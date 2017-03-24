@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Country(models.Model):
-    country_code = models.CharField(max_length=64, default=uuid.uuid4, null=False, blank=True)
+    country_code = models.CharField(max_length=64, default=uuid.uuid4, null=False, blank=True, db_index=True)
     country_name = models.CharField(max_length=64, null=False, blank=False)
     active = models.BooleanField(default=True)
 
@@ -15,7 +15,7 @@ class Country(models.Model):
 
 
 class SectionType(models.Model):
-    section_type_code = models.CharField(max_length=64, default=uuid.uuid4, blank=False, null=True)
+    section_type_code = models.CharField(max_length=64, default=uuid.uuid4, blank=False, null=True, db_index=True)
     section_type_name = models.CharField(max_length=40, blank=False, null=True)
     active = models.BooleanField(default=True)
 
@@ -25,7 +25,7 @@ class SectionType(models.Model):
 
 
 class Section(models.Model):
-    section_code = models.CharField(max_length=64, default=uuid.uuid4, blank=False, null=True)
+    section_code = models.CharField(max_length=64, default=uuid.uuid4, blank=False, null=True, db_index=True)
     section_name = models.CharField(max_length=30, blank=False, null=False)
     active = models.BooleanField(default=True)
     fk_country = models.ForeignKey(Country, blank=False, null=True, related_name='section_country')
