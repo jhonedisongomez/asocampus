@@ -1,0 +1,4 @@
+#Python bycode
+*.py[co]
+*.pyc
+/static/bower_components
