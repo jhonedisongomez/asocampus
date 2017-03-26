@@ -17,7 +17,12 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
 )
 LOCAL_APPS = (
-
+    'country.apps.CountryConfig',
+    'rooms.apps.RoomsConfig',
+    'activities.apps.ActivitiesConfig',
+    'topics.apps.TopicsConfig',
+    'profiles.apps.ProfilesConfig',
+    'payment.apps.PaymentConfig',
 
 )
 from django.core.urlresolvers import reverse_lazy

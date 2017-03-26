@@ -11,7 +11,7 @@ class Room(models.Model):
     room_name = models.CharField(max_length=40, blank=True, null=True)
     address = models.CharField(max_length=40, blank=True, null=True)
     capacity = models.IntegerField(blank=True, null=True)
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=True, db_index=True)
     fk_section = models.ForeignKey(Section, blank=True, null=True)
 
     def __unicode__(self):
