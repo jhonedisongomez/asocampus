@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 import uuid
 from django.contrib.auth.models import User
-from country.models import Country
+from country.models import Section
 
 
 class ActivitiesType(models.Model):
@@ -23,10 +23,10 @@ class Activities(models.Model):
     active = models.BooleanField(default=True, db_index=True)
     isPaid = models.BooleanField(default=False, db_index=True)  # to know if the activity as a price
     fk_activities_type = models.ForeignKey(ActivitiesType, blank=False, null=False)
-    fk_country = models.ForeignKey(Country)
+    fk_section = models.ForeignKey(Section)
 
     def __unicode__(self):
-        return self.thopic
+        return self.topic
 
 
 class SignUpActivities(models.Model):

@@ -23,6 +23,7 @@ LOCAL_APPS = (
     'topics.apps.TopicsConfig',
     'profiles.apps.ProfilesConfig',
     'payment.apps.PaymentConfig',
+    'agenda.apps.AgendaConfig',
 
 )
 from django.core.urlresolvers import reverse_lazy

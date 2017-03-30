@@ -26,14 +26,14 @@ class ActivityRoom(models.Model):
 
     def __unicode__(self):
 
-        obj_activity = Activities.objects.filter(activities_code = self.fk_activity_code, active = True)
+        obj_activity = Activities.objects.filter(pk=self.fk_activity.pk)
         if obj_activity:
-            activity = obj_activity[0].thopic
+            activity = obj_activity[0].topic
 
-            obj_room = Room.objects.filter(room_code = self.fk_room_code,active = True)
+            obj_room = Room.objects.filter(pk=self.fk_room.pk)
             room_name = obj_room[0].room_name
 
-            obj_topic = Topic.objects.filter(topic_code = self.fk_topic_code,active = True)
+            obj_topic = Topic.objects.filter(pk=self.fk_topic.pk)
             topic_name = obj_topic[0].topic_name
             return activity + " - " + topic_name + " - " + room_name
         else:
