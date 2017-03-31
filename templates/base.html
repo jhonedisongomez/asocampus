@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src ="../static/bower_components/webcomponentsjs/webcomponents.js"></script>
-    <link rel="import" href="../static/elements.vulcanized.html" />
+
+
+
     {% load static from staticfiles %}
+    <link rel="import" href="{% static 'elements.vulcanized.html' %}" />
     <script src="{% static 'js/general.js' %}"></script>
 
     {% block imports %} {% endblock %}

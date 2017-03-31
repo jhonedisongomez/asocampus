@@ -18210,7 +18210,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             display: none !important;
         }
         app-toolbar.base-login {
-            background-color: #7eb43e;
+            background-color: #06780b;
         }
         paper-tabs.base-login {
             height: 100%;
@@ -18246,6 +18246,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <app-toolbar class="tabs-bar" style="padding-left: 72%;color: white;" hidden$="{{!wideLayout}}">
             <!-- Nav on desktop: tabs -->
+            <paper-button on-click="listActivity">Actividades</paper-button>
             <paper-button on-click="logout">Cerrar sesión</paper-button>
 
           </app-toolbar>
@@ -18287,6 +18288,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       logout: function(event){
         window.location.replace("/logout");
+      },
+      listActivity: function(event){
+        window.location.replace("/actividades/lista-de-actividades");
       }
     });
   </script>
@@ -25462,4 +25466,34 @@ Configuration:
 
 
 </dom-module>
-<script src="js/jquery/dist/jquery.min.js"></script></div></body></html>
+<dom-module id="list-activity" assetpath="bower_components/template-activity/">
+
+    <template>
+
+        <iron-ajax id="list-ajax-activity" last-response="{{data}}" handle-as="json" auto="">
+
+        </iron-ajax>
+
+    </template>
+
+
+</dom-module>
+
+<script>
+
+    Polymer({
+    is: "list-activity",
+    properties: {
+    },
+    ready: function()
+    {
+      var url = ""
+      url = document.URL;
+      var ajaxUrl = "?load=true"
+      url = url + ajaxUrl;
+      this.querySelector('iron-ajax#list-ajax-activity').url = url
+    }
+  });
+
+
+</script></div></body></html>

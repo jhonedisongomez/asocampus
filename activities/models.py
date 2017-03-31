@@ -25,6 +25,12 @@ class Activities(models.Model):
     fk_activities_type = models.ForeignKey(ActivitiesType, blank=False, null=False)
     fk_section = models.ForeignKey(Section)
 
+    class Meta:
+        index_together = (
+            ('activities_code', 'begin_date', 'active', 'isPaid')
+
+        )
+
     def __unicode__(self):
         return self.topic
 

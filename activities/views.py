@@ -1,12 +1,9 @@
 from django.views.generic import TemplateView
-from django.contrib.auth import authenticate,login
 from django.template import RequestContext
-from django.shortcuts import render_to_response,redirect
-from django.contrib.auth import authenticate
+from django.shortcuts import render_to_response
 from django.http import HttpResponse
 import json
-from django.contrib.auth.models import User
-from .models import signUpActivities, Activities
+from .models import SignUpActivities, Activities
 from datetime import datetime
 from profiles.models import IdCard
 from topics.models import ActivityRoom
@@ -18,16 +15,49 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import threading
 
 
-class ActivitiesView(TemplateView):
-    template_name = 'activities/activity.html'
+class ActivitiesView(LoginRequiredMixin, TemplateView):
+    template_name = 'activities/list-activity.html'
     class_form = ""
+    login_url = "/iniciar-sesion"
 
     def get(self, request, *args, **kwargs):
+        if "load" in request.GET:
 
-        dic = {}
-        context_instance = RequestContext(request)
-        template = self.template_name
-        return render_to_response(template, dic,context_instance)
+            try:
+                response_data = {}
+                message = ""
+                is_error = False
+                activity_list = []
+                obj_activities = Activities.objects.filter(active=True)
+                for ix_act, val_act in enumerate(obj_activities):
+
+                    list = {}
+                    list['activity_code'] = val_act.activities_code
+                    list['begin_date'] = str(val_act.begin_date)
+                    list['finish_date'] = str(val_act.finish_date)
+                    list['topic'] = val_act.topic
+                    list['is_pay'] = val_act.isPaid
+                    activity_list.append(list)
+
+            except Exception as e:
+
+                is_error = True
+                message = "error en el sistema por favor comuniquese con soporte"
+                response_data['type_error'] = type(e).__name__
+
+            response_data['message'] = message
+            response_data['is_error'] = is_error
+            response_data['activity_list'] = activity_list
+            response_json = json.dumps(response_data)
+            content_type = 'application/json'
+            return HttpResponse(response_json, content_type)
+
+        else:
+
+            dic = {}
+            context_instance = RequestContext(request)
+            template = self.template_name
+            return render_to_response(template, dic,context_instance)
 
     def post(self, request, *args, **kwargs):
         lock = threading.Lock()

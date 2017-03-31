@@ -20,10 +20,16 @@ class Agenda(models.Model):
 
 class TopicAgenda(models.Model):
 
-    topic_agenda_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
-    active = models.BooleanField(default=True, db_index=True)
+    topic_agenda_code = models.CharField(max_length=64, default=uuid.uuid4)
+    active = models.BooleanField(default=True)
     fk_agenda = models.ForeignKey(Agenda)
     fk_activity_room = models.ForeignKey(ActivityRoom)
+
+    class Meta:
+        index_together = (
+            ('topic_agenda_code', 'active')
+
+        )
 
     def __unicode__(self):
 

@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.template import RequestContext
-from django.shortcuts import render_to_response,redirect
-from django.contrib.auth import authenticate
+from django.shortcuts import render_to_response
 from django.http import HttpResponse
-from django.core.urlresolvers import reverse_lazy
 import json
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView
@@ -11,15 +9,14 @@ from braces.views import LoginRequiredMixin
 from .models import Agenda, SignUpSchedule
 from datetime import datetime
 
-from topics.models import Topic, ActivityRoom#, RoomTopic
+from topics.models import ActivityRoom#, RoomTopic
 from rooms.models import Room
-from activities.models import Activities,signUpActivities
+from activities.models import Activities, SignUpActivities
 from agenda.models import TopicAgenda
 from .forms import CreateAgendaForm
-from django.db.models import Count
-from country.models import section
 from payment.models import PaymentPerson
 import threading
+
 
 def reservarCupo(self):
 
@@ -55,7 +52,7 @@ def reservarCupo(self):
                 obj_activities = Activities.objects.filter(year = year, active = True)
                 activities_code = obj_activities[0].activities_code
 
-                obj_sign_up_activities = signUpActivities.objects.filter(active = True,fk_activities_code = activities_code,fk_user = user)
+                obj_sign_up_activities = SignUpActivities.objects.filter(active = True,fk_activities_code = activities_code,fk_user = user)
 
                 if obj_sign_up_activities:
 
@@ -141,7 +138,7 @@ def cancelarCupo(self):
 
         if user.is_authenticated():
 
-            obj_sign_up_activities = signUpActivities.objects.filter(active = True,fk_user = user)
+            obj_sign_up_activities = SignUpActivities.objects.filter(active = True,fk_user = user)
             sign_up_code = obj_sign_up_activities[0].sign_up_code
             obj_signUpSchedule = SignUpSchedule.objects.filter(action = True,fk_topic_agenda = topic_agenda_code, fk_sign_up_code = sign_up_code)
 
@@ -230,12 +227,11 @@ class AgendaViewUser(TemplateView, LoginRequiredMixin):
         HttpResponse(response_json, content_type)
 
 
-#that is the general agenda with the topics and places
+# that is the general agenda with the topics and places
 class AgendaView(TemplateView):
 
     template_name = "agenda/activities-agenda.html"
     form_class = ""
-
 
     def get(self, request, *args, **kwargs):
         lock = threading.Lock()
@@ -247,99 +243,16 @@ class AgendaView(TemplateView):
                 response_data = {}
                 message = ""
                 is_error = False
-                list_town = {}
-                dates = []
-                list_date = {}
-                after_date = ""
-                list_time = {}
-                times = []
-                schedules = []
-                list_agenda = {}
-                agendas = []
-                print "I am here"
-                date = datetime.today()
-                year = date.year
-                obj_activities = Activities.objects.filter(year = "2016", active = True)
-                activities_code = obj_activities[0].activities_code
+                activity_list = []
+                obj_activities = Activities.objects.filter(active=True)
+                for ix_act, val_act in enumerate(obj_activities):
 
-                obj_activity_room = ActivityRoom.objects.filter(fk_activity_code = activities_code,active = True).values('fk_room_code').annotate(counter = Count('fk_room_code'))
-                for ix_act_room, act_room in enumerate(obj_activity_room):
-
-                    list_town = {}
-                    dates = []
-                    times = []
-
-                    counter =  act_room['counter']#count the activicy for each topic
-
-                    room_code = act_room['fk_room_code']
-
-
-                    obj_room = Room.objects.filter(room_code = room_code,active = True)
-                    room_name = obj_room[0].room_name
-                    capacity = obj_room[0].capacity
-
-                    section_code = obj_room[0].fk_section_code
-
-                    obj_section = section.objects.filter(section_code = section_code, active = True)
-                    town = obj_section[0].section_name
-
-                    list_town['town'] = town
-
-                    obj_activity_room = ActivityRoom.objects.filter(fk_room_code = room_code , active = True)
-                    for ix_act_room,val_act_room in enumerate(obj_activity_room):
-                        list_date = {}
-
-                        activity_room_code = val_act_room.activity_room_code
-                        topic_code = val_act_room.fk_topic_code
-                        obj_topic = Topic.objects.filter(topic_code = topic_code,active = True)
-                        topic_name = obj_topic[0].topic_name
-                        topic_description = obj_topic[0].description
-                        professor = obj_topic[0].profesor_name
-
-                        list_date['topic'] = topic_name
-                        list_date['description'] = topic_description
-                        list_date['professor'] = professor
-
-                        obj_topic_agenda = TopicAgenda.objects.filter(fk_activity_room_code = activity_room_code,active = True)
-
-                        if obj_topic_agenda:
-
-                            agenda_topic_pk = obj_topic_agenda[0].pk
-                            topic_agenda_code = obj_topic_agenda[0].topic_agenda_code
-                            agenda_code = obj_topic_agenda[0].fk_agenda_code
-
-                            obj_agenda = Agenda.objects.filter(agenda_code = agenda_code ,active = True)
-                            obj_signUpSchedule = SignUpSchedule.objects.filter(action = True, fk_topic_agenda = topic_agenda_code)
-                            if obj_signUpSchedule:
-
-                                obj_signUpSchedule = SignUpSchedule.objects.filter(action = True, fk_topic_agenda = topic_agenda_code).order_by('-id')[0]
-
-                                place = obj_signUpSchedule.count
-                                place = eval(place)
-                                place = len(place)
-
-                            else:
-                                place = 0
-
-                            place = capacity - place
-
-                            date = str(obj_agenda[0].date)
-                            time = obj_agenda[0].schedule
-
-                            list_date['date'] = date
-                            list_date['time'] = time
-                            list_date['agendaPk'] = agenda_topic_pk
-                            list_date['room_name'] = room_name
-                            list_date['places'] = place
-                            dates.append(list_date)
-
-                    after_date = date
-                    list_town['schedule'] = dates
-                    agendas.append(list_town)
-
-                list_time = {}
-                list_agenda['agenda'] = agendas
-                schedules.append(list_agenda)
+                    list['activity_code'] = val_act.activities_code
+                    list['begin_date'] = val_act.begin_date
+                    list['finish_date'] = val_act.finish_date
+                    list['topic'] = val_act.topic
+                    list['is_pay'] = val_act.is_pay
+                    activity_list.append(list)
 
             except Exception as e:
 
@@ -349,7 +262,7 @@ class AgendaView(TemplateView):
 
             response_data['message'] = message
             response_data['is_error'] = is_error
-            response_data['list_schedule'] = schedules
+            response_data['activity_list'] = activity_list
             response_json = json.dumps(response_data)
             content_type = 'application/json'
             return HttpResponse(response_json, content_type)

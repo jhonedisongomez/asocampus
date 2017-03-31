@@ -3,7 +3,7 @@ from .views import AgendaView, CreateDateView, CreateAgendaView, ListScheduleVie
 
 urlpatterns = [
 
-    url(r'^agenda-congreso/$', AgendaView.as_view(),name='agenda_congress'),
+    url(r'^lista-de-actividades/$', AgendaView.as_view(),name='activity_list'),
     url(r'crear-fecha/$', CreateDateView.as_view(),name='create-date'),
     url(r'crear-agenda/$', CreateAgendaView.as_view(),name='create-agenda'),
     url(r'list-schedule/$', ListScheduleView.as_view(),name='list-schedule'),

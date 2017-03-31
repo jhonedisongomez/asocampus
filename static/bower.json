@@ -21,6 +21,7 @@
     "paper-spinner": "PolymerElements/paper-spinner#^1.2.1",
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.2",
     "paper-material": "PolymerElements/paper-material#^1.0.6",
-    "paper-dialog": "PolymerElements/paper-dialog#^1.1.0"
+    "paper-dialog": "PolymerElements/paper-dialog#^1.1.0",
+    "paper-card": "PolymerElements/paper-card#^1.1.4"
   }
 }
