@@ -12,7 +12,13 @@ class Agenda(models.Model):
     agenda_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
     schedule = models.CharField(max_length=20, blank=False, null=False)
     date = models.DateField()
-    active = models.BooleanField(default=True,db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+
+    class Meta:
+        index_together = (
+            ('agenda_code', 'date', 'active')
+
+        )
 
     def __unicode__(self):
         return str(self.date) + " - " + self.schedule
@@ -20,8 +26,8 @@ class Agenda(models.Model):
 
 class TopicAgenda(models.Model):
 
-    topic_agenda_code = models.CharField(max_length=64, default=uuid.uuid4)
-    active = models.BooleanField(default=True)
+    topic_agenda_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
     fk_agenda = models.ForeignKey(Agenda)
     fk_activity_room = models.ForeignKey(ActivityRoom)
 
@@ -56,18 +62,31 @@ class TopicAgenda(models.Model):
 
 class SignUpSchedule(models.Model):
 
-    sign_up_schedule_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
+    sign_up_schedule_code = models.CharField(max_length=64, default=uuid.uuid4,
+                            db_index=True)
+                            
     count = models.CharField(max_length=2000, blank=False, null=False)
-    action = models.BooleanField(default=True)
+    action = models.BooleanField(default=True, db_index=True)
     fk_sign_up_code = models.ForeignKey(SignUpActivities)
     fk_topic_agenda = models.ForeignKey(TopicAgenda)
 
+    class Meta:
+        index_together = (
+            ('sign_up_schedule_code', 'action')
+
+        )
 
 class AuditorAgenda(models.Model):
-    action = models.CharField(max_length=30, blank=False, null=False)
-    table = models.CharField(max_length=20, blank=False, null=False)
-    field = models.CharField(max_length=20, blank=False, null=False)
-    before_value = models.CharField(max_length=30, blank=False, null=False)
-    after_value = models.CharField(max_length=30, blank=True, null=True)
-    date = models.DateField(null=False, blank=False)
+    action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    field = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    before_value = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    after_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
+    date = models.DateField(null=False, blank=False, db_index=True)
     user = models.ForeignKey(User, blank=False, null=False, related_name='auditor_agenda_user')
+
+    class Meta:
+        index_together = (
+            ('action', 'table', 'field', 'before_value', 'after_value', 'date')
+
+        )

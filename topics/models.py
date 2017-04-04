@@ -13,6 +13,12 @@ class Topic(models.Model):
     description = models.CharField(max_length=500, blank=True, null=True)
     active = models.BooleanField(default=True, db_index=True)
 
+    class Meta:
+        index_together = (
+            ('topic_code', 'active')
+
+        )
+
     def __unicode__(self):
         return self.topic_name
 
@@ -23,6 +29,12 @@ class ActivityRoom(models.Model):
     fk_room = models.ForeignKey(Room)
     fk_activity = models.ForeignKey(Activities)
     fk_topic = models.ForeignKey(Topic)
+
+    class Meta:
+        index_together = (
+            ('activity_room_code', 'active')
+
+        )
 
     def __unicode__(self):
 
@@ -42,10 +54,16 @@ class ActivityRoom(models.Model):
 
 
 class AuditorTopic(models.Model):
-    action = models.CharField(max_length=30, blank=False, null=False)
-    table = models.CharField(max_length=20, blank=False, null=False)
-    field = models.CharField(max_length=20, blank=False, null=False)
-    before_value = models.CharField(max_length=30, blank=False, null=False)
-    after_value = models.CharField(max_length=30, blank=True, null=True)
-    date = models.DateField(null=False, blank=False)
+    action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    field = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    before_value = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    after_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
+    date = models.DateField(null=False, blank=False, db_index=True)
     user = models.ForeignKey(User, blank=False, null=False, related_name='auditor_topic_user')
+
+    class Meta:
+        index_together = (
+            ('action', 'table', 'field', 'before_value', 'after_value', 'date')
+
+        )

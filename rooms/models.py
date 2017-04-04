@@ -14,15 +14,27 @@ class Room(models.Model):
     active = models.BooleanField(default=True, db_index=True)
     fk_section = models.ForeignKey(Section, blank=True, null=True)
 
+    class Meta:
+        index_together = (
+            ('room_code', 'active')
+
+        )
+
     def __unicode__(self):
         return self.room_name
 
 
 class AuditorRoom(models.Model):
-    action = models.CharField(max_length=30, blank=False, null=False)
-    table = models.CharField(max_length=20, blank=False, null=False)
-    field = models.CharField(max_length=20, blank=False, null=False)
-    before_value = models.CharField(max_length=30, blank=False, null=False)
-    after_value = models.CharField(max_length=30, blank=True, null=True)
-    date = models.DateField(null=False, blank=False)
+    action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    field = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    before_value = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    after_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
+    date = models.DateField(null=False, blank=False, db_index=True)
     user = models.ForeignKey(User, blank=False, null=False, related_name='auditor_room_user')
+
+    class Meta:
+        index_together = (
+            ('action', 'table', 'field', 'before_value', 'after_value', 'date')
+
+        )
