@@ -5,4 +5,6 @@ from .views import SignInView, SignUpView
 urlpatterns = [
     url(r'^iniciar-sesion/$', SignInView.as_view(), name='login'),
     url(r'^registro/$', SignUpView.as_view(), name='signUp'),
+ 	url(r'^mi-perfil/$', SignUpView.as_view(), name='my-profile'),
+       
 ]

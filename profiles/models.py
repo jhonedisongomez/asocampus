@@ -5,6 +5,26 @@ from django.contrib.auth.models import User
 from activities.models import SignUpActivities
 
 
+class Profile(models.Model):
+
+    profile_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
+    document_id = models.IntegerField(max_length=11, db_index=True, blank=False, null=False)
+    first_name = models.CharField(max_length=20, db_index=True, blank=False, null=False)
+    last_name = models.CharField(max_length=64, db_index=True, blank=True, null=True)
+    phone_number = models.IntegerField(blank=True, null=True)
+    movil_number = models.IntegerField(blank=True, null=True)
+    address = models.CharField(max_length=70, db_index=True, blank=True, null=True)
+    active = models.BooleanField(default=True, db_index=True)
+    fk_user = models.ForeignKey(User, blank=True, null=True)
+
+    class Meta:
+        index_together = (
+            ('profile_code', 'active'),
+            ('document_id', 'active', 'fk_user')
+
+        )
+
+
 class IdCard(models.Model):
 
     id_card_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
@@ -14,10 +34,16 @@ class IdCard(models.Model):
 
 
 class AuditorProfile(models.Model):
-    action = models.CharField(max_length=30, blank=False, null=False)
-    table = models.CharField(max_length=20, blank=False, null=False)
-    field = models.CharField(max_length=20, blank=False, null=False)
-    before_value = models.CharField(max_length=30, blank=False, null=False)
-    after_value = models.CharField(max_length=30, blank=True, null=True)
-    date = models.DateField(null=False, blank=False)
+    action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    field = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    before_value = models.CharField(max_length=30, blank=False, null=False, db_index=True)
+    after_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
+    date = models.DateField(null=False, blank=False, db_index=True)
     user = models.ForeignKey(User, blank=False, null=False, related_name='auditor_profile_user')
+
+    class Meta:
+        index_together = (
+            ('action', 'table', 'field', 'before_value', 'after_value', 'date')
+
+        )

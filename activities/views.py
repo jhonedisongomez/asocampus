@@ -22,28 +22,44 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
 
     def get(self, request, *args, **kwargs):
         if "load" in request.GET:
+           
+            state = "init"
+            response_data = {}
+            message = ""
+            is_error = False
+            activity_list = []
+            count = 0
 
             try:
-                response_data = {}
-                message = ""
-                is_error = False
-                activity_list = []
+
+                state = "get info"
+
                 obj_activities = Activities.objects.filter(active=True)
+                
                 for ix_act, val_act in enumerate(obj_activities):
 
                     list = {}
+
+                    list['id_html'] = count + 1
                     list['activity_code'] = val_act.activities_code
                     list['begin_date'] = str(val_act.begin_date)
                     list['finish_date'] = str(val_act.finish_date)
                     list['topic'] = val_act.topic
-                    list['is_pay'] = val_act.isPaid
+                    list['is_pay'] = val_act.is_pay
+                    list['description'] = val_act.description
                     activity_list.append(list)
+                    count = count +1
+                count = 0
 
+                state = "finish"    
             except Exception as e:
 
                 is_error = True
                 message = "error en el sistema por favor comuniquese con soporte"
                 response_data['type_error'] = type(e).__name__
+                response_data['file'] = "activities view"
+                response_data['class'] = "ActivitiesView"
+                response_data['state'] = state
 
             response_data['message'] = message
             response_data['is_error'] = is_error
@@ -60,52 +76,57 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
             return render_to_response(template, dic,context_instance)
 
     def post(self, request, *args, **kwargs):
-        lock = threading.Lock()
-        lock.acquire()
+
         try:
 
             authenticated = False
             response_data = {}
             message = ""
             is_error = False
-
             user = request.user
 
+            state = "init"
             if user.is_authenticated():
                 authenticated = True
-
-                date = datetime.today()
-                year = str(date.year)
-
-                obj_activity = Activities.objects.filter(year = year, active = True)
-                activity_code = obj_activity[0].activities_code
-
-                obj_sign_up_activities = signUpActivities.objects.filter(fk_activities_code = activity_code,fk_user = user ,active = True)
+                
+                body_unicode = request.body.decode('utf-8')
+                body = json.loads(body_unicode)
+                obj_activity = Activities.objects.filter(activities_code=body['activity_code'], active=True)
+                obj_sign_up_activities = SignUpActivities.objects.filter(fk_activities=obj_activity,
+                                                                        fk_user=user,
+                                                                        active=True)
+                state = "validate"
                 if obj_sign_up_activities:
-                    message = "ya estas inscrito en la base de datos"
+                    message = "ya estas inscrito en la actividad"
 
                 else:
-                    obj_sign_up_activities = signUpActivities()
-                    sign_up_code = obj_sign_up_activities.sign_up_code
-                    obj_sign_up_activities.fk_activities_code = activity_code
-                    obj_sign_up_activities.fk_user = request.user
-                    obj_sign_up_activities.save()
 
+                    state = "sign up"
+                    obj_sign_up_activities = SignUpActivities()
+                    obj_sign_up_activities.create(obj_activity[0], request.user)
+
+                    """
                     obj_id_card = IdCard()
                     obj_id_card.created_at = datetime.today()
                     obj_id_card.fk_user_created = request.user
                     obj_id_card.fk_sign_activity_code = sign_up_code
                     obj_id_card.save()
-                    message = "se ha registrado en nuestro congreso por favor revisa la agenda"
+
+                    """
+                    message = "Gracias por inscribirte en nuestra actividad"
 
             else:
-                message = "por favor inicie sesion para regitrarte en el congreso"
+                message = "por favor inicie sesion para regitrarte en la actividad"
+
+            state ="finish"
 
         except Exception as e:
 
+            print str(e)
             is_error = True
             message = "error en el sistema por favor comuniquese con soporte"
             response_data['type_error'] = type(e).__name__
+            response_data['state'] = state
 
         response_data['message'] = message
         response_data['is_error'] = is_error
@@ -113,8 +134,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
         response_json = json.dumps(response_data)
         content_type = 'application/json'
         return HttpResponse(response_json, content_type)
-        lock.release()
-
+        
 
 class VerifySignUpActivity(LoginRequiredMixin,TemplateView):
 
