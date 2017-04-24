@@ -1,24 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
-<html lang="es">
-<head>
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-drawer-panel/paper-drawer-panel.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    {% load static from staticfiles %}
-    <link rel="import" href="{% static 'elements.vulcanized.html' %}" />
-    <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'js/general.js' %}"></script>
-
-    {% block imports %} {% endblock %}
-
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body  fullbleed layout vertical style="background: #eee">
-<input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
-
-
-{% if user.is_authenticated %}
-
-<dom-module id="base-login">
+<dom-module id="base-login1">
 
   <template>
 
@@ -46,8 +36,8 @@
         </div>
         <paper-menu>
             <paper-item icon="home" id="item_inicio" label="Inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
-            <paper-item icon="home" label="Actividades" on-click="listActivity"><a is="pushstate-anchor" href="actividades/lista-de-actividades">Actividades</a></paper-item>
-            <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="/logout">Cerrar sesiÃ³n</a></paper-item>
+            <paper-item icon="home" label="Actividades" on-click="listActivity">Actividades</paper-item>
+            <paper-item icon="home" label="Cerrar Sesion" on-click="logout" >Cerrar sesión</paper-item>
         </paper-menu>
 
       </div>
@@ -56,11 +46,10 @@
       <div main>
 
     <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
-      <paper-toolbar class="toolbar-main" elevation="5">
+      <paper-toolbar class="toolbar-main">
         <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
-
+        <div class="title">Campus virtual de ASOPROVIDA</div>
       </paper-toolbar>
-        {% block content %}	{% endblock %}
     </paper-scroll-header-panel>
       </div>
 
@@ -70,7 +59,7 @@
     </dom-module>
   <script>
     Polymer({
-      is: 'base-login',
+      is: 'base-login1',
 
       ready:function(){
         this.$.item_inicio.focused = true;
@@ -101,17 +90,3 @@
     });
   </script>
 
-    <base-login></base-login>
- {% else %}
-    <x-app></x-app>
-
-{% endif %}
-
-<footer>
-
-    <p>develop by Jhon Edison Gomez </p>
-</footer>
-
-
-</body>
-</html>

@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 import json
-from .models import SignUpActivities, Activities
+from .models import SignUpActivities, Activities, AuditorActivity
 from datetime import datetime
 from profiles.models import IdCard
 from topics.models import ActivityRoom
@@ -13,7 +13,10 @@ from rooms.models import Room
 from agenda.models import Agenda, SignUpSchedule
 from django.contrib.auth.mixins import LoginRequiredMixin
 import threading
+import logging
 
+
+logger = logging.getLogger("logging")
 
 class ActivitiesView(LoginRequiredMixin, TemplateView):
     template_name = 'activities/list-activity.html'
@@ -21,9 +24,12 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
     login_url = "/iniciar-sesion"
 
     def get(self, request, *args, **kwargs):
+        logger.info(str(request) +  ", usuario:" +  str(request.user))
+
         if "load" in request.GET:
-           
+            print (str(request))
             state = "init"
+            logger.info("state: " + state + ", usuario:" + str(request.user))
             response_data = {}
             message = ""
             is_error = False
@@ -33,9 +39,8 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
             try:
 
                 state = "get info"
-
+                logger.info("state: " + state + ", usuario:" + str(request.user))
                 obj_activities = Activities.objects.filter(active=True)
-                
                 for ix_act, val_act in enumerate(obj_activities):
 
                     list = {}
@@ -54,6 +59,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                 state = "finish"    
             except Exception as e:
 
+                logger.error(e)
                 is_error = True
                 message = "error en el sistema por favor comuniquese con soporte"
                 response_data['type_error'] = type(e).__name__
@@ -65,6 +71,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
             response_data['is_error'] = is_error
             response_data['activity_list'] = activity_list
             response_json = json.dumps(response_data)
+            logger.info("response_data: " + response_json + ", usuario:" + str(request.user))
             content_type = 'application/json'
             return HttpResponse(response_json, content_type)
 
@@ -77,18 +84,21 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
 
     def post(self, request, *args, **kwargs):
 
+
+        response_data = {}
+        message = ""
+        is_error = False
+        created = False
+
         try:
 
-            authenticated = False
-            response_data = {}
-            message = ""
-            is_error = False
             user = request.user
-
             state = "init"
+            logger.info("state: " + state + ", usuario:" + str(request.user))
+            logger.info("state: " + state + ", usuario:" + str(request.user))
             if user.is_authenticated():
-                authenticated = True
-                
+
+                logger.info(str(request.body.decode('utf-8')) +  ", usuario:" +  str(request.user))
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
                 obj_activity = Activities.objects.filter(activities_code=body['activity_code'], active=True)
@@ -96,14 +106,25 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                                                                         fk_user=user,
                                                                         active=True)
                 state = "validate"
+                logger.info("state: " + state + ", usuario:" + str(request.user))
                 if obj_sign_up_activities:
                     message = "ya estas inscrito en la actividad"
 
                 else:
-
+                    created = True
                     state = "sign up"
+                    logger.info("state: " + state + ", usuario:" + str(request.user))
                     obj_sign_up_activities = SignUpActivities()
-                    obj_sign_up_activities.create(obj_activity[0], request.user)
+                    obj_sign_up_activities.fk_activities = obj_activity[0]
+                    obj_sign_up_activities.fk_user = request.user
+
+                    obj_auditor_topic = AuditorActivity()
+                    obj_auditor_topic.action = "SAVE"
+                    obj_auditor_topic.table = "SignUpActivities"
+                    obj_auditor_topic.field = "ALL"
+                    obj_auditor_topic.after_value = str(obj_sign_up_activities.sign_up_code) + "," + str(obj_sign_up_activities.active) + "," + str(Activities.pk) + ","\
+                                                                                                    + str(request.user.pk)
+                    obj_auditor_topic.user = request.user
 
                     """
                     obj_id_card = IdCard()
@@ -115,23 +136,36 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                     """
                     message = "Gracias por inscribirte en nuestra actividad"
 
+
             else:
                 message = "por favor inicie sesion para regitrarte en la actividad"
 
             state ="finish"
+            logger.info("state: " + state + ", usuario:" + str(request.user))
 
         except Exception as e:
 
             print str(e)
+            logger.error(e)
             is_error = True
             message = "error en el sistema por favor comuniquese con soporte"
             response_data['type_error'] = type(e).__name__
             response_data['state'] = state
 
+
+        else:
+            if created:
+
+                obj_sign_up_activities.save()
+                obj_auditor_topic.save()
+                state = "save"
+                logger.info("state: " + state + ", usuario:" + str(request.user))
+
         response_data['message'] = message
         response_data['is_error'] = is_error
 
         response_json = json.dumps(response_data)
+        logger.info("response_data: " + response_json + ", usuario:" + str(request.user))
         content_type = 'application/json'
         return HttpResponse(response_json, content_type)
         

@@ -4,6 +4,7 @@ import uuid
 from django.contrib.auth.models import User
 from country.models import Section
 
+
 class AuditorActivity(models.Model):
     action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
     table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
@@ -63,23 +64,6 @@ class SignUpActivities(models.Model):
     active = models.BooleanField(default=True, db_index=True)
     fk_activities = models.ForeignKey(Activities)
     fk_user = models.ForeignKey(User)
-
-    def create(self, Activities, User):
-
-        self.sign_up_code = self.sign_up_code
-        self.active = self.active 
-        self.fk_activities = Activities
-        self.fk_user = User
-        
-        obj_auditor_topic = AuditorActivity()
-        obj_auditor_topic.action = "SAVE"
-        obj_auditor_topic.table = "SignUpActivities"
-        obj_auditor_topic.field = "ALL"
-        obj_auditor_topic.after_value = str(self.sign_up_code) +","+ str(self.active) +","+ str(Activities.pk) + "," + str(User.pk)
-        obj_auditor_topic.user = User
-        self.save()
-        obj_auditor_topic.save()
-
 
     class Meta:
         index_together = (

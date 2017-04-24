@@ -79,3 +79,47 @@ TEMPLATE_DIRS = [BASE_DIR.child('templates')]
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR.child('static')]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format' : "[%(asctime)s] %(levelname)s %(name)s:%(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR.child('logs') + "/logs.log",
+            'formatter': 'standard'
+        },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+
+        'logging': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+
+    'django.request': {
+        'handlers': ['file'],
+        'level': 'DEBUG' or 'INFO',
+    },
+
+    },
+
+    'activities.views': {
+        'handlers': ['file'],
+        'level': 'INFO',
+        'propagate': True,
+    },
+}

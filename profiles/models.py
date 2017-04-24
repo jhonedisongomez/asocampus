@@ -5,6 +5,18 @@ from django.contrib.auth.models import User
 from activities.models import SignUpActivities
 
 
+class IdType(models.Model):
+
+    id_type_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
+    description = models.CharField(max_length=30,blank=False,null=True)
+    active = models.BooleanField(default=True, null=False, blank=True, db_index=True)
+
+    class Meta:
+        index_together =(
+            ('id_type_code', 'active')
+        )
+
+
 class Profile(models.Model):
 
     profile_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
@@ -15,11 +27,13 @@ class Profile(models.Model):
     movil_number = models.IntegerField(blank=True, null=True)
     address = models.CharField(max_length=70, db_index=True, blank=True, null=True)
     active = models.BooleanField(default=True, db_index=True)
+    fk_id_type = models.ForeignKey(IdType)
     fk_user = models.ForeignKey(User, blank=True, null=True)
 
     class Meta:
         index_together = (
             ('profile_code', 'active'),
+            ('active', 'fk_user'),
             ('document_id', 'active', 'fk_user')
 
         )
