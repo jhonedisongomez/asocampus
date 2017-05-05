@@ -3,8 +3,11 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     {% load static from staticfiles %}
-    <link rel="import" href="{% static 'elements.vulcanized.html' %}" />
+    <script type="text/javascript" src="{% static 'bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
+    <link  rel="import" href="{% static 'elements.vulcanized.html' %}"/>
+
     <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'js/general.js' %}"></script>
 
@@ -18,91 +21,94 @@
 
 {% if user.is_authenticated %}
 
-<dom-module id="base-login">
+    <dom-module id="base-login">
 
-  <template>
+        <template>
 
-    <style>
+            <style>
 
-    .toolbar-menu{
-        --paper-toolbar-background:#06780b;
-    }
+                .toolbar-menu{
+                    --paper-toolbar-background:#06780b;
+                }
 
-    .toolbar-main{
-        --paper-toolbar-background:rgb(34, 198, 30);
-    }
+                .toolbar-main{
+                    --paper-toolbar-background:rgb(34, 198, 30);
+                }
 
-    </style>
+            </style>
 
-    <paper-drawer-panel class="flex" id="menu">
-      <div drawer  layout flex>
-        <paper-toolbar class="toolbar-menu">
-          <span class="title">Menu</span>
-          <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
-         </paper-toolbar>
-        <div class="logo-asoprovida" style="background: lightgray;">
-            <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
-                    style="width: 200px;">
-        </div>
-        <paper-menu>
-            <paper-item icon="home" id="item_inicio" label="Inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
-            <paper-item icon="home" label="Actividades" on-click="listActivity"><a is="pushstate-anchor" href="actividades/lista-de-actividades">Actividades</a></paper-item>
-            <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="/logout">Cerrar sesión</a></paper-item>
-        </paper-menu>
+            <paper-drawer-panel class="flex" id="menu">
+                <div drawer  layout flex>
+                    <paper-toolbar class="toolbar-menu">
+                        <span class="title">Menu</span>
+                        <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
+                    </paper-toolbar>
+                    <div class="logo-asoprovida" style="background: lightgray;">
+                        <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
+                             style="width: 200px;">
+                    </div>
+                    <paper-menu>
+                        <paper-item icon="home" id="item_inicio" label="Inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
+                        <paper-item icon="home" label="Actividades" on-click="listActivity"><a is="pushstate-anchor" href="actividades/lista-de-actividades">Actividades</a></paper-item>
+                        <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="/logout">Cerrar sesión</a></paper-item>
+                    </paper-menu>
 
-      </div>
+                </div>
 
 
-      <div main>
+                <div main>
 
-    <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
-      <paper-toolbar class="toolbar-main" elevation="5">
-        <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+                    <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
+                        <paper-toolbar class="toolbar-main" elevation="5">
+                            <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
 
-      </paper-toolbar>
-        {% block content %}	{% endblock %}
-    </paper-scroll-header-panel>
-      </div>
+                        </paper-toolbar>
+                        {% block content %}	{% endblock %}
+                    </paper-scroll-header-panel>
+                </div>
 
-    </paper-drawer-panel>
+            </paper-drawer-panel>
 
-  </template>
+        </template>
     </dom-module>
-  <script>
-    Polymer({
-      is: 'base-login',
+    <script>
+        HTMLImports.whenReady(function() {
+            Polymer({
+                is: 'base-login',
 
-      ready:function(){
-        this.$.item_inicio.focused = true;
-        this.$.menu.forceNarrow = true;
+                ready:function(){
+                    this.$.item_inicio.focused = true;
+                    this.$.menu.forceNarrow = true;
 
-      },
+                },
 
-      onLayoutChange: function(wide) {
-        var drawer = this.$.drawer;
-        if (wide && drawer.opened) {
-          drawer.opened = false;
-        }
-      },
+                onLayoutChange: function(wide) {
+                    var drawer = this.$.drawer;
+                    if (wide && drawer.opened) {
+                        drawer.opened = false;
+                    }
+                },
 
-      home:function(event){
-        window.location.replace("/");
-      },
-      listActivity:function(event){
-        window.location.replace("/actividades/lista-de-actividades");
-      },
+                home:function(event){
+                    window.location.replace("/");
+                },
+                listActivity:function(event){
+                    window.location.replace("/actividades/lista-de-actividades");
+                },
 
-      logout:function(event){
-        window.location.replace("/logout");
-      },
-      closedMenu:function(event){
-          this.$.menu.closeDrawer();
-      },
-    });
-  </script>
+                logout:function(event){
+                    window.location.replace("/logout");
+                },
+                closedMenu:function(event){
+                    this.$.menu.closeDrawer();
+                },
+            });
+        });
+
+    </script>
 
     <base-login></base-login>
- {% else %}
+{% else %}
     <x-app></x-app>
 
 {% endif %}

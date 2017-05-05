@@ -12,141 +12,141 @@
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
 
 <dom-module id="list-activity">
-<style>
-  .container {
-  @apply(--layout-horizontal);
+    <style>
+        .container {
+        @apply(--layout-horizontal);
 
-  }
-  .paper-card-0 .header.paper-card .title-text.paper-card {
-      padding: 16px;
-      font-size: 24px;
-      font-weight: 400;
-      color: white;
-  }
+        }
+        .paper-card-0 .header.paper-card .title-text.paper-card {
+            padding: 16px;
+            font-size: 24px;
+            font-weight: 400;
+            color: white;
+        }
 
-</style>
-  <template>
-    <div class="horizontal layout wrap" style="margin-top: 140px;">
+    </style>
+    <template>
+        <div class="horizontal layout wrap" style="margin-top: 140px;">
 
-      <iron-ajax id ="list-ajax-activity"
-      on-response="response"
-      url = ""
-      handle-as="json">
-      </iron-ajax>
+            <iron-ajax id ="list-ajax-activity"
+                       on-response="response"
+                       url = ""
+                       handle-as="json">
+            </iron-ajax>
 
-      <template is="dom-repeat" items="[[repos]]">
+            <template is="dom-repeat" items="[[repos]]">
 
-        
-        <div   style="margin-left: 10px;
+
+                <div   style="margin-left: 10px;
           margin-top: 20px;
           max-width: 350px;">
 
-          <paper-card class="list_activity" elevation="5" heading="[[item.topic]]" style="    max-width: 100%;
+                    <paper-card class="list_activity" elevation="5" heading="[[item.topic]]" style="    max-width: 100%;
             min-width: 100%;
             margin: auto;
             margin-left: 20px;"  image="https://scontent.fclo1-2.fna.fbcdn.net/v/t1.0-9/13501956_1023216811094463_7027667485082089552_n.jpg?oh=4428d37268c5e3b513825e455b00cbb1&oe=5991171C" alt="Sailboat Harbor" class="white">
 
-            <div class="card-content" >1,000 miles of wonder</div>
-            <div class="card-actions">
-              <input type="hidden"
-              value="[[item.activity_code]]"
-              id="activity_code[[item.id_html]]">
+                        <div class="card-content" >1,000 miles of wonder</div>
+                        <div class="card-actions">
+                            <input type="hidden"
+                                   value="[[item.activity_code]]"
+                                   id="activity_code[[item.id_html]]">
 
-              <paper-button name="[[item.activity_code]]"
-              on-click="signUpActivity">Inscribite</paper-button>
+                            <paper-button name="[[item.activity_code]]"
+                                          on-click="signUpActivity">Inscribite</paper-button>
 
-              <paper-button>Ver Agenda</paper-button>
+                            <paper-button>Ver Agenda</paper-button>
 
-              <paper-icon-button name="[[item.id_html]]" icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle(this.name)"  style="float:right;">
-              </paper-icon-button>
+                            <paper-icon-button name="[[item.id_html]]" icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle(this.name)"  style="float:right;">
+                            </paper-icon-button>
 
-              <iron-collapse id="[[item.id_html]]" style="width:100%;">
-                  [[item.description]]
-              </iron-collapse>
+                            <iron-collapse id="[[item.id_html]]" style="width:100%;">
+                                [[item.description]]
+                            </iron-collapse>
 
-              <script>
+                            <script>
 
-              </script>
+                            </script>
+                        </div>
+                    </paper-card>
+                </div>
+            </template>
+        </div>
+
+        <iron-ajax id ="axSignUpActivity"
+                   on-response="signUpActivityResponse"
+                   contentType="application/x-www-form-urlencoded; charset=UTF-8"
+                   url = ""
+                   handle-as="json">
+        </iron-ajax>
+
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dialog"
+                      modal = "true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">[[body]]</div>
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cerrar</paper-button>
+
             </div>
-          </paper-card>
-        </div>
-      </template>
-    </div>
 
-      <iron-ajax id ="axSignUpActivity"
-      on-response="signUpActivityResponse"
-      contentType="application/x-www-form-urlencoded; charset=UTF-8"
-      url = ""
-      handle-as="json">
-      </iron-ajax>
+        </paper-dialog>
 
-      <paper-dialog entry-animation="scale-up-animation"
-              exit-animation="fade-out-animation" id="dialog"
-                modal = "true">
-        <h2>Mensaje</h2>
-        <div id="dialog-body">[[body]]</div>
-        <div class="buttons">
-            <paper-button dialog-dismiss>Cerrar</paper-button>
-
-        </div>
-
-      </paper-dialog>
-
-  </template>
+    </template>
 
 </dom-module>
 
 <script>
 
     Polymer({
-    is: "list-activity",
-    properties: {
-    },
-    ready: function()
-    {
-      var url = ""
-      url = document.URL;
-      var ajaxUrl = "?load=true"
-      url = url + ajaxUrl;
-      this.querySelector('iron-ajax#list-ajax-activity').url = url
-      this.querySelector('iron-ajax#list-ajax-activity').generateRequest();
-    },
+        is: "list-activity",
+        properties: {
+        },
+        ready: function()
+        {
+            var url = ""
+            url = document.URL;
+            var ajaxUrl = "?load=true"
+            url = url + ajaxUrl;
+            this.querySelector('iron-ajax#list-ajax-activity').url = url
+            this.querySelector('iron-ajax#list-ajax-activity').generateRequest();
+        },
 
-    response: function(request){
+        response: function(request){
 
-        this.repos = request.detail.response.activity_list;
+            this.repos = request.detail.response.activity_list;
 
-    },
+        },
 
-    signUpActivity:function(event){
+        signUpActivity:function(event){
 
-      var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
-      this.$.axSignUpActivity.method = "POST";
-      this.$.axSignUpActivity.url = document.URL;
-      this.$.axSignUpActivity.body = {'activity_code': event.toElement.name};
-      this.$.axSignUpActivity.headers = {
-          "X-CSRFToken":  getCookie('csrftoken'),
-          "X-Requested-With": "XMLHttpRequest",
-          "content-type": "application/json"
-      };
+            var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+            this.$.axSignUpActivity.method = "POST";
+            this.$.axSignUpActivity.url = document.URL;
+            this.$.axSignUpActivity.body = {'activity_code': event.target.name};
+            this.$.axSignUpActivity.headers = {
+                "X-CSRFToken":  getCookie('csrftoken'),
+                "X-Requested-With": "XMLHttpRequest",
+                "content-type": "application/json"
+            };
 
-      this.$.axSignUpActivity.generateRequest();
-    },
+            this.$.axSignUpActivity.generateRequest();
+        },
 
-    signUpActivityResponse:function(request){
+        signUpActivityResponse:function(request){
 
-      this.body = request.detail.response.message;
-      this.$.dialog.open();
-    },
+            this.body = request.detail.response.message;
+            this.$.dialog.open();
+        },
 
-  });
-  function _toggle(id) {
-    var moreInfo = document.getElementById(id);
-    var iconButton = Polymer.dom(event).localTarget;
-    iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-down'
-                                : 'hardware:keyboard-arrow-up';
-    moreInfo.toggle();
-  }
+    });
+    function _toggle(id) {
+        var moreInfo = document.getElementById(id);
+        var iconButton = Polymer.dom(event).localTarget;
+        iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-down'
+                : 'hardware:keyboard-arrow-up';
+        moreInfo.toggle();
+    }
 
 
 </script>

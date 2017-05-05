@@ -21,7 +21,7 @@ logger = logging.getLogger("logging")
 class ActivitiesView(LoginRequiredMixin, TemplateView):
     template_name = 'activities/list-activity.html'
     class_form = ""
-    login_url = "/iniciar-sesion"
+    login_url = "/iniciar-sesion/"
 
     def get(self, request, *args, **kwargs):
         logger.info(str(request) +  ", usuario:" +  str(request.user))
@@ -84,17 +84,16 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
 
     def post(self, request, *args, **kwargs):
 
-
         response_data = {}
         message = ""
         is_error = False
         created = False
+        counter = ""
 
         try:
 
             user = request.user
             state = "init"
-            logger.info("state: " + state + ", usuario:" + str(request.user))
             logger.info("state: " + state + ", usuario:" + str(request.user))
             if user.is_authenticated():
 
@@ -102,40 +101,53 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
                 obj_activity = Activities.objects.filter(activities_code=body['activity_code'], active=True)
-                obj_sign_up_activities = SignUpActivities.objects.filter(fk_activities=obj_activity,
-                                                                        fk_user=user,
-                                                                        active=True)
+                obj_sign_up_activities = SignUpActivities.objects.filter(active=True,
+                                                                         fk_activities=obj_activity,
+                                                                        fk_user=user)
                 state = "validate"
                 logger.info("state: " + state + ", usuario:" + str(request.user))
                 if obj_sign_up_activities:
                     message = "ya estas inscrito en la actividad"
 
                 else:
-                    created = True
-                    state = "sign up"
+                    obj_sign_up_activities = SignUpActivities.objects.filter(active=True,
+                                                     fk_activities=obj_activity)
+
+                    state = "validate limit"
                     logger.info("state: " + state + ", usuario:" + str(request.user))
-                    obj_sign_up_activities = SignUpActivities()
-                    obj_sign_up_activities.fk_activities = obj_activity[0]
-                    obj_sign_up_activities.fk_user = request.user
+                    if obj_sign_up_activities:
 
-                    obj_auditor_topic = AuditorActivity()
-                    obj_auditor_topic.action = "SAVE"
-                    obj_auditor_topic.table = "SignUpActivities"
-                    obj_auditor_topic.field = "ALL"
-                    obj_auditor_topic.after_value = str(obj_sign_up_activities.sign_up_code) + "," + str(obj_sign_up_activities.active) + "," + str(Activities.pk) + ","\
-                                                                                                    + str(request.user.pk)
-                    obj_auditor_topic.user = request.user
+                        obj_sign_up_activities = SignUpActivities.objects.filter(active=True,
+                                                         fk_activities=obj_activity).order_by('-id')[0]
 
-                    """
-                    obj_id_card = IdCard()
-                    obj_id_card.created_at = datetime.today()
-                    obj_id_card.fk_user_created = request.user
-                    obj_id_card.fk_sign_activity_code = sign_up_code
-                    obj_id_card.save()
+                        counter = obj_sign_up_activities.count + 1
 
-                    """
-                    message = "Gracias por inscribirte en nuestra actividad"
+                    else:
+                        counter = 1
 
+                    if counter != obj_activity[0].limit:
+
+                        created = True
+                        state = "sign up"
+                        logger.info("state: " + state + ", usuario:" + str(request.user))
+                        obj_sign_up_activities = SignUpActivities()
+                        obj_sign_up_activities.count = counter
+                        obj_sign_up_activities.fk_activities = obj_activity[0]
+                        obj_sign_up_activities.fk_user = request.user
+
+                        obj_auditor_topic = AuditorActivity()
+                        obj_auditor_topic.action = "SAVE"
+                        obj_auditor_topic.table = "SignUpActivities"
+                        obj_auditor_topic.field = "ALL"
+                        obj_auditor_topic.after_value = str(obj_sign_up_activities.sign_up_code) + "," + str(obj_sign_up_activities.active) + "," + str(Activities.pk) + ","\
+                                                                                                        + str(request.user.pk)
+                        obj_auditor_topic.user = request.user
+
+                        message = "Gracias por inscribirte en nuestra actividad"
+
+                    else:
+
+                        message = "esta actividad ya no tiene cupo disponible"
 
             else:
                 message = "por favor inicie sesion para regitrarte en la actividad"
