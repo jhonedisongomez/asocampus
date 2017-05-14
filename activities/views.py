@@ -19,6 +19,7 @@ import logging
 logger = logging.getLogger("logging")
 
 class ActivitiesView(LoginRequiredMixin, TemplateView):
+
     template_name = 'activities/list-activity.html'
     class_form = ""
     login_url = "/iniciar-sesion/"
@@ -125,7 +126,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                     else:
                         counter = 1
 
-                    if counter != obj_activity[0].limit:
+                    if counter <= obj_activity[0].limit:
 
                         created = True
                         state = "sign up"
@@ -139,7 +140,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                         obj_auditor_topic.action = "SAVE"
                         obj_auditor_topic.table = "SignUpActivities"
                         obj_auditor_topic.field = "ALL"
-                        obj_auditor_topic.after_value = str(obj_sign_up_activities.sign_up_code) + "," + str(obj_sign_up_activities.active) + "," + str(Activities.pk) + ","\
+                        obj_auditor_topic.after_value = str(obj_sign_up_activities.sign_up_code) + "," + str(obj_sign_up_activities.active) + "," + str(obj_activity[0].pk) + ","\
                                                                                                         + str(request.user.pk)
                         obj_auditor_topic.user = request.user
 

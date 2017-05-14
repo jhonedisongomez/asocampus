@@ -1,0 +1,118 @@
+<link rel="import" href="../elements.html">
+
+<dom-module id="profile-user">
+
+    <style>
+        .container {
+        @apply(--layout-horizontal);
+
+        }
+        .paper-card-0 .header.paper-card .title-text.paper-card {
+            padding: 16px;
+            font-size: 24px;
+            font-weight: 400;
+            color: white;
+        }
+
+    </style>
+
+    <template>
+        <div class="horizontal layout wrap" style="margin-top: 140px;">
+
+            <iron-ajax id ="ajax-profile"
+                       on-response="response"
+                       url = ""
+                       handle-as="json">
+            </iron-ajax>
+
+            <template is="dom-repeat" items="[[profile]]">
+
+            <div   style="margin-left: 10px;
+              margin-top: 20px;
+              max-width: 350px;">
+
+                <paper-card
+                heading="Mi perfil"
+                style="max-width: 100%;
+                min-width: 100%;
+                margin: auto;"
+                class="cyan">
+
+                    <div class="card-actions">
+
+                        <div class="">
+                            <h3>Nombre completo:</h3>
+                            <div class="content-card">
+                                <span>[[ item.name]]</span>
+
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <h3>Documento:</h3>
+                            <div class="content-card">
+                                 <span>[[ item.document_id]]</span>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <h3>telefono fijo:</h3>
+                            <div class="content-card">
+                                 <span>[[ item.mobil_number]]</span>
+
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <h3>Celular:</h3>
+                            <div class="content-card">
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <h3>Email:</h3>
+                            <div class="content-card">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </paper-card>
+            </div>
+            </template>
+
+        </div>
+
+
+
+
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: "profile-user",
+        properties: {
+        },
+
+        ready: function()
+        {
+            var url = ""
+            url = document.URL;
+            var ajaxUrl = "?load=true"
+            url = url + ajaxUrl;
+            this.querySelector('iron-ajax#ajax-profile').url = url
+            this.querySelector('iron-ajax#ajax-profile').generateRequest();
+        },
+
+        response: function(request){
+
+            console.log(request.detail.response);
+            this.profile = request.detail.response.data;
+
+        },
+
+    });
+
+</script>

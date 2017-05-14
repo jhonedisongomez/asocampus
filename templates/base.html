@@ -48,8 +48,9 @@
                              style="width: 200px;">
                     </div>
                     <paper-menu>
-                        <paper-item icon="home" id="item_inicio" label="Inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
-                        <paper-item icon="home" label="Actividades" on-click="listActivity"><a is="pushstate-anchor" href="actividades/lista-de-actividades">Actividades</a></paper-item>
+                        <paper-item  id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
+                        <paper-item   on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
+                        <paper-item ><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
                         <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="/logout">Cerrar sesión</a></paper-item>
                     </paper-menu>
 
@@ -63,6 +64,7 @@
                             <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
 
                         </paper-toolbar>
+
                         {% block content %}	{% endblock %}
                     </paper-scroll-header-panel>
                 </div>
