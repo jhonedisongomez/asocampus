@@ -14,10 +14,16 @@
             color: white;
         }
 
+        #bntEdit{
+            width: 95%;
+            background: #06780b;
+            color: white;
+        }
+
     </style>
 
     <template>
-        <div class="horizontal layout wrap" style="margin-top: 140px;">
+        <div class="horizontal layout wrap" style="">
 
             <iron-ajax id ="ajax-profile"
                        on-response="response"
@@ -35,7 +41,8 @@
                 heading="Mi perfil"
                 style="max-width: 100%;
                 min-width: 100%;
-                margin: auto;"
+                margin: auto;
+                margin: 20px;"
                 class="cyan">
 
                     <div class="card-actions">
@@ -72,9 +79,13 @@
                         <div class="">
                             <h3>Email:</h3>
                             <div class="content-card">
+                                <span>[[item.email]]</span>
                             </div>
                         </div>
 
+                    </div>
+                    <div class="card-actions">
+                        <paper-button id="bntEdit" on-click="openDialogFunction">Editar</paper-button>
                     </div>
 
                 </paper-card>
@@ -83,7 +94,53 @@
 
         </div>
 
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dlgEditProfile"
+                        modal = "true">
+            <h2>Editar perfil</h2>
 
+            <div id="dialog-body">
+                <paper-dialog-scrollable>
+                 <form is="iron-form" id="sign-in-form" style="width: 350px;">
+                    <paper-dropdown-menu label="Tipo de documento">
+                      <paper-listbox slot="dropdown-content" selected="0">
+                        <paper-item>Por favor seleccione una opción</paper-item>
+                        <paper-item>allosaurus</paper-item>
+                        <paper-item>brontosaurus</paper-item>
+                        <paper-item>carcharodontosaurus</paper-item>
+                        <paper-item>diplodocus</paper-item>
+                      </paper-listbox>
+                    </paper-dropdown-menu>
+
+                      <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                                   label="Primer nombre" required></paper-input>
+
+                      <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                                   label="Segundo nombre" required></paper-input>
+
+                      <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                                   label="Primer apellido" required></paper-input>
+
+
+                      <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                                   label="Segundo apellido" required></paper-input>
+
+                      <paper-button on-click="signIn" raised style="width: 100%;margin-top: 23px;background:#06780b;
+                          color: white;" >EDITAR</paper-button>
+
+                 </form>
+                    </paper-dialog-scrollable>
+
+            </div>
+
+
+                </form>
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cerrar</paper-button>
+
+            </div>
+
+        </paper-dialog>
 
 
     </template>
@@ -111,6 +168,11 @@
             console.log(request.detail.response);
             this.profile = request.detail.response.data;
 
+        },
+
+        openDialogFunction:function(event){
+            this.$.dlgEditProfile.center();
+            this.$.dlgEditProfile.open();
         },
 
     });
