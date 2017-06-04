@@ -24,8 +24,9 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=20, db_index=True, blank=False, null=False)
     last_name = models.CharField(max_length=64, db_index=True, blank=True, null=True)
     phone_number = models.IntegerField(blank=True, null=True)
-    movil_number = models.IntegerField(blank=True, null=True)
+    mobil_number = models.CharField(max_length=11,blank=True, null=True)
     active = models.BooleanField(default=True, db_index=True)
+    version = models.IntegerField(default=0,blank=False, null=True)
     fk_id_type = models.ForeignKey(IdType)
     fk_user = models.ForeignKey(User, blank=True, null=True)
 
@@ -36,6 +37,9 @@ class Profile(models.Model):
             ('document_id', 'active', 'fk_user')
 
         )
+
+    def __unicode__(self):
+        return self.first_name + self.last_name
 
 
 class IdCard(models.Model):
@@ -48,8 +52,8 @@ class IdCard(models.Model):
 
 class AuditorProfile(models.Model):
     action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
-    table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
-    field = models.CharField(max_length=20, blank=False, null=False, db_index=True)
+    table = models.CharField(max_length=100, blank=False, null=False, db_index=True)
+    field = models.CharField(max_length=100, blank=False, null=False, db_index=True)
     before_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
     after_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
     date = models.DateField(null=False, blank=False, db_index=True)
