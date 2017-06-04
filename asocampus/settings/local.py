@@ -12,8 +12,8 @@ DATABASES = {
         'NAME': 'asocampus',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': '192.168.1.57',
+        'HOST': '192.168.1.59',
         'PORT': '5432',
     }
 }
-# Static files (CSS, JavaScript, Images)
+

@@ -1,0 +1,261 @@
+<link rel="import" href="../elements.html">
+
+<dom-module id="profile-user">
+
+    <style>
+        .container {
+        @apply(--layout-horizontal);
+
+        }
+        .paper-card-0 .header.paper-card .title-text.paper-card {
+            padding: 16px;
+            font-size: 24px;
+            font-weight: 400;
+            color: white;
+        }
+
+        #bntEdit{
+            width: 95%;
+            background: #06780b;
+            color: white;
+        }
+      paper-dialog.colored {
+        border: 2px solid;
+        border-color: #4caf50;
+        background-color: #f1f8e9;
+        color: #4caf50;
+      }
+    </style>
+
+    <template>
+        <div class="horizontal layout wrap" style="">
+
+            <iron-ajax id ="ajax-profile"
+                       on-response="response"
+                       url = ""
+                       handle-as="json">
+            </iron-ajax>
+
+            <template is="dom-repeat" items="[[profile]]">
+
+                <div   style="margin-left: 10px;
+              margin-top: 20px;
+              max-width: 350px;">
+
+                    <paper-card
+                            heading="Mi perfil"
+                            style="max-width: 100%;
+                min-width: 100%;
+                margin: auto;
+                margin: 20px;"
+                            class="cyan">
+
+                        <div class="card-actions">
+
+                            <div class="">
+                                <h3>Nombre completo:</h3>
+                                <div class="content-card">
+                                    <span>[[ item.name]]</span>
+
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <h3>Documento:</h3>
+                                <div class="content-card">
+                                    <span>[[ item.document_id]]</span>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <h3>telefono fijo:</h3>
+                                <div class="content-card">
+                                    <span>[[ item.phone_number]]</span>
+
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <h3>Celular:</h3>
+                                <div class="content-card">
+                                    <span>[[ item.mobil_number]]</span>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <h3>Email:</h3>
+                                <div class="content-card">
+                                    <span>[[item.email]]</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-actions">
+                            <paper-button id="bntEdit" on-click="openDialogFunction">Editar</paper-button>
+                        </div>
+
+                    </paper-card>
+                </div>
+            </template>
+
+        </div>
+
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dlgEditProfile"
+                      modal = "true">
+            <h2>Editar perfil</h2>
+
+            <div id="dialog-body">
+                <paper-dialog-scrollable>
+                    <form is="iron-form" id="editProfileForm" style="width: 350px;">
+                        <paper-dropdown-menu label="Tipo de documento" id="selectDocumentId" style="width: 100%;">
+                            <paper-listbox slot="dropdown-content" id="paperListBoxDocumentType" attrForSelected="value" selected="0">
+                                <paper-item>Por favor seleccione una opci&#243n</paper-item>
+                                <paper-item>allosaurus</paper-item>
+                                <paper-item>brontosaurus</paper-item>
+                                <paper-item>carcharodontosaurus</paper-item>
+                                <paper-item>diplodocus</paper-item>
+                            </paper-listbox>
+                        </paper-dropdown-menu>
+
+                        <paper-input required auto-validate error-message="no se permite espacios en blanco" id="documentNumber"
+                                     label="N° de documento" required></paper-input>
+
+                        <paper-input required auto-validate error-message="no se permite espacios en blanco" id="firstName"
+                                     label="Nombres" required></paper-input>
+
+                        <paper-input required auto-validate error-message="no se permite espacios en blanco" id="lastName"
+                                     label="Apellidos" required></paper-input>
+
+                        <paper-input  error-message="no se permite espacios en blanco" id="phoneNumber"
+                                     label="Telfono Fijo" required></paper-input>
+
+                        <paper-input  error-message="no se permite espacios en blanco" id="mobilNumber"
+                                     label="Celular" required></paper-input>
+
+                        <paper-button on-click="btnEditProfile"
+                                      raised style="width: 100%;margin-top: 23px;background:#06780b;
+                          color: white;" >EDITAR</paper-button>
+
+                    </form>
+                </paper-dialog-scrollable>
+
+            </div>
+
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cerrar</paper-button>
+
+            </div>
+        </paper-dialog>
+
+      <iron-ajax
+          id="ajaxProfile"
+          url=""
+          handle-as="json"
+          on-response="profileResponse">
+      </iron-ajax>
+
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dialog"
+                      class="colored"
+                      modal = "true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">[[body]]</div>
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cerrar</paper-button>
+
+            </div>
+
+        </paper-dialog>
+
+    </template>
+
+<script>
+
+    function validateEditForm(){
+
+        if(document.getElementById('documentNumber').validate() &&
+        document.getElementById('firstName').validate() &&
+        document.getElementById('lastName').validate() &&
+        document.getElementById('mobilNumber').validate())
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+
+    }
+
+    Polymer({
+        is: "profile-user",
+        properties: {
+        },
+
+        ready: function()
+        {
+            var url = ""
+            url = document.URL;
+            var ajaxUrl = "?load=true"
+            url = url + ajaxUrl;
+            this.querySelector('iron-ajax#ajax-profile').url = url
+            this.querySelector('iron-ajax#ajax-profile').generateRequest();
+        },
+
+        response: function(request){
+
+            console.log(request.detail.response);
+            this.profile = request.detail.response.data;
+
+            this.$.documentNumber.value = this.profile[0].document_id;
+            this.$.firstName.value = this.profile[0].first_name;
+            this.$.lastName.value = this.profile[0].last_name;
+            this.$.phoneNumber.value = this.profile[0].phone_number;
+            this.$.mobilNumber.value = this.profile[0].mobil_number;
+
+        },
+
+        openDialogFunction:function(event){
+            this.$.dlgEditProfile.center();
+            this.$.dlgEditProfile.open();
+        },
+
+        btnEditProfile:function(event){
+
+            if(validateEditForm()){
+                var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                this.$.ajaxProfile.method = "POST";
+                this.$.ajaxProfile.url = document.URL;
+
+                this.$.ajaxProfile.body = {'id_type': 1,
+                'document_id': this.$.documentNumber.value,
+                'first_name': this.$.firstName.value,
+                'last_name': this.$.lastName.value,
+                'phone_number': this.$.phoneNumber.value,
+                'mobil_number': this.$.mobilNumber.value,
+                'method': 'edit'};
+
+                this.$.ajaxProfile.headers = {
+                    "X-CSRFToken":  getCookie('csrftoken'),
+                    "X-Requested-With": "XMLHttpRequest",
+                    "content-type": "application/json"
+                };
+
+                this.$.ajaxProfile.generateRequest();
+
+            }else{
+                console.log("formulario invalido");
+            }
+        },
+
+        profileResponse: function(request) {
+            console.log(request.detail.response);
+            this.body = request.detail.response.message;
+            this.$.dialog.open();
+        },
+
+    });
+
+</script>
+</dom-module>
+

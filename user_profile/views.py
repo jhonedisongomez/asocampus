@@ -63,7 +63,7 @@ class SignUpView(TemplateView):
             email = body['email']
             username = email
             password = body['password']
-            user = User.objects.create_user(first_name=first_name,
+            User.objects.create_user(first_name=first_name,
                                             last_name=last_name,
                                             email=email,
                                             username=username,
@@ -87,20 +87,27 @@ class SignInView(TemplateView):
     form_class = ""
 
     def get(self, request, *args, **kwargs):
+
+        message = ""
+        is_error = False
+        authenticated = False
+        response_data = {}
+
         if "username" in request.GET:
             try:
-                message = ""
-                is_error = False
-                authenticated = False
-                response_data = {}
+
                 username = request.GET['username']
                 password = request.GET['password']
                 user = authenticate(username=username, password=password)
                 if user is not None:
                     if user.is_active:
+
                         message = "bienvenido a nuestra plataforma"
                         authenticated = True
                         login(request, user)
+                        request.session['member_id'] = user.id
+                        response_data['member_id'] = user.id
+                        response_data['cookie'] = request.COOKIES
                     else:
                         message = "este usuario esta desactivado por favor comuniquese con soporte"
                 else:
@@ -116,8 +123,9 @@ class SignInView(TemplateView):
             response_json = json.dumps(response_data)
             content_type = 'application/json'
             return HttpResponse(response_json, content_type)
+
         else:
-            dic = {}
+            dict = {}
             context_instance = RequestContext(request)
             template = self.template_name
-            return render_to_response(template, dic, context_instance)
+            return render_to_response(template, dict, context_instance)

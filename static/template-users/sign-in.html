@@ -1,0 +1,107 @@
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+
+<dom-module id="sign-in">
+
+    <template>
+
+        <div style="margin-top: 140px;">
+   <paper-material elevation="3" style="    max-width: 380px;
+    margin-left: 31%;
+    padding: 50px;
+    background: white;
+    margin: 0 auto;>
+            <div id="sign-in" style="padding:10%;">
+
+                <form is="iron-form" id="sign-in-form">
+                    <h3>BIENVENIDOS</h3>
+                  <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                               label="Correo electronico" required></paper-input>
+
+                  <paper-input required auto-validate error-message="no se permite espacios en blanco" id="password"
+                               label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+
+
+                  <paper-button on-click="signIn" raised style="width: 100%;margin-top: 23px;background:#7eb43e;
+                      color: white;" >INICIAR SESIÓN</paper-button>
+                </form>
+
+            </div>
+        </paper-material>
+
+        </div>
+
+      <iron-ajax
+          id="ajax"
+          url=""
+          handle-as="json"
+          on-response="hresponse"
+          debounce-duration="300">
+      </iron-ajax>
+
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dialog"
+                        modal = "true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">Dialog body</div>
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cerrar</paper-button>
+
+            </div>
+
+        </paper-dialog>
+    </template>
+
+    <script >
+
+    Polymer({
+      is: 'sign-in',
+      signIn: function(event){
+
+        if(this.$.name.validate() && this.$.password.validate()){
+            ///iniciar-sesion/
+            this.$.ajax.url = '/iniciar-sesion/'
+            this.$.ajax.params = {'username':this.$.name.value, 'password': this.$.password.value }
+            this.$.ajax.generateRequest();
+
+        }else{
+            document.getElementById("dialog-body").innerHTML = "los valores no son validos.";
+            this.$.dialog.open();
+
+        }
+    },
+    hresponse: function(request) {
+
+        if(!request.detail.response.is_error){
+
+            if(!request.detail.response.authenticated){
+            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+            this.$.dialog.open();
+            }else{
+                document.getElementById("dialog-body").innerHTML = "Bienvenido a ASOCAMPUS, nuestro campus virtual.";
+                this.$.dialog.open();
+                window.location.replace("/");
+            }
+
+        }else{
+            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+            this.$.dialog.open();
+
+        }
+  }
+
+
+    });
+
+
+    </script>
+
+
+</dom-module>
