@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     {% load static from staticfiles %}
+     <link  rel="import" href="{% static 'css/general.css' %}"/>
     <script type="text/javascript" src="{% static 'bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
     <link  rel="import" href="{% static 'elements.vulcanized.html' %}"/>
 
@@ -17,7 +18,6 @@
 </head>
 <body  fullbleed layout vertical style="background: #eee">
 <input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
-
 
 {% if user.is_authenticated %}
 
@@ -51,7 +51,7 @@
                         <paper-item  id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
                         <paper-item   on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
                         <paper-item ><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
-                        <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="/logout">Cerrar sesión</a></paper-item>
+                        <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
                     </paper-menu>
 
                 </div>
@@ -99,7 +99,7 @@
                 },
 
                 logout:function(event){
-                    window.location.replace("/logout");
+                    window.location.replace("/usuario/cerrar-sesion");
                 },
                 closedMenu:function(event){
                     this.$.menu.closeDrawer();
@@ -111,14 +111,149 @@
 
     <base-login></base-login>
 {% else %}
-    <x-app></x-app>
+<dom-module id="sign-in">
+        <style>
+
+            .background {
+                background: url("{% static 'img/cano-cristales.jpg'  %}");
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                z-index: -10;
+            }
+
+            footer{
+
+                background: black;
+                color: white;
+                height: 65px;
+                margin: 0;
+                margin-top: 15px;
+            }
+
+        </style>
+    <template>
+        <div class="background"></div>
+        <div style="margin-top: 140px;">
+
+   <paper-material elevation="5"
+   style="max-width: 380px;
+    margin-left: 31%;
+    background: white;
+    margin: 0 auto;>
+
+            <div id="sign-in" style="">
+                          <paper-toolbar class="toolbar-main">
+        <div class="title">Bienvenidos</div>
+        </paper-toolbar>
+                <form is="iron-form" id="sign-in-form" style="padding: 50px;">
+
+                  <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                               label="Correo electronico" required></paper-input>
+
+                  <paper-input required auto-validate error-message="no se permite espacios en blanco" id="password"
+                               label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+
+
+                  <paper-button on-click="signIn" raised style="width: 100%;margin-top: 23px;background:#00C851;
+                      color: white;" >INICIAR SESIÓN</paper-button>
+
+                  <paper-button on-click="signUp" raised style="width: 100%;margin-top: 5px;background:#4285F4;
+                      color: white;" >Registrate</paper-button>
+                </form>
+
+            </div>
+        </paper-material>
+
+        </div>
+
+      <iron-ajax
+          id="ajax"
+          url=""
+          handle-as="json"
+          on-response="hresponse"
+          debounce-duration="300">
+      </iron-ajax>
+
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dialog"
+                        modal = "true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">Dialog body</div>
+            <div class="buttons">
+                <paper-button dialog-dismiss>Cerrar</paper-button>
+
+            </div>
+
+        </paper-dialog>
+
+    </template>
+
+    <script >
+    HTMLImports.whenReady(function() {
+    Polymer({
+      is: 'sign-in',
+      signIn: function(event){
+
+        if(this.$.name.validate() && this.$.password.validate()){
+            ///iniciar-sesion/
+            this.$.ajax.url = 'usuario/iniciar-sesion/'
+            this.$.ajax.params = {'username':this.$.name.value, 'password': this.$.password.value }
+            this.$.ajax.generateRequest();
+
+        }else{
+            document.getElementById("dialog-body").innerHTML = "los valores no son validos.";
+            this.$.dialog.open();
+
+        }
+    },
+    hresponse: function(request) {
+
+        if(!request.detail.response.is_error){
+
+            if(!request.detail.response.authenticated){
+            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+            this.$.dialog.open();
+            }else{
+                document.getElementById("dialog-body").innerHTML = "Bienvenido a ASOCAMPUS, nuestro campus virtual.";
+                this.$.dialog.open();
+                window.location.replace("/");
+            }
+
+        }else{
+            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+            this.$.dialog.open();
+
+        }
+    },
+
+     signUp: function(event){
+
+         window.location.replace("/usuario/registro");
+
+     }
+
+
+    });
+        });
+
+
+    </script>
+
+
+</dom-module>
+
+    <sign-in></sign-in>
+
 
 {% endif %}
 
-<footer>
 
-    <p>develop by Jhon Edison Gomez </p>
-</footer>
 
 
 </body>

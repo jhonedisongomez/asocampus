@@ -13,6 +13,24 @@
             color: white;
         }
 
+        .button-paper-card { color: var(--google-blue-500); }
+
+        .green {
+            border: 2px solid;
+            border-color: #4caf50;
+            background-color: #f1f8e9;
+            color: #4caf50;
+        }
+
+        footer{
+
+            background: black;
+            color: white;
+            height: 65px;
+            margin: 0;
+            margin-top: 15px;
+        }
+
     </style>
     <template>
         <div class="horizontal layout wrap" style="margin-top: 140px;">
@@ -32,23 +50,23 @@
 
                     <paper-card class="list_activity"
                         elevation="5"
-                        heading="[[item.topic]]"
+                        heading=""
                         style="    max-width: 100%;
                         min-width: 100%;
                         margin: auto;
                         margin-left: 20px;"
                         image="https://scontent.fclo1-2.fna.fbcdn.net/v/t1.0-9/13501956_1023216811094463_7027667485082089552_n.jpg?oh=4428d37268c5e3b513825e455b00cbb1&oe=5991171C" alt="Sailboat Harbor" class="white">
 
-                        <div class="card-content" >1,000 miles of wonder</div>
+                        <div class="card-content" ><h2>[[item.topic]]</h2></div>
                         <div class="card-actions">
                             <input type="hidden"
                                    value="[[item.activity_code]]"
                                    id="activity_code[[item.id_html]]">
 
-                            <paper-button name="[[item.activity_code]]"
+                            <paper-button class="button-paper-card" name="[[item.activity_code]]"
                                           on-click="signUpActivity">Inscribite</paper-button>
 
-                            <paper-button>Ver Agenda</paper-button>
+                            <paper-button class="button-paper-card">Ver Agenda</paper-button>
 
                             <paper-icon-button name="[[item.id_html]]" icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle(this.name)"  style="float:right;">
                             </paper-icon-button>
@@ -75,6 +93,7 @@
 
         <paper-dialog entry-animation="scale-up-animation"
                       exit-animation="fade-out-animation" id="dialog"
+                      class="green"
                       modal = "true">
             <h2>Mensaje</h2>
             <div id="dialog-body">[[body]]</div>
@@ -84,10 +103,14 @@
             </div>
 
         </paper-dialog>
+            <footer>
 
+    <p>develop by Jhon Edison Gomez </p>
+</footer>
     </template>
 
 </dom-module>
+
 
 <script>
 

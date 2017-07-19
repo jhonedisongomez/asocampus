@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate
 from django.http import HttpResponse
 import json
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 
 
 class SignUpView(TemplateView):
@@ -129,3 +130,30 @@ class SignInView(TemplateView):
             context_instance = RequestContext(request)
             template = self.template_name
             return render_to_response(template, dict, context_instance)
+
+
+class Logout(TemplateView):
+
+    template_name = ""
+    form_class = ""
+
+    def get(self, request, *args, **kwargs):
+
+        try:
+
+            message = ""
+            is_error = False
+            response_data = {}
+
+            logout(request)
+
+        except Exception as e:
+            is_error = True
+            message = "error en el sistema por favor comuniquese con soporte"
+            response_data['type_error'] = type(e).__name__
+
+        response_data['message'] = message
+        response_data['is_error'] = is_error
+        response_json = json.dumps(response_data)
+        content_type = 'application/json'
+        return HttpResponse(response_json, content_type)
