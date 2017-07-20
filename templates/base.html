@@ -71,6 +71,14 @@
 
             </paper-drawer-panel>
 
+      <iron-ajax
+          id="ajaxLogout"
+          url=""
+          handle-as="json"
+          on-response="hresponseLogout"
+          debounce-duration="300">
+      </iron-ajax>
+
         </template>
     </dom-module>
     <script>
@@ -99,7 +107,20 @@
                 },
 
                 logout:function(event){
-                    window.location.replace("/usuario/cerrar-sesion");
+
+                    this.$.ajax.url = '/usuario/cerrar-sesion/'
+                    this.$.ajax.generateRequest();
+                },
+                hresponseLogout: function(request) {
+
+                    if(!request.detail.response.is_error){
+                    window.location.replace("/");
+
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        this.$.dialog.open();
+
+                    }
                 },
                 closedMenu:function(event){
                     this.$.menu.closeDrawer();
@@ -148,15 +169,15 @@
     margin: 0 auto;>
 
             <div id="sign-in" style="">
-                          <paper-toolbar class="toolbar-main">
-        <div class="title">Bienvenidos</div>
+        <paper-toolbar class="toolbar-main">
+            <div class="title">Bienvenidos</div>
         </paper-toolbar>
                 <form is="iron-form" id="sign-in-form" style="padding: 50px;">
 
-                  <paper-input required auto-validate error-message="no se permite espacios en blanco" id="name"
+                  <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="usernameSignIn"
                                label="Correo electronico" required></paper-input>
 
-                  <paper-input required auto-validate error-message="no se permite espacios en blanco" id="password"
+                  <paper-input required auto-validate error-message="El campo no pude estar en blanco" id="passwordSignIn"
                                label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
 
 
@@ -192,6 +213,64 @@
 
         </paper-dialog>
 
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dlgSignUpForm"
+                      style="max-height: 570px;
+                      min-width: 32%;"
+                      modal = "true">
+            <div id="dialog-body" style="padding: 0px;">
+
+        <paper-toolbar class="toolbar-main"
+                style="margin-top: -24px;">
+            <div class="title">Registrate</div>
+            <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
+        </paper-toolbar>
+                 <div id="sign-up" style="padding: 10%;
+                    min-width: 63px;">
+
+                    <form is="iron-form"id="sign-up-form" style="margin-top: -50px;
+                    padding: 17px;
+                    max-width: 100%;">
+
+                        <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="name"
+                                   label="Nombres" required></paper-input>
+
+                        <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="lastName"
+                                   label="Apellidos" required></paper-input>
+
+                        <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="email"
+                                   label="Correo electronico" required></paper-input>
+
+                        <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="password"
+                                   label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+
+                        <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="confirmPassword" label="Confirmar contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+
+                      <paper-button on-click="signUpEvent" raised style="width: 100%;margin-top: 23px;background:#00C851;
+                          color: white;" >Registrarse</paper-button>
+                    </form>
+
+                </div>
+            </div>
+        </paper-dialog>
+
+        <iron-ajax
+          id="ajaxSignUp"
+          url=""
+          handle-as="json"
+          on-response="hresponseSignUp"
+          debounce-duration="300">
+        </iron-ajax>
+
+        <iron-ajax
+          id="signUp"
+          url=""
+          handle-as="json"
+          contentType="application/x-www-form-urlencoded; charset=UTF-8"
+          on-response="signUpResponse"
+          debounce-duration="300">
+        </iron-ajax>
+
     </template>
 
     <script >
@@ -200,10 +279,10 @@
       is: 'sign-in',
       signIn: function(event){
 
-        if(this.$.name.validate() && this.$.password.validate()){
+        if(this.$.usernameSignIn.validate() && this.$.passwordSignIn.validate()){
             ///iniciar-sesion/
-            this.$.ajax.url = 'usuario/iniciar-sesion/'
-            this.$.ajax.params = {'username':this.$.name.value, 'password': this.$.password.value }
+            this.$.ajax.url = '/usuario/iniciar-sesion/'
+            this.$.ajax.params = {'username':this.$.usernameSignIn.value, 'password': this.$.passwordSignIn.value }
             this.$.ajax.generateRequest();
 
         }else{
@@ -234,9 +313,89 @@
 
      signUp: function(event){
 
-         window.location.replace("/usuario/registro");
+         this.$.dlgSignUpForm.open();
 
-     }
+     },
+
+        signUpEvent: function(event){
+
+            if(this.$.name.validate() && this.$.password.validate() && this.$.lastName.validate()
+                && this.$.email.validate() && this.$.password.validate() && this.$.confirmPassword.validate()){
+
+                if(this.$.password.value == this.$.confirmPassword.value){
+                    this.$.ajaxSignUp.url = '/usuario/registro/'
+                    this.$.ajaxSignUp.params = {'email':this.$.email.value};
+
+                    this.$.ajaxSignUp.generateRequest();
+
+                }else{
+                    document.getElementById("dialog-body").innerHTML = "las contraseñas no son iguales";
+                    this.$.dialog.open();
+
+                }
+
+            }else{
+                document.getElementById("dialog-body").innerHTML = "los valores no son validos";
+                this.$.dialog.open();
+
+            }
+        },
+
+        hresponseSignUp: function(request) {
+
+            if(!request.detail.response.is_error){
+                if(request.detail.response.exist){
+
+                document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                this.$.dialog.open();
+
+                }else{
+                    var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                    this.$.signUp.method = "POST";
+                    this.$.signUp.url = '/usuario/registro/';
+
+                    this.$.signUp.body = {'password': this.$.password.value,
+                        'email': this.$.email.value,
+                        'name':this.$.name.value,
+                        'last_name': this.$.lastName.value,};
+
+                    this.$.signUp.headers = {
+                        "X-CSRFToken":  getCookie('csrftoken'),
+                        "X-Requested-With": "XMLHttpRequest",
+                        "content-type": "application/json"
+                    };
+
+                    this.$.signUp.generateRequest();
+                }
+
+            }else{
+                document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                this.$.dialog.open();
+            }
+        },
+
+        signUpResponse: function(request){
+
+            if(!request.detail.response.is_error){
+                this.$.name.value = "";
+                this.$.password.value = "";
+                this.$.lastName.value = "";
+                this.$.email.value = "";
+                this.$.confirmPassword.value = "";
+
+                document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                this.$.dialog.open();
+            }else{
+
+                document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                this.$.dialog.open();
+            }
+
+        },
+
+        closedMenu:function(event){
+            this.$.dlgSignUpForm.close();
+        }
 
 
     });
