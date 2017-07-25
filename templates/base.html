@@ -3,7 +3,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static from staticfiles %}
      <link  rel="import" href="{% static 'css/general.css' %}"/>
     <script type="text/javascript" src="{% static 'bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
@@ -166,7 +166,7 @@
    style="max-width: 380px;
     margin-left: 31%;
     background: white;
-    margin: 0 auto;>
+    margin: 0 auto;">
 
             <div id="sign-in" style="">
         <paper-toolbar class="toolbar-main">
@@ -215,7 +215,7 @@
 
         <paper-dialog entry-animation="scale-up-animation"
                       exit-animation="fade-out-animation" id="dlgSignUpForm"
-                      style="max-height: 570px;
+                      style="max-height: 500px;
                       min-width: 32%;"
                       modal = "true">
             <div id="dialog-body" style="padding: 0px;">
@@ -226,7 +226,7 @@
             <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
         </paper-toolbar>
                  <div id="sign-up" style="padding: 10%;
-                    min-width: 63px;">
+                    min-width: 60px;">
 
                     <form is="iron-form"id="sign-up-form" style="margin-top: -50px;
                     padding: 17px;
