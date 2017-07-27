@@ -4,8 +4,6 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 import json
 from .models import SignUpActivities, Activities, AuditorActivity
-from datetime import datetime
-from profiles.models import IdCard
 from topics.models import ActivityRoom
 from .forms import VerifySignUpForm
 from agenda.models import TopicAgenda

@@ -30175,6 +30175,7 @@ event and do your own custom submission:
         @apply(--layout-horizontal);
 
         }
+
         .paper-card-0 .header.paper-card .title-text.paper-card {
             padding: 16px;
             font-size: 24px;
@@ -30187,12 +30188,7 @@ event and do your own custom submission:
             background: #06780b;
             color: white;
         }
-      .colored {
-        border: 2px solid;
-        border-color: #4caf50;
-        background-color: #f1f8e9;
-        color: #4caf50;
-      }
+
     </style>
 
     <template>
@@ -30271,22 +30267,22 @@ event and do your own custom submission:
                         <paper-dropdown-menu label="Tipo de documento" id="selectDocumentId" style="width: 100%;">
                             <paper-listbox slot="dropdown-content" id="paperListBoxDocumentType" attrforselected="value" selected="0">
                                 <paper-item>Por favor seleccione una opción</paper-item>
-                                <paper-item>allosaurus</paper-item>
-                                <paper-item>brontosaurus</paper-item>
-                                <paper-item>carcharodontosaurus</paper-item>
-                                <paper-item>diplodocus</paper-item>
+                                <paper-item>Cedula</paper-item>
+                                <paper-item>Tarjeta de identidad</paper-item>
+                                <paper-item>registro civil</paper-item>
+                                <paper-item>N�mero de pasaporte</paper-item>
                             </paper-listbox>
                         </paper-dropdown-menu>
 
-                        <paper-input required="" auto-validate="" error-message="no se permite espacios en blanco" id="documentNumber" label="N� de documento"></paper-input>
+                        <paper-input required="" auto-validate="" error-message="El campo no puede estar vac�o." id="documentNumber" label="N� de documento"></paper-input>
 
-                        <paper-input required="" auto-validate="" error-message="no se permite espacios en blanco" id="firstName" label="Nombres"></paper-input>
+                        <paper-input required="" auto-validate="" error-message="El campo no puede estar vac�o." id="firstName" label="Nombres"></paper-input>
 
-                        <paper-input required="" auto-validate="" error-message="no se permite espacios en blanco" id="lastName" label="Apellidos"></paper-input>
+                        <paper-input required="" auto-validate="" error-message="El campo no puede estar vac�o." id="lastName" label="Apellidos"></paper-input>
 
-                        <paper-input error-message="no se permite espacios en blanco" id="phoneNumber" label="Telfono Fijo" required=""></paper-input>
+                        <paper-input error-message="El campo no puede estar vac�o." id="phoneNumber" label="Telfono Fijo" required=""></paper-input>
 
-                        <paper-input error-message="no se permite espacios en blanco" id="mobilNumber" label="Celular" required=""></paper-input>
+                        <paper-input error-message="El campo no puede estar vac�o." id="mobilNumber" label="Celular" required=""></paper-input>
 
                         <paper-button on-click="btnEditProfile" raised="" style="width: 100%;margin-top: 23px;background:#06780b;
                           color: white;">EDITAR</paper-button>
@@ -30305,7 +30301,7 @@ event and do your own custom submission:
       <iron-ajax id="ajaxProfile" url="" handle-as="json" on-response="profileResponse">
       </iron-ajax>
 
-        <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" modal="true">
+        <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" class="colored" modal="true">
             <h2>Mensaje</h2>
             <div id="dialog-body">[[body]]</div>
             <div class="buttons">
@@ -30347,13 +30343,12 @@ event and do your own custom submission:
             url = url + ajaxUrl;
             this.querySelector('iron-ajax#ajax-profile').url = url
             this.querySelector('iron-ajax#ajax-profile').generateRequest();
+
         },
 
         response: function(request){
 
-            console.log(request.detail.response);
             this.profile = request.detail.response.data;
-
             this.$.documentNumber.value = this.profile[0].document_id;
             this.$.firstName.value = this.profile[0].first_name;
             this.$.lastName.value = this.profile[0].last_name;
@@ -30370,11 +30365,12 @@ event and do your own custom submission:
         btnEditProfile:function(event){
 
             if(validateEditForm()){
+
                 var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
                 this.$.ajaxProfile.method = "POST";
                 this.$.ajaxProfile.url = document.URL;
 
-                this.$.ajaxProfile.body = {'id_type': 1,
+                this.$.ajaxProfile.body = {'id_type': this.querySelector('paper-listbox#paperListBoxDocumentType').selected,
                 'document_id': this.$.documentNumber.value,
                 'first_name': this.$.firstName.value,
                 'last_name': this.$.lastName.value,
@@ -30396,9 +30392,7 @@ event and do your own custom submission:
         },
 
         profileResponse: function(request) {
-            console.log(request.detail.response);
             this.body = request.detail.response.message;
-            this.$.dialog.className = "colored"
             this.$.dialog.open();
         },
 
@@ -30420,6 +30414,24 @@ event and do your own custom submission:
             color: white;
         }
 
+        .button-paper-card { color: var(--google-blue-500); }
+
+        .green {
+            border: 2px solid;
+            border-color: #4caf50;
+            background-color: #f1f8e9;
+            color: #4caf50;
+        }
+
+        footer{
+
+            background: black;
+            color: white;
+            height: 65px;
+            margin: 0;
+            margin-top: 15px;
+        }
+
     </style>
     <template>
         <div class="horizontal layout wrap" style="margin-top: 140px;">
@@ -30434,18 +30446,18 @@ event and do your own custom submission:
                   margin-top: 20px;
                   max-width: 350px;">
 
-                    <paper-card class="list_activity" elevation="5" heading="[[item.topic]]" style="    max-width: 100%;
+                    <paper-card class="list_activity" elevation="5" heading="" style="    max-width: 100%;
                         min-width: 100%;
                         margin: auto;
                         margin-left: 20px;" image="https://scontent.fclo1-2.fna.fbcdn.net/v/t1.0-9/13501956_1023216811094463_7027667485082089552_n.jpg?oh=4428d37268c5e3b513825e455b00cbb1&amp;oe=5991171C" alt="Sailboat Harbor">
 
-                        <div class="card-content">1,000 miles of wonder</div>
+                        <div class="card-content"><h2>[[item.topic]]</h2></div>
                         <div class="card-actions">
                             <input type="hidden" value="[[item.activity_code]]" id="activity_code[[item.id_html]]">
 
-                            <paper-button name="[[item.activity_code]]" on-click="signUpActivity">Inscribite</paper-button>
+                            <paper-button class="button-paper-card" name="[[item.activity_code]]" on-click="signUpActivity">Inscribite</paper-button>
 
-                            <paper-button>Ver Agenda</paper-button>
+                            <paper-button class="button-paper-card">Ver Agenda</paper-button>
 
                             <paper-icon-button name="[[item.id_html]]" icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle(this.name)" style="float:right;">
                             </paper-icon-button>
@@ -30466,7 +30478,7 @@ event and do your own custom submission:
         <iron-ajax id="axSignUpActivity" on-response="signUpActivityResponse" contenttype="application/x-www-form-urlencoded; charset=UTF-8" url="" handle-as="json">
         </iron-ajax>
 
-        <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" modal="true">
+        <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" class="green" modal="true">
             <h2>Mensaje</h2>
             <div id="dialog-body">[[body]]</div>
             <div class="buttons">
@@ -30475,10 +30487,14 @@ event and do your own custom submission:
             </div>
 
         </paper-dialog>
+            <footer>
 
+    <p>develop by Jhon Edison Gomez </p>
+</footer>
     </template>
 
 </dom-module>
+
 
 <script>
 

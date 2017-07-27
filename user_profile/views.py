@@ -7,6 +7,10 @@ from django.contrib.auth import authenticate
 from django.http import HttpResponse
 import json
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
+import logging
+from django.http import HttpResponseRedirect
+logger = logging.getLogger("logging")
 
 
 class SignUpView(TemplateView):
@@ -16,22 +20,29 @@ class SignUpView(TemplateView):
     def get(self, request, *args, **kwargs):
         if "email" in request.GET:
             try:
-
+                state = "init"
                 response_data = {}
                 message = ""
                 exist = False
                 is_error = False
                 email = request.GET['email']
                 user = User.objects.filter(email=email)
+                logger.info("state: " + state + ", usuario:" + str(request.user))
 
+                state = "user"
                 if user:
                     message = "ya existe una cuenta con este email"
                     exist = True
+
+                    logger.info("state: " + state + ", usuario:" + str(request.user))
                 else:
                     message = "no hay una cuenta con este email, por favor registrelo"
                     exist = False
-
+                logger.info("state: " + state + ", usuario:" + str(request.user))
             except Exception as e:
+
+                print str(e)
+                logger.error(e)
                 is_error = True
                 message = "error en el sistema por favor comuniquese con soporte"
                 response_data['type_error'] = type(e).__name__
@@ -41,6 +52,7 @@ class SignUpView(TemplateView):
             response_data['is_error'] = is_error
             response_json = json.dumps(response_data)
             content_type = 'application/json'
+            logger.info("response_data: " + response_json + ", usuario:" + str(request.user))
             return HttpResponse(response_json, content_type)
         else:
             dic = {}
@@ -52,17 +64,21 @@ class SignUpView(TemplateView):
 
         try:
 
+            state = "init"
             response_data = {}
             message = ""
             is_error = False
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
+            logger.info("state: " + state + ", usuario:" + str(request.user))
 
             first_name = body['name']
             last_name = body['last_name']
             email = body['email']
             username = email
             password = body['password']
+            state = "create user"
+            logger.info("state: " + state + ", usuario:" + str(request.user))
             User.objects.create_user(first_name=first_name,
                                             last_name=last_name,
                                             email=email,
@@ -71,6 +87,9 @@ class SignUpView(TemplateView):
 
             message = "el usuario ha sido creado por favor inicie sesion"
         except Exception as e:
+
+            print str(e)
+            logger.error(e)
             is_error = True
             message = "error en el sistema por favor comuniquese con soporte"
             response_data['type_error'] = type(e).__name__
@@ -78,6 +97,7 @@ class SignUpView(TemplateView):
         response_data['message'] = message
         response_data['is_error'] = is_error
         response_json = json.dumps(response_data)
+        logger.info("response_data: " + response_json + ", usuario:" + str(request.user))
         content_type = 'application/json'
         return HttpResponse(response_json, content_type)
 
@@ -87,7 +107,7 @@ class SignInView(TemplateView):
     form_class = ""
 
     def get(self, request, *args, **kwargs):
-
+        logger.info(str(request) +  ", usuario:" +  str(request.user))
         message = ""
         is_error = False
         authenticated = False
@@ -108,11 +128,16 @@ class SignInView(TemplateView):
                         request.session['member_id'] = user.id
                         response_data['member_id'] = user.id
                         response_data['cookie'] = request.COOKIES
+                        logger.info("usuario autenticado" +  ", usuario:" +  str(request.user))
                     else:
                         message = "este usuario esta desactivado por favor comuniquese con soporte"
+                        logger.info("usuario desactivado" +  ", usuario:" +  str(request.user))
                 else:
                     message = "Error en el nombre de usuario o contraseña"
+                    logger.info("usuario no autenticado" +  ", usuario:" +  str(request.user))
             except Exception as e:
+                print(e.message)
+                logger.info(e +  ", usuario:" +  str(request.user))
                 is_error = True
                 message = "error en el sistema por favor comuniquese con soporte"
                 response_data['type_error'] = type(e).__name__
@@ -121,6 +146,7 @@ class SignInView(TemplateView):
             response_data['message'] = message
             response_data['is_error'] = is_error
             response_json = json.dumps(response_data)
+            logger.info("response_data: " + response_json + ", usuario:" + str(request.user))
             content_type = 'application/json'
             return HttpResponse(response_json, content_type)
 
@@ -129,3 +155,33 @@ class SignInView(TemplateView):
             context_instance = RequestContext(request)
             template = self.template_name
             return render_to_response(template, dict, context_instance)
+
+
+class Logout(TemplateView):
+
+    template_name = ""
+    form_class = ""
+
+    def get(self, request, *args, **kwargs):
+
+        try:
+
+            message = ""
+            is_error = False
+            response_data = {}
+
+            logout(request)
+
+        except Exception as e:
+            print(str(e))
+            is_error = True
+            message = "error en el sistema por favor comuniquese con soporte"
+            response_data['type_error'] = type(e).__name__
+
+            response_data['message'] = message
+            response_data['is_error'] = is_error
+            response_json = json.dumps(response_data)
+            content_type = 'application/json'
+            return HttpResponse(response_json, content_type)
+
+        return HttpResponseRedirect("/")

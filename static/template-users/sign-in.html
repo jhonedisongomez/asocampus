@@ -67,7 +67,7 @@
 
         if(this.$.name.validate() && this.$.password.validate()){
             ///iniciar-sesion/
-            this.$.ajax.url = '/iniciar-sesion/'
+            this.$.ajax.url = 'usuario/iniciar-sesion/'
             this.$.ajax.params = {'username':this.$.name.value, 'password': this.$.password.value }
             this.$.ajax.generateRequest();
 

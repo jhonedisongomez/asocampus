@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^', include('home.urls')),
     url(r'^actividades/', include('activities.urls')),
     url(r'^perfil/', include('profiles.urls')),
+    url(r'^usuario/', include('user_profile.urls')),
 
 ]

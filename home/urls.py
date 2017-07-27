@@ -7,6 +7,6 @@ urlpatterns = [
 
     # url(r'^inicia-sesion/$', 'django.contrib.auth.views.login', {'template_name': 'users/sign-in.html'}, name='login'),
 
-    url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', name='logout'),
+    #url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', name='logout'),
 
 ]

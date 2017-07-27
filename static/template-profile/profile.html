@@ -7,6 +7,7 @@
         @apply(--layout-horizontal);
 
         }
+
         .paper-card-0 .header.paper-card .title-text.paper-card {
             padding: 16px;
             font-size: 24px;
@@ -19,12 +20,7 @@
             background: #06780b;
             color: white;
         }
-      paper-dialog.colored {
-        border: 2px solid;
-        border-color: #4caf50;
-        background-color: #f1f8e9;
-        color: #4caf50;
-      }
+
     </style>
 
     <template>
@@ -111,26 +107,26 @@
                         <paper-dropdown-menu label="Tipo de documento" id="selectDocumentId" style="width: 100%;">
                             <paper-listbox slot="dropdown-content" id="paperListBoxDocumentType" attrForSelected="value" selected="0">
                                 <paper-item>Por favor seleccione una opci&#243n</paper-item>
-                                <paper-item>allosaurus</paper-item>
-                                <paper-item>brontosaurus</paper-item>
-                                <paper-item>carcharodontosaurus</paper-item>
-                                <paper-item>diplodocus</paper-item>
+                                <paper-item>Cedula</paper-item>
+                                <paper-item>Tarjeta de identidad</paper-item>
+                                <paper-item>registro civil</paper-item>
+                                <paper-item>Número de pasaporte</paper-item>
                             </paper-listbox>
                         </paper-dropdown-menu>
 
-                        <paper-input required auto-validate error-message="no se permite espacios en blanco" id="documentNumber"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="documentNumber"
                                      label="N° de documento" required></paper-input>
 
-                        <paper-input required auto-validate error-message="no se permite espacios en blanco" id="firstName"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="firstName"
                                      label="Nombres" required></paper-input>
 
-                        <paper-input required auto-validate error-message="no se permite espacios en blanco" id="lastName"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="lastName"
                                      label="Apellidos" required></paper-input>
 
-                        <paper-input  error-message="no se permite espacios en blanco" id="phoneNumber"
+                        <paper-input  error-message="El campo no puede estar vacío." id="phoneNumber"
                                      label="Telfono Fijo" required></paper-input>
 
-                        <paper-input  error-message="no se permite espacios en blanco" id="mobilNumber"
+                        <paper-input  error-message="El campo no puede estar vacío." id="mobilNumber"
                                      label="Celular" required></paper-input>
 
                         <paper-button on-click="btnEditProfile"
@@ -200,13 +196,12 @@
             url = url + ajaxUrl;
             this.querySelector('iron-ajax#ajax-profile').url = url
             this.querySelector('iron-ajax#ajax-profile').generateRequest();
+
         },
 
         response: function(request){
 
-            console.log(request.detail.response);
             this.profile = request.detail.response.data;
-
             this.$.documentNumber.value = this.profile[0].document_id;
             this.$.firstName.value = this.profile[0].first_name;
             this.$.lastName.value = this.profile[0].last_name;
@@ -223,11 +218,12 @@
         btnEditProfile:function(event){
 
             if(validateEditForm()){
+
                 var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
                 this.$.ajaxProfile.method = "POST";
                 this.$.ajaxProfile.url = document.URL;
 
-                this.$.ajaxProfile.body = {'id_type': 1,
+                this.$.ajaxProfile.body = {'id_type': this.querySelector('paper-listbox#paperListBoxDocumentType').selected,
                 'document_id': this.$.documentNumber.value,
                 'first_name': this.$.firstName.value,
                 'last_name': this.$.lastName.value,
@@ -249,7 +245,6 @@
         },
 
         profileResponse: function(request) {
-            console.log(request.detail.response);
             this.body = request.detail.response.message;
             this.$.dialog.open();
         },
