@@ -3,3 +3,5 @@
 *.pyc
 /static/bower_components
 /logs
+.idea/
+.vscode/

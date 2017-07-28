@@ -36,9 +36,9 @@
         <div class="horizontal layout wrap" style="margin-top: 140px;">
 
             <iron-ajax id ="list-ajax-activity"
-                       on-response="response"
-                       url = ""
-                       handle-as="json">
+                on-response="response"
+                url = ""
+                handle-as="json">
             </iron-ajax>
 
             <template is="dom-repeat" items="[[repos]]">
@@ -85,16 +85,16 @@
         </div>
 
         <iron-ajax id ="axSignUpActivity"
-                   on-response="signUpActivityResponse"
-                   contentType="application/x-www-form-urlencoded; charset=UTF-8"
-                   url = ""
-                   handle-as="json">
+            on-response="signUpActivityResponse"
+            contentType="application/x-www-form-urlencoded; charset=UTF-8"
+            url = ""
+            handle-as="json">
         </iron-ajax>
 
         <paper-dialog entry-animation="scale-up-animation"
-                      exit-animation="fade-out-animation" id="dialog"
-                      class="green"
-                      modal = "true">
+            exit-animation="fade-out-animation" id="dialog"
+            class="green"
+            modal = "true">
             <h2>Mensaje</h2>
             <div id="dialog-body">[[body]]</div>
             <div class="buttons">
@@ -103,14 +103,13 @@
             </div>
 
         </paper-dialog>
-            <footer>
+        <footer>
 
-    <p>develop by Jhon Edison Gomez </p>
-</footer>
+        <p>develop by Jhon Edison Gomez </p>
+        </footer>
     </template>
 
 </dom-module>
-
 
 <script>
 

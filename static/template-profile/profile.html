@@ -4,7 +4,7 @@
 
     <style>
         .container {
-        @apply(--layout-horizontal);
+            @apply(--layout-horizontal);
 
         }
 
@@ -27,24 +27,25 @@
         <div class="horizontal layout wrap" style="">
 
             <iron-ajax id ="ajax-profile"
-                       on-response="response"
-                       url = ""
-                       handle-as="json">
+                on-response="response"
+                url = ""
+                handle-as="json">
             </iron-ajax>
+            
 
             <template is="dom-repeat" items="[[profile]]">
 
                 <div   style="margin-left: 10px;
-              margin-top: 20px;
-              max-width: 350px;">
+                    margin-top: 20px;
+                    max-width: 350px;">
 
                     <paper-card
-                            heading="Mi perfil"
-                            style="max-width: 100%;
-                min-width: 100%;
-                margin: auto;
-                margin: 20px;"
-                            class="cyan">
+                        heading="Mi perfil"
+                        style="max-width: 100%;
+                        min-width: 100%;
+                        margin: auto;
+                        margin: 20px;"
+                        class="cyan">
 
                         <div class="card-actions">
 
@@ -97,8 +98,8 @@
         </div>
 
         <paper-dialog entry-animation="scale-up-animation"
-                      exit-animation="fade-out-animation" id="dlgEditProfile"
-                      modal = "true">
+            exit-animation="fade-out-animation" id="dlgEditProfile"
+            modal = "true">
             <h2>Editar perfil</h2>
 
             <div id="dialog-body">
@@ -110,23 +111,23 @@
                                 <paper-item>Cedula</paper-item>
                                 <paper-item>Tarjeta de identidad</paper-item>
                                 <paper-item>registro civil</paper-item>
-                                <paper-item>Número de pasaporte</paper-item>
+                                <paper-item>Nï¿½mero de pasaporte</paper-item>
                             </paper-listbox>
                         </paper-dropdown-menu>
 
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="documentNumber"
-                                     label="N° de documento" required></paper-input>
+                        <paper-input required auto-validate error-message="El campo no puede estar vacï¿½o." id="documentNumber"
+                                     label="Nï¿½ de documento" required></paper-input>
 
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="firstName"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacï¿½o." id="firstName"
                                      label="Nombres" required></paper-input>
 
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="lastName"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacï¿½o." id="lastName"
                                      label="Apellidos" required></paper-input>
 
-                        <paper-input  error-message="El campo no puede estar vacío." id="phoneNumber"
+                        <paper-input  error-message="El campo no puede estar vacï¿½o." id="phoneNumber"
                                      label="Telfono Fijo" required></paper-input>
 
-                        <paper-input  error-message="El campo no puede estar vacío." id="mobilNumber"
+                        <paper-input  error-message="El campo no puede estar vacï¿½o." id="mobilNumber"
                                      label="Celular" required></paper-input>
 
                         <paper-button on-click="btnEditProfile"
