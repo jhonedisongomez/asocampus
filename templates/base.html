@@ -214,10 +214,10 @@
                     </paper-dialog>
 
                     <paper-dialog entry-animation="scale-up-animation"
-                                exit-animation="fade-out-animation" id="dlgSignUpForm"
-                                style="max-height: 500px;
-                                min-width: 32%;"
-                                modal = "true">
+                        exit-animation="fade-out-animation" id="dlgSignUpForm"
+                        style="max-height: 500px;
+                        min-width: 32%;"
+                        modal = "true">
                         <div id="dialog-body" style="padding: 0px;">
 
                     <paper-toolbar class="toolbar-main"
@@ -255,20 +255,20 @@
                     </paper-dialog>
 
                     <iron-ajax
-                    id="ajaxSignUp"
-                    url=""
-                    handle-as="json"
-                    on-response="hresponseSignUp"
-                    debounce-duration="300">
+                        id="ajaxSignUp"
+                        url=""
+                        handle-as="json"
+                        on-response="hresponseSignUp"
+                        debounce-duration="300">
                     </iron-ajax>
 
                     <iron-ajax
-                    id="signUp"
-                    url=""
-                    handle-as="json"
-                    contentType="application/x-www-form-urlencoded; charset=UTF-8"
-                    on-response="signUpResponse"
-                    debounce-duration="300">
+                        id="signUp"
+                        url=""
+                        handle-as="json"
+                        contentType="application/x-www-form-urlencoded; charset=UTF-8"
+                        on-response="signUpResponse"
+                        debounce-duration="300">
                     </iron-ajax>
 
             </template>
@@ -297,8 +297,9 @@
                         if(!request.detail.response.is_error){
 
                             if(!request.detail.response.authenticated){
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
+                                document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                                this.$.dialog.open();
+                                
                             }else{
                                 document.getElementById("dialog-body").innerHTML = "Bienvenido a ASOCAMPUS, nuestro campus virtual.";
                                 this.$.dialog.open();

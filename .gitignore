@@ -5,3 +5,11 @@
 /logs
 .idea/
 .vscode/
+!agenda/migrations/__init__.py
+!activities/migrations/__init__.py
+!country/migrations/__init__.py
+!profiles/migrations/__init__.py
+!rooms/migrations/__init__.py
+!topics/migrations/__init__.py
+!user_profile/migrations/__init__.py
+!roles/migrations/__init__

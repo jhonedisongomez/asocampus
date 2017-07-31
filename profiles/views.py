@@ -16,7 +16,7 @@ class ProfileView(LoginRequiredMixin, TemplateView):
 
     template_name = "profile/profile.html"
     class_form = ""
-    login_url = "/iniciar-sesion/"
+    login_url = "/"
 
     def get(self, request, *args, **kwargs):
 
@@ -74,7 +74,6 @@ class ProfileView(LoginRequiredMixin, TemplateView):
 
     def post (self, request, *args, **kwargs):
 
-        print request.user
         response_data = {}
         message = ""
         is_error = False
