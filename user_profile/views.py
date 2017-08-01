@@ -41,7 +41,6 @@ class SignUpView(TemplateView):
                 logger.info("state: " + state + ", usuario:" + str(request.user))
             except Exception as e:
 
-                print str(e)
                 logger.error(e)
                 is_error = True
                 message = "error en el sistema por favor comuniquese con soporte"
@@ -88,7 +87,6 @@ class SignUpView(TemplateView):
             message = "el usuario ha sido creado por favor inicie sesion"
         except Exception as e:
 
-            print str(e)
             logger.error(e)
             is_error = True
             message = "error en el sistema por favor comuniquese con soporte"

@@ -2,6 +2,10 @@ from __future__ import unicode_literals
 import uuid
 from django.db import models
 from country.models import Country
+from profiles.models import Profile
+from activities.models import Activities
+from django.contrib.auth.models import User
+
 
 class Roles(models.Model):
     roles_code = models.CharField(max_length=64, default=uuid.uuid4, null=False, blank=True, db_index=True)
@@ -30,6 +34,18 @@ class RolesProfile(models.Model):
     def __unicode__(self):
         
         return self.rol_profile_code
+
+
+class ProfileRolActivity(models.Model):
+    ProfileRolActivity = models.CharField(max_length=64, default=uuid.uuid4, null=False, blank=True, db_index=True)
+    fk_rol_profile = models.ForeignKey(RolesProfile, blank=False, null=True, related_name='roles_profile_activity')
+    fk_activity = models.ForeignKey(Activities, blank=False, null=True, related_name='roles_profile_activity')
+    active = models.BooleanField(default=True, db_index=True)
+    version = models.IntegerField(blank=False, null=False)
+
+    def __unicode__(self):
+            
+        return self.ProfileRolActivity
 
 
 class AuditorRol(models.Model):

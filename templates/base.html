@@ -48,9 +48,9 @@
                                 style="width: 200px;">
                         </div>
                         <paper-menu>
-                            <paper-item  id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
-                            <paper-item   on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
-                            <paper-item ><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
+                            <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
+                            <paper-item on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
+                            <paper-item><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
                             <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
                         </paper-menu>
 
@@ -271,6 +271,15 @@
                         debounce-duration="300">
                     </iron-ajax>
 
+                    <iron-ajax
+                        id="createProfileAjax"
+                        url=""
+                        handle-as="json"
+                        contentType="application/x-www-form-urlencoded; charset=UTF-8"
+                        on-response="createProfileResponse"
+                        debounce-duration="300">
+                    </iron-ajax>
+
             </template>
         </dom-module>
         <script >
@@ -379,14 +388,31 @@
                     signUpResponse: function(request){
 
                         if(!request.detail.response.is_error){
-                            this.$.name.value = "";
-                            this.$.password.value = "";
-                            this.$.lastName.value = "";
-                            this.$.email.value = "";
-                            this.$.confirmPassword.value = "";
-
+                            
                             document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
+                            var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                            this.$.createProfileAjax.method = "POST";
+                            this.$.createProfileAjax.url = '/perfil/mi-perfil/';
+
+                            this.$.createProfileAjax.body = {'password': this.$.password.value,
+                                'email': this.$.email.value,
+                                'first_name':this.$.name.value,
+                                'last_name': this.$.lastName.value,
+                                'phone_number': 0,
+                                'mobil_number': 0,
+                                'id_type':1,
+                                'method':'create',
+                                'id':0};
+
+                            this.$.createProfileAjax.headers = {
+                                "X-CSRFToken":  getCookie('csrftoken'),
+                                "X-Requested-With": "XMLHttpRequest",
+                                "content-type": "application/json"
+                            };
+
+                            this.$.createProfileAjax.generateRequest();
+                            
+                            //this.$.dialog.open();
                         }else{
 
                             document.getElementById("dialog-body").innerHTML = request.detail.response.message;
@@ -397,6 +423,18 @@
 
                     closedMenu:function(event){
                         this.$.dlgSignUpForm.close();
+                    },
+
+                    createProfileResponse:function(request){
+                        if(!request.detail.response.is_error){
+                            this.$.dialog.open();
+
+                            
+
+                        }else{
+                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                            this.$.dialog.open();
+                        }
                     }
 
 

@@ -8,11 +8,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Profile, IdType, AuditorProfile
 import logging
 from datetime import datetime
+from django.contrib.auth.models import User
 
 logger = logging.getLogger("logging")
 
 
-class ProfileView(LoginRequiredMixin, TemplateView):
+class ProfileView(TemplateView):
 
     template_name = "profile/profile.html"
     class_form = ""
@@ -89,10 +90,12 @@ class ProfileView(LoginRequiredMixin, TemplateView):
         try:
 
             if method == "create":
-
+                created = True
+                edited = False
                 state = "init create"
                 logger.info("state: " + state + ", usuario:" + str(request.user))
                 obj_id_type = IdType.objects.filter(pk=body['id_type'])
+                obj_user = User.objects.filter(email = body['email'])
 
                 obj_profile = Profile()
                 obj_profile.document_id = body['id']
@@ -100,21 +103,23 @@ class ProfileView(LoginRequiredMixin, TemplateView):
                 obj_profile.last_name = body['last_name']
                 obj_profile.phone_number = body['phone_number']
                 obj_profile.mobil_number = body['mobil_number']
-                obj_profile.fk_id_type = obj_id_type[0].pk
-                obj_profile.fk_user = request.user
+                obj_id_type = IdType.objects.filter(pk = body['id_type'])
+
+                obj_profile.fk_id_type = obj_id_type[0]
+                obj_profile.fk_user = obj_user[0]
 
                 obj_auditor_profile = AuditorProfile()
                 obj_auditor_profile.action = "CREATE"
                 obj_auditor_profile.table = "Profile"
                 obj_auditor_profile.field = "ALL"
-                obj_auditor_profile.after_value = obj_profile.profile_code + "," + obj_profile.document_id +"," \
-                + obj_profile.first_name + "," + obj_profile.last_name + "," + obj_profile.phone_number + "+" \
-                + obj_profile.mobil_number + "," + obj_profile.active + "," + obj_profile.fk_id_type + "," \
-                + obj_profile.fk_user
+                obj_auditor_profile.after_value = str(obj_profile.profile_code) + "," + str(obj_profile.document_id) +"," \
+                + str(obj_profile.first_name) + "," + str(obj_profile.last_name) + "," + str(obj_profile.phone_number) + "+" \
+                + str(obj_profile.mobil_number) + "," + str(obj_profile.active) + "," + str(obj_profile.fk_id_type) + "," \
+                + str(obj_user[0].pk)
+                obj_auditor_profile.date = datetime.today()
+                obj_auditor_profile.user = obj_user[0]
 
-                obj_auditor_profile.user = request.user
-
-                message = "Su perfil ha sido guardado en la base de datos"
+                #message = "Su perfil ha sido guardado en la base de datos"
                 state = "finish create"
                 logger.info("state: " + state + ", usuario:" + str(request.user))
 
@@ -231,7 +236,8 @@ class ProfileView(LoginRequiredMixin, TemplateView):
                     edited = True
 
         except Exception as e:
-
+            created = False
+            edited = False
             logger.error("state: " + state + ", usuario:" + str(request.user) + ", error:" +e.message)
             is_error = True
             message = "error en el sistema por favor comuniquese con soporte"
