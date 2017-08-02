@@ -3,10 +3,6 @@
 <dom-module id="profile-user">
 
     <style>
-        .container {
-        @apply(--layout-horizontal);
-
-        }
 
         .paper-card-0 .header.paper-card .title-text.paper-card {
             padding: 16px;
@@ -24,27 +20,28 @@
     </style>
 
     <template>
-        <div class="horizontal layout wrap" style="">
+        <div class="horizontal layout wrap">
 
             <iron-ajax id ="ajax-profile"
-                       on-response="response"
-                       url = ""
-                       handle-as="json">
+                on-response="response"
+                url = ""
+                handle-as="json">
             </iron-ajax>
+            
 
             <template is="dom-repeat" items="[[profile]]">
 
                 <div   style="margin-left: 10px;
-              margin-top: 20px;
-              max-width: 350px;">
+                    margin-top: 20px;
+                    max-width: 350px;">
 
                     <paper-card
-                            heading="Mi perfil"
-                            style="max-width: 100%;
-                min-width: 100%;
-                margin: auto;
-                margin: 20px;"
-                            class="cyan">
+                        heading="Mi perfil"
+                        style="max-width: 100%;
+                        min-width: 100%;
+                        margin: auto;
+                        margin: 20px;"
+                        class="cyan">
 
                         <div class="card-actions">
 
@@ -97,8 +94,8 @@
         </div>
 
         <paper-dialog entry-animation="scale-up-animation"
-                      exit-animation="fade-out-animation" id="dlgEditProfile"
-                      modal = "true">
+            exit-animation="fade-out-animation" id="dlgEditProfile"
+            modal = "true">
             <h2>Editar perfil</h2>
 
             <div id="dialog-body">
@@ -106,31 +103,31 @@
                     <form is="iron-form" id="editProfileForm" style="width: 350px;">
                         <paper-dropdown-menu label="Tipo de documento" id="selectDocumentId" style="width: 100%;">
                             <paper-listbox slot="dropdown-content" id="paperListBoxDocumentType" attrForSelected="value" selected="0">
-                                <paper-item>Por favor seleccione una opci&#243n</paper-item>
+                                <paper-item>Por favor seleccione una opciÃ³n</paper-item>
                                 <paper-item>Cedula</paper-item>
                                 <paper-item>Tarjeta de identidad</paper-item>
                                 <paper-item>registro civil</paper-item>
-                                <paper-item>Número de pasaporte</paper-item>
+                                <paper-item>NÃºmero de pasaporte</paper-item>
                             </paper-listbox>
                         </paper-dropdown-menu>
 
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="documentNumber"
-                                     label="N° de documento" required></paper-input>
+                        <paper-input required auto-validate error-message="El campo no puede estar vacÃ­o." id="documentNumber"
+                                     label="NÂ° de documento" required></paper-input>
 
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="firstName"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacÃ­o." id="firstName"
                                      label="Nombres" required></paper-input>
 
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="lastName"
+                        <paper-input required auto-validate error-message="El campo no puede estar vacÃ­o." id="lastName"
                                      label="Apellidos" required></paper-input>
 
-                        <paper-input  error-message="El campo no puede estar vacío." id="phoneNumber"
+                        <paper-input  error-message="El campo no puede estar vacÃ­o." id="phoneNumber"
                                      label="Telfono Fijo" required></paper-input>
 
-                        <paper-input  error-message="El campo no puede estar vacío." id="mobilNumber"
+                        <paper-input  error-message="El campo no puede estar vacÃ­o." id="mobilNumber"
                                      label="Celular" required></paper-input>
 
                         <paper-button on-click="btnEditProfile"
-                                      raised style="width: 100%;margin-top: 23px;background:#06780b;
+                        raised style="width: 100%;margin-top: 23px;background:#06780b;
                           color: white;" >EDITAR</paper-button>
 
                     </form>
@@ -152,9 +149,9 @@
       </iron-ajax>
 
         <paper-dialog entry-animation="scale-up-animation"
-                      exit-animation="fade-out-animation" id="dialog"
-                      class="colored"
-                      modal = "true">
+            exit-animation="fade-out-animation" id="dialog"
+            class="colored"
+            modal = "true">
             <h2>Mensaje</h2>
             <div id="dialog-body">[[body]]</div>
             <div class="buttons">
@@ -171,9 +168,9 @@
     function validateEditForm(){
 
         if(document.getElementById('documentNumber').validate() &&
-        document.getElementById('firstName').validate() &&
-        document.getElementById('lastName').validate() &&
-        document.getElementById('mobilNumber').validate())
+            document.getElementById('firstName').validate() &&
+            document.getElementById('lastName').validate() &&
+            document.getElementById('mobilNumber').validate())
         {
             return true;
         }else
@@ -223,13 +220,16 @@
                 this.$.ajaxProfile.method = "POST";
                 this.$.ajaxProfile.url = document.URL;
 
-                this.$.ajaxProfile.body = {'id_type': this.querySelector('paper-listbox#paperListBoxDocumentType').selected,
-                'document_id': this.$.documentNumber.value,
-                'first_name': this.$.firstName.value,
-                'last_name': this.$.lastName.value,
-                'phone_number': this.$.phoneNumber.value,
-                'mobil_number': this.$.mobilNumber.value,
-                'method': 'edit'};
+                this.$.ajaxProfile.body = {
+                    
+                    'id_type': this.querySelector('paper-listbox#paperListBoxDocumentType').selected,
+                    'document_id': this.$.documentNumber.value,
+                    'first_name': this.$.firstName.value,
+                    'last_name': this.$.lastName.value,
+                    'phone_number': this.$.phoneNumber.value,
+                    'mobil_number': this.$.mobilNumber.value,
+                    'method': 'edit'
+                };
 
                 this.$.ajaxProfile.headers = {
                     "X-CSRFToken":  getCookie('csrftoken'),
