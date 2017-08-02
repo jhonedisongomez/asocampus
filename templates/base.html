@@ -228,9 +228,11 @@
                             <div id="sign-up" style="padding: 10%;
                                 min-width: 60px;">
 
-                                <form is="iron-form"id="sign-up-form" style="margin-top: -50px;
-                                padding: 17px;
-                                max-width: 100%;">
+                                <form is="iron-form"
+                                    id="signUpForm"
+                                    style="margin-top: -50px;
+                                    padding: 17px;
+                                    max-width: 100%;">
 
                                     <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="name"
                                             label="Nombres" required></paper-input>
@@ -246,8 +248,8 @@
 
                                     <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="confirmPassword" label="Confirmar contraseña" type="password" required style="margin-top: 13px;"></paper-input>
 
-                                <paper-button on-click="signUpEvent" raised style="width: 100%;margin-top: 23px;background:#00C851;
-                                    color: white;" >Registrarse</paper-button>
+                                    <paper-button on-click="signUpEvent" raised style="width: 100%;margin-top: 23px;background:#00C851;
+                                        color: white;" >Registrarse</paper-button>
                                 </form>
 
                             </div>
@@ -323,7 +325,7 @@
                     },
 
                     signUp: function(event){
-
+                        document.getElementById('signUpForm').reset();
                         this.$.dlgSignUpForm.open();
 
                     },
@@ -428,9 +430,8 @@
                     createProfileResponse:function(request){
                         if(!request.detail.response.is_error){
                             this.$.dialog.open();
-
-                            
-
+                            document.getElementById('signUpForm').reset();
+                                
                         }else{
                             document.getElementById("dialog-body").innerHTML = request.detail.response.message;
                             this.$.dialog.open();
