@@ -4,11 +4,12 @@
 
     <style>
 
-        .paper-card-0 .header.paper-card .title-text.paper-card {
+        .title-text  style-scope paper-card {
             padding: 16px;
             font-size: 24px;
             font-weight: 400;
             color: white;
+            background: #06780b;
         }
 
         #bntEdit{
@@ -27,119 +28,120 @@
                 url = ""
                 handle-as="json">
             </iron-ajax>
-            
 
             <template is="dom-repeat" items="[[profile]]">
 
-                <div   style="margin-left: 10px;
-                    margin-top: 20px;
-                    max-width: 350px;">
+                <div style="margin-left: 10px;
+                    margin-top: 80px;
+                    max-width: 400px;">
 
-                    <paper-card
-                        heading="Mi perfil"
-                        style="max-width: 100%;
-                        min-width: 100%;
-                        margin: auto;
-                        margin: 20px;"
-                        class="cyan">
+                    <paper-material elevation="5"
+                        style="max-width: 380px;
+                            margin-left: 31%;
+                            background: white;
+                            margin: 0 auto;">
 
-                        <div class="card-actions">
+                        <paper-toolbar class="toolbar-main"
+                                style="margin-top: -24px;">
+                            <div class="title">Mi perfil</div>
+                        </paper-toolbar>
 
-                            <div class="">
-                                <h3>Nombre completo:</h3>
-                                <div class="content-card">
-                                    <span>[[ item.name]]</span>
+                        <div id="profile-form" style="padding: 10%;
+                                min-width: 60px;">
 
-                                </div>
-                            </div>
+                                <form is="iron-form"
+                                    id="signUpForm"
+                                    style="padding: 17px;
+                                    max-width: 100%;">
 
-                            <div class="">
-                                <h3>Documento:</h3>
-                                <div class="content-card">
-                                    <span>[[ item.document_id]]</span>
-                                </div>
-                            </div>
+                                    <paper-dropdown-menu
+                                        label="Tipo de documento"
+                                        id="selectDocumentId"
+                                        style="width: 100%;">
 
-                            <div class="">
-                                <h3>telefono fijo:</h3>
-                                <div class="content-card">
-                                    <span>[[ item.phone_number]]</span>
+                                        <paper-listbox
+                                        slot="dropdown-content"
+                                        id="paperListBoxDocumentType"
+                                        attrForSelected="value"
+                                        selected="0">
 
-                                </div>
-                            </div>
+                                            <paper-item>Seleccione una opción</paper-item>
+                                            <paper-item>Cedula</paper-item>
+                                            <paper-item>Tarjeta de identidad</paper-item>
+                                            <paper-item>registro civil</paper-item>
+                                            <paper-item>Número de pasaporte</paper-item>
+                                        </paper-listbox>
+                                    </paper-dropdown-menu>
 
-                            <div class="">
-                                <h3>Celular:</h3>
-                                <div class="content-card">
-                                    <span>[[ item.mobil_number]]</span>
-                                </div>
-                            </div>
+                                    <paper-input
+                                        required auto-validate
+                                        error-message="El campo no puede estar vacío."
+                                        id="documentNumber"
+                                        label="N° de documento"
+                                        required
+                                        value="[[ item.document_id]]"
+                                        readonly = true>
+                                    </paper-input>
 
-                            <div class="">
-                                <h3>Email:</h3>
-                                <div class="content-card">
-                                    <span>[[item.email]]</span>
-                                </div>
-                            </div>
+                                    <paper-input
+                                        required
+                                        auto-validate
+                                        error-message="El campo no puede estar vacío."
+                                        id="firstName"
+                                        label="Nombres"
+                                        value="[[ item.first_name]]"
+                                        readonly=true
+                                        required>
+                                    </paper-input>
 
-                        </div>
-                        <div class="card-actions">
-                            <paper-button id="bntEdit" on-click="openDialogFunction">Editar</paper-button>
-                        </div>
+                                    <paper-input
+                                        required
+                                        auto-validate
+                                        error-message="El campo no puede estar vacío."
+                                        id="lastName"
+                                        label="Apellidos"
+                                        value="[[ item.last_name]]"
+                                        readonly=true
+                                        required>
+                                    </paper-input>
 
-                    </paper-card>
+                                    <paper-input
+                                    error-message="El campo no puede estar vacío."
+                                    id="phoneNumber"
+                                    label="Telfono Fijo"
+                                    value="[[ item.phone_number]]"
+                                    readonly=true
+                                    required>
+                                </paper-input>
+
+                                <paper-input
+                                    error-message="El campo no puede estar vacío."
+                                    id="mobilNumber"
+                                    label="Celular"
+                                    value="[[ item.mobil_number]]"
+                                    readonly=true
+                                    required>
+                                </paper-input>
+
+                                <paper-input
+                                    error-message="El campo no puede estar vacío."
+                                    id="email"
+                                    label="Correo electronico"
+                                    value="[[ item.email]]"
+                                    readonly=true
+                                    required>
+                                </paper-input>
+
+                                    <paper-button on-click="btnEditProfile"
+                                    raised style="width: 100%;margin-top: 23px;background:#06780b;
+                                    color: white;" >EDITAR</paper-button>
+                                </form>
+
+                    </paper-material>
                 </div>
             </template>
 
         </div>
-
-        <paper-dialog entry-animation="scale-up-animation"
-            exit-animation="fade-out-animation" id="dlgEditProfile"
-            modal = "true">
-            <h2>Editar perfil</h2>
-
-            <div id="dialog-body">
-                <paper-dialog-scrollable>
-                    <form is="iron-form" id="editProfileForm" style="width: 350px;">
-                        <paper-dropdown-menu label="Tipo de documento" id="selectDocumentId" style="width: 100%;">
-                            <paper-listbox slot="dropdown-content" id="paperListBoxDocumentType" attrForSelected="value" selected="0">
-                                <paper-item>Por favor seleccione una opción</paper-item>
-                                <paper-item>Cedula</paper-item>
-                                <paper-item>Tarjeta de identidad</paper-item>
-                                <paper-item>registro civil</paper-item>
-                                <paper-item>Número de pasaporte</paper-item>
-                            </paper-listbox>
-                        </paper-dropdown-menu>
-
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="documentNumber"
-                                     label="N° de documento" required></paper-input>
-
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="firstName"
-                                     label="Nombres" required></paper-input>
-
-                        <paper-input required auto-validate error-message="El campo no puede estar vacío." id="lastName"
-                                     label="Apellidos" required></paper-input>
-
-                        <paper-input  error-message="El campo no puede estar vacío." id="phoneNumber"
-                                     label="Telfono Fijo" required></paper-input>
-
-                        <paper-input  error-message="El campo no puede estar vacío." id="mobilNumber"
-                                     label="Celular" required></paper-input>
-
-                        <paper-button on-click="btnEditProfile"
-                        raised style="width: 100%;margin-top: 23px;background:#06780b;
-                          color: white;" >EDITAR</paper-button>
-
-                    </form>
-                </paper-dialog-scrollable>
-
-            </div>
-
-            <div class="buttons">
-                <paper-button dialog-dismiss>Cerrar</paper-button>
-
-            </div>
-        </paper-dialog>
 
       <iron-ajax
           id="ajaxProfile"
@@ -204,6 +206,8 @@
             this.$.lastName.value = this.profile[0].last_name;
             this.$.phoneNumber.value = this.profile[0].phone_number;
             this.$.mobilNumber.value = this.profile[0].mobil_number;
+            this.$.email.value = this.profile[0].email;
+            
 
         },
 

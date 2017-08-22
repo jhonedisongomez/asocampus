@@ -123,9 +123,7 @@ class SignInView(TemplateView):
                         message = "bienvenido a nuestra plataforma"
                         authenticated = True
                         login(request, user)
-                        request.session['member_id'] = user.id
-                        response_data['member_id'] = user.id
-                        response_data['cookie'] = request.COOKIES
+                        
                         logger.info("usuario autenticado" +  ", usuario:" +  str(request.user))
                     else:
                         message = "este usuario esta desactivado por favor comuniquese con soporte"
