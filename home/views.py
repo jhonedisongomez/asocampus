@@ -19,14 +19,17 @@ class IndexView(TemplateView):
     form_class = ""
 
     def get(self, request, *args, **kwargs):
-        
+        is_admin = {}
         if request.user.is_authenticated():
 
             with connection.cursor() as cursor:
 
                 cursor.callproc('is_administrator',[request.user.id])
                 is_admin = cursor.fetchone()
-        
+        else:
+		is_admin[0] = ''
+		is_admin[1] = False
+
         dict = {'is_administrator':is_admin[1] }
         context_instance = RequestContext(request)
         template = self.template_name

@@ -12,7 +12,7 @@ DATABASES = {
         'NAME': 'asocampus',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '10.11.6.6',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
