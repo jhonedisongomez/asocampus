@@ -19,18 +19,15 @@ class IndexView(TemplateView):
     form_class = ""
 
     def get(self, request, *args, **kwargs):
-        is_admin = {}
+        is_admin = []
         if request.user.is_authenticated():
 
             with connection.cursor() as cursor:
 
-                cursor.callproc('is_administrator',[request.user.id])
-                is_admin = cursor.fetchone()
-        else:
-		is_admin[0] = ''
-		is_admin[1] = False
-
-        dict = {'is_administrator':is_admin[1] }
+                cursor.callproc('get_menu',[request.user.id])
+                is_admin = cursor.fetchall()
+        
+        dict = {'menu':is_admin }
         context_instance = RequestContext(request)
         template = self.template_name
         return render_to_response(template, dict, context_instance)
@@ -38,6 +35,10 @@ class IndexView(TemplateView):
 
 class SignIn(TemplateView):
     template_name = 'users/sign-in.html'
+
+
+class baseSuperAdminView(TemplateView):
+    template_name = 'home/index-superadmin.html'
 
 
 

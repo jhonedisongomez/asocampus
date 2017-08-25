@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html lang="es">
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static from staticfiles %}
+        <link  rel="import" href="{% static 'css/general.css' %}"/>
+        <script type="text/javascript" src="{% static 'bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
+        <link  rel="import" href="{% static 'elements.vulcanized.html' %}"/>
+
+        <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'js/general.js' %}"></script>
+
+        {% block imports %} {% endblock %}
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body  fullbleed layout vertical style="background: #eee">
+        <input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+        <dom-module id="super-admin">
+
+            <template>
+
+                <style>
+
+                    .toolbar-menu{
+                        --paper-toolbar-background:#06780b;
+                    }
+
+                    .toolbar-main{
+                        --paper-toolbar-background:rgb(34, 198, 30);
+                    }
+
+                </style>
+
+                <paper-drawer-panel class="flex" id="menu">
+                    <div drawer  layout flex  style="overflow:scroll;overflow-x:hidden;" >
+                        <paper-toolbar class="toolbar-menu">
+                            <span class="title">Menu</span>
+                            <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
+                        </paper-toolbar>
+                        <div class="logo-asoprovida" style="background: lightgray;">
+                            <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
+                                style="width: 200px;">
+                        </div>
+                        <paper-menu >
+                            <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
+                            <paper-item on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
+                            <paper-item><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
+                            <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
+                            
+                        </paper-menu>
+
+                    </div>
+
+                    <div main>
+
+                        <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
+                            <paper-toolbar class="toolbar-main" elevation="5">
+                                <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+
+                            </paper-toolbar>
+                                
+                            {% block content %}	{% endblock %}
+                        </paper-scroll-header-panel>
+                    </div>
+
+                </paper-drawer-panel>
+
+        <iron-ajax
+            id="ajaxLogout"
+            url=""
+            handle-as="json"
+            on-response="hresponseLogout"
+            debounce-duration="300">
+        </iron-ajax>
+
+            </template>
+        </dom-module>
+        <script>
+            HTMLImports.whenReady(function() {
+                Polymer({
+                    is: 'super-admin',
+
+                    ready:function(){
+                        this.$.item_inicio.focused = true;
+                        this.$.menu.forceNarrow = true;
+
+                    },
+
+                    onLayoutChange: function(wide) {
+                        var drawer = this.$.drawer;
+                        if (wide && drawer.opened) {
+                            drawer.opened = false;
+                        }
+                    },
+
+                    home:function(event){
+                        window.location.replace("/");
+                    },
+                    listActivity:function(event){
+                        window.location.replace("/actividades/lista-de-actividades");
+                    },
+
+                    logout:function(event){
+
+                        this.$.ajax.url = '/usuario/cerrar-sesion/'
+                        this.$.ajax.generateRequest();
+                    },
+                    hresponseLogout: function(request) {
+
+                        if(!request.detail.response.is_error){
+                        window.location.replace("/");
+
+                        }else{
+                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                            this.$.dialog.open();
+
+                        }
+                    },
+                    closedMenu:function(event){
+                        this.$.menu.closeDrawer();
+                    },
+                });
+            });
+
+</script>
+<super-admin></super-admin>
+    </body>
+</html>
