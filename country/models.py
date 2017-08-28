@@ -5,13 +5,14 @@ from django.contrib.auth.models import User
 
 
 class Country(models.Model):
-    country_code = models.CharField(max_length=64, default=uuid.uuid4, null=False, blank=True, db_index=True)
-    country_name = models.CharField(max_length=64, null=False, blank=False)
-    active = models.BooleanField(default=True, db_index=True)
+    country_code = models.CharField(max_length=64, default=uuid.uuid4, null=False, blank=True)
+    country_name = models.CharField(max_length=64, null=False, blank=False,db_index=True)
+    active = models.BooleanField(default=True)
+    version = models.IntegerField(blank = False, null=True)
 
     class Meta:
         index_together = (
-            ('country_code', 'active')
+            ('country_name', 'active')
 
         )
 
@@ -56,16 +57,17 @@ class Section(models.Model):
 
 
 class AuditorCountry(models.Model):
-    action = models.CharField(max_length=30, blank=False, null=False, db_index=True)
-    table = models.CharField(max_length=20, blank=False, null=False, db_index=True)
-    field = models.CharField(max_length=20, blank=False, null=False, db_index=True)
-    before_value = models.CharField(max_length=30, blank=False, null=False, db_index=True)
-    after_value = models.CharField(max_length=30, blank=True, null=True, db_index=True)
-    date = models.DateField(null=False, blank=False, db_index=True)
+    action = models.CharField(max_length=30, blank=False, null=False)
+    table = models.CharField(max_length=20, blank=False, null=False)
+    field = models.CharField(max_length=20, blank=False, null=False)
+    before_value = models.CharField(max_length=100,blank=True, null=True)
+    after_value = models.CharField(max_length=100,  blank=False, null=False)
+    date = models.DateField(null=False, blank=False)
+    object_id = models.IntegerField(blank=False, null=False)
     user = models.ForeignKey(User, blank=False, null=False, related_name='auditor_country_user')
 
     class Meta:
         index_together = (
-            ('action', 'table', 'field', 'before_value', 'after_value', 'date')
+            ('action', 'table','object_id', 'user')
 
         )

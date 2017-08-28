@@ -1,0 +1,145 @@
+<link rel="import" href="../elements.html">
+
+<dom-module id="country-app">
+
+    <template>
+        <paper-material elevation="5"
+            style="max-width: 380px;
+                margin-left: 31%;
+                background: white;
+                margin: 0 auto;">
+
+            <paper-toolbar class="toolbar-main"
+                style="margin-top: -24px;">
+                <div class="title">Infomación del pais</div>
+            </paper-toolbar>
+
+            <div id="profile-form" style="padding: 10%;
+            min-width: 60px;">
+
+            <form is="iron-form"
+                id="CountryForm"
+                style="padding: 17px;
+                max-width: 100%;">
+
+                <paper-input
+                    required auto-validate
+                    error-message="El campo no puede estar vacío."
+                    id="countryDescription"
+                    label="Nombre del pais"
+                    required>
+                </paper-input>
+
+                <paper-checkbox checked
+                    disabled
+                    style="margin-top:10px">
+                    activo
+                </paper-checkbox>
+                
+                <div class="card-actions">
+
+                    <paper-button
+                        id="btnCreateCountry"
+                        on-click="btnCreateCountry"
+                        raised style="width: 100%;margin-top: 23px;background:#06780b;
+                        color: white;" >
+                        Guardar
+                    </paper-button>
+    
+                    <paper-button
+                        id="btnEditCountry"
+                        on-click="btnEditCountry"
+                        raised style="width: 100%;margin-top: 23px;background:#D4E157;
+                        color: white;" >Editar
+                    </paper-button>
+                </div>
+                
+            </form>
+
+        </paper-material>
+
+    <iron-ajax
+        id="ajaxCreateCountry"
+        url=""
+        handle-as="json"
+        on-response="CreateCountryResponse">
+    </iron-ajax>
+
+    <paper-dialog entry-animation="scale-up-animation"
+        
+        exit-animation="fade-out-animation"
+        id="dialog"
+        class="colored"
+        modal = "true">
+        <h2>Mensaje</h2>
+        <div id="dialog-body">[[body]]</div>
+        <div class="buttons">
+            <paper-button dialog-dismiss>Cerrar</paper-button>
+        </div>
+
+    </paper-dialog>
+
+    </template>
+    <script>
+
+        function validateEditForm(){
+
+            if(document.getElementById('countryDescription').validate() )
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+
+        }
+    
+        Polymer({
+            is: "country-app",
+            properties: {
+            },
+
+            ready: function()
+            {
+                this.querySelector('paper-button#btnEditCountry').hidden = true;
+            },
+
+            btnCreateCountry:function(event){
+
+                if(validateEditForm()){
+
+                    var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                    this.$.ajaxCreateCountry.method = "POST";
+                    this.$.ajaxCreateCountry.url = document.URL;
+
+                    this.$.ajaxCreateCountry.body = {
+                        
+                        'country_name': this.$.countryDescription.value,
+                        'method': 'create'
+                    };
+
+                    this.$.ajaxCreateCountry.headers = {
+                        "X-CSRFToken":  getCookie('csrftoken'),
+                        "X-Requested-With": "XMLHttpRequest",
+                        "content-type": "application/json"
+                    };
+
+                    this.$.ajaxCreateCountry.generateRequest();
+
+                }else{
+                    this.body = 'Por favor diligencie los datos obligatorios';
+                    this.$.dialog.open();
+                }
+            },
+
+            CreateCountryResponse: function(request) {
+
+                this.body = request.detail.response.message;
+                this.$.dialog.open();
+            },
+
+        });
+
+    </script>
+
+</dom-module>

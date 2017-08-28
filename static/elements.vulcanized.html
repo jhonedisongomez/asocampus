@@ -30168,7 +30168,487 @@ event and do your own custom submission:
 
   });
 
-</script><dom-module id="profile-user" assetpath="template-profile/">
+</script><!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+Material design: [Checkbox](https://www.google.com/design/spec/components/selection-controls.html#selection-controls-checkbox)
+
+`paper-checkbox` is a button that can be either checked or unchecked.  User
+can tap the checkbox to check or uncheck it.  Usually you use checkboxes
+to allow user to select multiple options from a set.  If you have a single
+ON/OFF option, avoid using a single checkbox and use `paper-toggle-button`
+instead.
+
+Example:
+
+    <paper-checkbox>label</paper-checkbox>
+
+    <paper-checkbox checked> label</paper-checkbox>
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--paper-checkbox-unchecked-background-color` | Checkbox background color when the input is not checked | `transparent`
+`--paper-checkbox-unchecked-color` | Checkbox border color when the input is not checked | `--primary-text-color`
+`--paper-checkbox-unchecked-ink-color` | Selected/focus ripple color when the input is not checked | `--primary-text-color`
+`--paper-checkbox-checked-color` | Checkbox color when the input is checked | `--primary-color`
+`--paper-checkbox-checked-ink-color` | Selected/focus ripple color when the input is checked | `--primary-color`
+`--paper-checkbox-checkmark-color` | Checkmark color | `white`
+`--paper-checkbox-label-color` | Label color | `--primary-text-color`
+`--paper-checkbox-label-checked-color` | Label color when the input is checked | `--paper-checkbox-label-color`
+`--paper-checkbox-label-spacing` | Spacing between the label and the checkbox | `8px`
+`--paper-checkbox-label` | Mixin applied to the label | `{}`
+`--paper-checkbox-label-checked` | Mixin applied to the label when the input is checked | `{}`
+`--paper-checkbox-error-color` | Checkbox color when invalid | `--error-color`
+`--paper-checkbox-size` | Size of the checkbox | `18px`
+`--paper-checkbox-ink-size` | Size of the ripple | `48px`
+`--paper-checkbox-margin` | Margin around the checkbox container | `initial`
+`--paper-checkbox-vertical-align` | Vertical alignment of the checkbox container | `middle`
+
+This element applies the mixin `--paper-font-common-base` but does not import `paper-styles/typography.html`.
+In order to apply the `Roboto` font to this element, make sure you've imported `paper-styles/typography.html`.
+
+@demo demo/index.html
+-->
+
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><script>
+
+  /**
+   * Use `Polymer.IronCheckedElementBehavior` to implement a custom element
+   * that has a `checked` property, which can be used for validation if the
+   * element is also `required`. Element instances implementing this behavior
+   * will also be registered for use in an `iron-form` element.
+   *
+   * @demo demo/index.html
+   * @polymerBehavior Polymer.IronCheckedElementBehavior
+   */
+  Polymer.IronCheckedElementBehaviorImpl = {
+
+    properties: {
+      /**
+       * Fired when the checked state changes.
+       *
+       * @event iron-change
+       */
+
+      /**
+       * Gets or sets the state, `true` is checked and `false` is unchecked.
+       */
+      checked: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true,
+        notify: true,
+        observer: '_checkedChanged'
+      },
+
+      /**
+       * If true, the button toggles the active state with each tap or press
+       * of the spacebar.
+       */
+      toggles: {
+        type: Boolean,
+        value: true,
+        reflectToAttribute: true
+      },
+
+      /* Overriden from Polymer.IronFormElementBehavior */
+      value: {
+        type: String,
+        value: 'on',
+        observer: '_valueChanged'
+      }
+    },
+
+    observers: [
+      '_requiredChanged(required)'
+    ],
+
+    created: function() {
+      // Used by `iron-form` to handle the case that an element with this behavior
+      // doesn't have a role of 'checkbox' or 'radio', but should still only be
+      // included when the form is serialized if `this.checked === true`.
+      this._hasIronCheckedElementBehavior = true;
+    },
+
+    /**
+     * Returns false if the element is required and not checked, and true otherwise.
+     * @param {*=} _value Ignored.
+     * @return {boolean} true if `required` is false or if `checked` is true.
+     */
+    _getValidity: function(_value) {
+      return this.disabled || !this.required || this.checked;
+    },
+
+    /**
+     * Update the aria-required label when `required` is changed.
+     */
+    _requiredChanged: function() {
+      if (this.required) {
+        this.setAttribute('aria-required', 'true');
+      } else {
+        this.removeAttribute('aria-required');
+      }
+    },
+
+    /**
+     * Fire `iron-changed` when the checked state changes.
+     */
+    _checkedChanged: function() {
+      this.active = this.checked;
+      this.fire('iron-change');
+    },
+
+    /**
+     * Reset value to 'on' if it is set to `undefined`.
+     */
+    _valueChanged: function() {
+      if (this.value === undefined || this.value === null) {
+        this.value = 'on';
+      }
+    }
+  };
+
+  /** @polymerBehavior Polymer.IronCheckedElementBehavior */
+  Polymer.IronCheckedElementBehavior = [
+    Polymer.IronFormElementBehavior,
+    Polymer.IronValidatableBehavior,
+    Polymer.IronCheckedElementBehaviorImpl
+  ];
+
+</script><script>
+  /**
+   * Use `Polymer.PaperCheckedElementBehavior` to implement a custom element
+   * that has a `checked` property similar to `Polymer.IronCheckedElementBehavior`
+   * and is compatible with having a ripple effect.
+   * @polymerBehavior Polymer.PaperCheckedElementBehavior
+   */
+  Polymer.PaperCheckedElementBehaviorImpl = {
+    /**
+     * Synchronizes the element's checked state with its ripple effect.
+     */
+    _checkedChanged: function() {
+      Polymer.IronCheckedElementBehaviorImpl._checkedChanged.call(this);
+      if (this.hasRipple()) {
+        if (this.checked) {
+          this._ripple.setAttribute('checked', '');
+        } else {
+          this._ripple.removeAttribute('checked');
+        }
+      }
+    },
+
+    /**
+     * Synchronizes the element's `active` and `checked` state.
+     */
+    _buttonStateChanged: function() {
+      Polymer.PaperRippleBehavior._buttonStateChanged.call(this);
+      if (this.disabled) {
+        return;
+      }
+      if (this.isAttached) {
+        this.checked = this.active;
+      }
+    }
+  };
+
+  /** @polymerBehavior Polymer.PaperCheckedElementBehavior */
+  Polymer.PaperCheckedElementBehavior = [
+    Polymer.PaperInkyFocusBehavior,
+    Polymer.IronCheckedElementBehavior,
+    Polymer.PaperCheckedElementBehaviorImpl
+  ];
+</script><dom-module id="paper-checkbox" assetpath="bower_components/paper-checkbox/">
+  <template strip-whitespace="">
+    <style>
+      :host {
+        display: inline-block;
+        white-space: nowrap;
+        cursor: pointer;
+        --calculated-paper-checkbox-size: var(--paper-checkbox-size, 18px);
+        /* -1px is a sentinel for the default and is replaced in `attached`. */
+        --calculated-paper-checkbox-ink-size: var(--paper-checkbox-ink-size, -1px);
+        @apply --paper-font-common-base;
+        line-height: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      :host([hidden]) {
+        display: none !important;
+      }
+
+      :host(:focus) {
+        outline: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #checkboxContainer {
+        display: inline-block;
+        position: relative;
+        width: var(--calculated-paper-checkbox-size);
+        height: var(--calculated-paper-checkbox-size);
+        min-width: var(--calculated-paper-checkbox-size);
+        margin: var(--paper-checkbox-margin, initial);
+        vertical-align: var(--paper-checkbox-vertical-align, middle);
+        background-color: var(--paper-checkbox-unchecked-background-color, transparent);
+      }
+
+      #ink {
+        position: absolute;
+
+        /* Center the ripple in the checkbox by negative offsetting it by
+         * (inkWidth - rippleWidth) / 2 */
+        top: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);
+        left: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);
+        width: var(--calculated-paper-checkbox-ink-size);
+        height: var(--calculated-paper-checkbox-ink-size);
+        color: var(--paper-checkbox-unchecked-ink-color, var(--primary-text-color));
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      :host-context([dir="rtl"]) #ink {
+        right: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);
+        left: auto;
+      }
+
+      #ink[checked] {
+        color: var(--paper-checkbox-checked-ink-color, var(--primary-color));
+      }
+
+      #checkbox {
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        border: solid 2px;
+        border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));
+        border-radius: 2px;
+        pointer-events: none;
+        -webkit-transition: background-color 140ms, border-color 140ms;
+        transition: background-color 140ms, border-color 140ms;
+      }
+
+      /* checkbox checked animations */
+      #checkbox.checked #checkmark {
+        -webkit-animation: checkmark-expand 140ms ease-out forwards;
+        animation: checkmark-expand 140ms ease-out forwards;
+      }
+
+      @-webkit-keyframes checkmark-expand {
+        0% {
+          -webkit-transform: scale(0, 0) rotate(45deg);
+        }
+        100% {
+          -webkit-transform: scale(1, 1) rotate(45deg);
+        }
+      }
+
+      @keyframes checkmark-expand {
+        0% {
+          transform: scale(0, 0) rotate(45deg);
+        }
+        100% {
+          transform: scale(1, 1) rotate(45deg);
+        }
+      }
+
+      #checkbox.checked {
+        background-color: var(--paper-checkbox-checked-color, var(--primary-color));
+        border-color: var(--paper-checkbox-checked-color, var(--primary-color));
+      }
+
+      #checkmark {
+        position: absolute;
+        width: 36%;
+        height: 70%;
+        border-style: solid;
+        border-top: none;
+        border-left: none;
+        border-right-width: calc(2/15 * var(--calculated-paper-checkbox-size));
+        border-bottom-width: calc(2/15 * var(--calculated-paper-checkbox-size));
+        border-color: var(--paper-checkbox-checkmark-color, white);
+        -webkit-transform-origin: 97% 86%;
+        transform-origin: 97% 86%;
+        box-sizing: content-box; /* protect against page-level box-sizing */
+      }
+
+      :host-context([dir="rtl"]) #checkmark {
+        -webkit-transform-origin: 50% 14%;
+        transform-origin: 50% 14%;
+      }
+
+      /* label */
+      #checkboxLabel {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: var(--paper-checkbox-label-spacing, 8px);
+        white-space: normal;
+        line-height: normal;
+        color: var(--paper-checkbox-label-color, var(--primary-text-color));
+        @apply --paper-checkbox-label;
+      }
+
+      :host([checked]) #checkboxLabel {
+        color: var(--paper-checkbox-label-checked-color, var(--paper-checkbox-label-color, var(--primary-text-color)));
+        @apply --paper-checkbox-label-checked;
+      }
+
+      :host-context([dir="rtl"]) #checkboxLabel {
+        padding-right: var(--paper-checkbox-label-spacing, 8px);
+        padding-left: 0;
+      }
+
+      #checkboxLabel[hidden] {
+        display: none;
+      }
+
+      /* disabled state */
+
+      :host([disabled]) #checkbox {
+        opacity: 0.5;
+        border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));
+      }
+
+      :host([disabled][checked]) #checkbox {
+        background-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));
+        opacity: 0.5;
+      }
+
+      :host([disabled]) #checkboxLabel  {
+        opacity: 0.65;
+      }
+
+      /* invalid state */
+      #checkbox.invalid:not(.checked) {
+        border-color: var(--paper-checkbox-error-color, var(--error-color));
+      }
+    </style>
+
+    <div id="checkboxContainer">
+      <div id="checkbox" class$="[[_computeCheckboxClass(checked, invalid)]]">
+        <div id="checkmark" class$="[[_computeCheckmarkClass(checked)]]"></div>
+      </div>
+    </div>
+
+    <div id="checkboxLabel"><slot></slot></div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'paper-checkbox',
+
+      behaviors: [
+        Polymer.PaperCheckedElementBehavior
+      ],
+
+      hostAttributes: {
+        role: 'checkbox',
+        'aria-checked': false,
+        tabindex: 0
+      },
+
+      properties: {
+        /**
+         * Fired when the checked state changes due to user interaction.
+         *
+         * @event change
+         */
+
+        /**
+         * Fired when the checked state changes.
+         *
+         * @event iron-change
+         */
+        ariaActiveAttribute: {
+          type: String,
+          value: 'aria-checked'
+        }
+      },
+
+      attached: function() {
+        // Wait until styles have resolved to check for the default sentinel.
+        // See polymer#4009 for more details.
+        Polymer.RenderStatus.afterNextRender(this, function() {
+          var inkSize = this.getComputedStyleValue('--calculated-paper-checkbox-ink-size').trim();
+          // If unset, compute and set the default `--paper-checkbox-ink-size`.
+          if (inkSize === '-1px') {
+            var checkboxSizeText = this.getComputedStyleValue('--calculated-paper-checkbox-size').trim();
+
+            var units = checkboxSizeText.match(/[A-Za-z]+$/)[0] || 'px';
+            var checkboxSize = parseFloat(checkboxSizeText, 10);
+            var defaultInkSize = (8 / 3) * checkboxSize;
+
+            if (units === 'px') {
+              defaultInkSize = Math.floor(defaultInkSize);
+
+              // The checkbox and ripple need to have the same parity so that their
+              // centers align.
+              if (defaultInkSize % 2 !== checkboxSize % 2) {
+                defaultInkSize++;
+              }
+            }
+
+            this.updateStyles({
+              '--paper-checkbox-ink-size': defaultInkSize + units,
+            });
+          }
+        });
+      },
+
+      _computeCheckboxClass: function(checked, invalid) {
+        var className = '';
+        if (checked) {
+          className += 'checked ';
+        }
+        if (invalid) {
+          className += 'invalid';
+        }
+        return className;
+      },
+
+      _computeCheckmarkClass: function(checked) {
+        return checked ? '' : 'hidden';
+      },
+
+      // create ripple inside the checkboxContainer
+      _createRipple: function() {
+        this._rippleContainer = this.$.checkboxContainer;
+        return Polymer.PaperInkyFocusBehaviorImpl._createRipple.call(this);
+      }
+
+    });
+  </script>
+</dom-module>
+<dom-module id="profile-user" assetpath="template-profile/">
 
     <style>
 
@@ -30363,7 +30843,123 @@ event and do your own custom submission:
 </script>
 </dom-module>
 
-<dom-module id="list-activity" assetpath="template-activity/">
+<dom-module id="country-app" assetpath="template-country/">
+
+    <template>
+        <paper-material elevation="5" style="max-width: 380px;
+                margin-left: 31%;
+                background: white;
+                margin: 0 auto;">
+
+            <paper-toolbar class="toolbar-main" style="margin-top: -24px;">
+                <div class="title">Infomación del pais</div>
+            </paper-toolbar>
+
+            <div id="profile-form" style="padding: 10%;
+            min-width: 60px;">
+
+            <form is="iron-form" id="CountryForm" style="padding: 17px;
+                max-width: 100%;">
+
+                <paper-input required="" auto-validate="" error-message="El campo no puede estar vacío." id="countryDescription" label="Nombre del pais">
+                </paper-input>
+
+                <paper-checkbox checked="" disabled="" style="margin-top:10px">
+                    activo
+                </paper-checkbox>
+                
+                <div class="card-actions">
+
+                    <paper-button id="btnCreateCountry" on-click="btnCreateCountry" raised="" style="width: 100%;margin-top: 23px;background:#06780b;
+                        color: white;">
+                        Guardar
+                    </paper-button>
+    
+                    <paper-button id="btnEditCountry" on-click="btnEditCountry" raised="" style="width: 100%;margin-top: 23px;background:#D4E157;
+                        color: white;">Editar
+                    </paper-button>
+                </div>
+                
+            </form>
+
+        
+
+    <iron-ajax id="ajaxCreateCountry" url="" handle-as="json" on-response="CreateCountryResponse">
+    </iron-ajax>
+
+    <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" class="colored" modal="true">
+        <h2>Mensaje</h2>
+        <div id="dialog-body">[[body]]</div>
+        <div class="buttons">
+            <paper-button dialog-dismiss="">Cerrar</paper-button>
+        </div>
+
+    </paper-dialog>
+
+    </div></paper-material></template>
+    <script>
+
+        function validateEditForm(){
+
+            if(document.getElementById('countryDescription').validate() )
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+
+        }
+    
+        Polymer({
+            is: "country-app",
+            properties: {
+            },
+
+            ready: function()
+            {
+                this.querySelector('paper-button#btnEditCountry').hidden = true;
+            },
+
+            btnCreateCountry:function(event){
+
+                if(validateEditForm()){
+
+                    var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                    this.$.ajaxCreateCountry.method = "POST";
+                    this.$.ajaxCreateCountry.url = document.URL;
+
+                    this.$.ajaxCreateCountry.body = {
+                        
+                        'country_name': this.$.countryDescription.value,
+                        'method': 'create'
+                    };
+
+                    this.$.ajaxCreateCountry.headers = {
+                        "X-CSRFToken":  getCookie('csrftoken'),
+                        "X-Requested-With": "XMLHttpRequest",
+                        "content-type": "application/json"
+                    };
+
+                    this.$.ajaxCreateCountry.generateRequest();
+
+                }else{
+                    this.body = 'Por favor diligencie los datos obligatorios';
+                    this.$.dialog.open();
+                }
+            },
+
+            CreateCountryResponse: function(request) {
+
+                this.body = request.detail.response.message;
+                this.$.dialog.open();
+            },
+
+        });
+
+    </script>
+
+</dom-module><dom-module id="list-activity" assetpath="template-activity/">
     <style>
         .container {
         @apply(--layout-horizontal);

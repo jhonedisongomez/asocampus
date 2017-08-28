@@ -20,10 +20,11 @@ from home.views import baseSuperAdminView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^superadmin/$', baseSuperAdminView.as_view(), name='superadmin'),
+    url(r'^administrador/$', baseSuperAdminView.as_view(), name='superadmin'),
     url(r'^', include('home.urls')),
     url(r'^actividades/', include('activities.urls')),
     url(r'^perfil/', include('profiles.urls')),
     url(r'^usuario/', include('user_profile.urls')),
-
+    url(r'^administrador/', include('country.urls')),
+    
 ]
