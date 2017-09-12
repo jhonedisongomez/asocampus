@@ -20,7 +20,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
 
     template_name = 'activities/list-activity.html'
     class_form = ""
-    login_url = "/iniciar-sesion/"
+    login_url = "/"
 
     def get(self, request, *args, **kwargs):
         logger.info(str(request) +  ", usuario:" +  str(request.user))

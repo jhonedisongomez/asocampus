@@ -1,0 +1,69 @@
+{% extends "base-superadmin.html" %}
+{%  block title %}
+
+{% endblock %}
+{% block content %}
+    <div style="margin-top:100px;">
+        <country-app></country-app>
+    </div>
+
+    <h1>Vaadin Elementary School Signups</h1>
+    <vaadin-grid>
+      <table>
+        <colgroup>
+          <col/>
+          <col/>
+          <col/>
+          <col/>
+        </colgroup>
+        <thead>
+          <tr>
+            <td>
+              First name
+            </td>
+            <td>
+              Last name
+            </td>
+            <td>
+              Email
+            </td>
+            <td>
+              Phone
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Marcus
+            </td>
+            <td>
+              Hellberg
+            </td>
+            <td>
+              marcus@fakemail.com
+            </td>
+            <td>
+              1 (844) 4-VAADIN
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Joonas
+            </td>
+            <td>
+              Lehtinen
+            </td>
+            <td>
+              joonas@fakemail.com
+            </td>
+            <td>
+              1 (844) 4-VAADIN
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </vaadin-grid>
+    
+
+{% endblock %}

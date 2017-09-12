@@ -9,6 +9,7 @@ from .models import Profile, IdType, AuditorProfile
 import logging
 from datetime import datetime
 from django.contrib.auth.models import User
+from django.db import connection
 
 logger = logging.getLogger("logging")
 
@@ -28,29 +29,41 @@ class ProfileView(TemplateView):
         data = []
         message = ""
         is_error = False
-        created = False
 
         if "load" in request.GET:
             try:
 
-                state = "validate profile"
+                profile = None
+                state = "init profile"
                 logger.info("state: " + state + ", usuario:" + str(request.user))
-                obj_profile = Profile.objects.filter(active=True,fk_user=request.user )
+                
+                with connection.cursor() as cursor:
 
-                if obj_profile:
+                    cursor.callproc('get_profile_activity',[request.user.id])
+                    profile = cursor.fetchone()
 
-                    profile_data['document_id'] = obj_profile[0].document_id
-                    profile_data['first_name'] = obj_profile[0].first_name
-                    profile_data['last_name'] = obj_profile[0].last_name
-                    profile_data['name'] = obj_profile[0].first_name + " " + obj_profile[0].last_name
-                    profile_data['phone_number'] = obj_profile[0].phone_number
-                    profile_data['mobil_number'] = obj_profile[0].mobil_number
+                if(profile[0] is False):
+                   
+                    profile_data['document_id'] = profile[3]
+                    profile_data['first_name'] = profile[4]
+                    profile_data['last_name'] = profile[5]
+                    profile_data['name'] = profile[4] + " " + profile[5]
+                    profile_data['phone_number'] = profile[6]
+                    profile_data['mobil_number'] = profile[7]
                     profile_data['email'] = request.user.email
                     data.append(profile_data)
                     response_data['data'] = data
 
+                    state = "finish get profile"
+                    logger.info("state: " + state + ", usuario:" + str(request.user))
+
+                else:
+
+                    message = profile[1]
+                    is_error = True
+                    
             except Exception as e:
-                print (e)
+                
                 logger.error(e)
                 is_error = True
                 message = "error en el sistema por favor comuniquese con soporte"
@@ -71,7 +84,7 @@ class ProfileView(TemplateView):
             dic = {}
             context_instance = RequestContext(request)
             template = self.template_name
-            return render_to_response(template, dic,context_instance)
+            return render_to_response(template, dic,context_instance) 
 
     def post (self, request, *args, **kwargs):
 

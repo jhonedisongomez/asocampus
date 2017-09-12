@@ -38,7 +38,7 @@
                 </style>
 
                 <paper-drawer-panel class="flex" id="menu">
-                    <div drawer  layout flex>
+                    <div drawer  layout flex  style="overflow:scroll;overflow-x:hidden;" >
                         <paper-toolbar class="toolbar-menu">
                             <span class="title">Menu</span>
                             <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
@@ -47,11 +47,15 @@
                             <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
                                 style="width: 200px;">
                         </div>
-                        <paper-menu>
+                        <paper-menu >
                             <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
                             <paper-item on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
                             <paper-item><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
                             <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
+                            {% for option in menu %}
+                                <paper-item icon="home" label="Administrador" on-click="logout" ><a is="pushstate-anchor" href="{{option.1}}">{{option.0}}</a></paper-item>
+                            {% endfor %}
+                        
                         </paper-menu>
 
                     </div>
@@ -63,7 +67,7 @@
                                 <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
 
                             </paper-toolbar>
-
+                                
                             {% block content %}	{% endblock %}
                         </paper-scroll-header-panel>
                     </div>
@@ -179,7 +183,6 @@
 
                             <paper-input required auto-validate error-message="El campo no pude estar en blanco" id="passwordSignIn"
                                         label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
-
 
                             <paper-button on-click="signIn" raised style="width: 100%;margin-top: 23px;background:#00C851;
                                 color: white;" >INICIAR SESIÓN</paper-button>
