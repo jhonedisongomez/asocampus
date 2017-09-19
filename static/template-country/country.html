@@ -4,13 +4,13 @@
 
     <template>
         <paper-material elevation="5"
-            style="max-width: 380px;
+                        style="max-width: 380px;
                 margin-left: 31%;
                 background: white;
                 margin: 0 auto;">
 
             <paper-toolbar class="toolbar-main"
-                style="margin-top: -24px;">
+                           style="margin-top: -24px;">
                 <div class="title">Infomación del pais</div>
             </paper-toolbar>
 
@@ -58,28 +58,30 @@
 
         </paper-material>
 
-    <iron-ajax
-        id="ajaxCreateCountry"
-        url=""
-        handle-as="json"
-        on-response="CreateCountryResponse">
-    </iron-ajax>
 
-    <paper-dialog entry-animation="scale-up-animation"
+        <iron-ajax
+                id="ajaxCreateCountry"
+                url=""
+                handle-as="json"
+                on-response="CreateCountryResponse">
+        </iron-ajax>
+
+        <paper-dialog
+            entry-animation="scale-up-animation"
         
-        exit-animation="fade-out-animation"
-        id="dialog"
-        class="colored"
-        modal = "true">
-        <h2>Mensaje</h2>
-        <div id="dialog-body">[[body]]</div>
-        <div class="buttons">
+            exit-animation="fade-out-animation"
+            id="dialog"
+            class="colored"
+            modal = "true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">[[body]]</div>
+            <div class="buttons">
             <paper-button dialog-dismiss>Cerrar</paper-button>
         </div>
 
-    </paper-dialog>
-
+        </paper-dialog>
     </template>
+
     <script>
 
         function validateEditForm(){
@@ -93,6 +95,8 @@
             }
 
         }
+
+
     
         Polymer({
             is: "country-app",
@@ -137,6 +141,12 @@
                 this.body = request.detail.response.message;
                 this.$.dialog.open();
             },
+
+            getCountry: function(id) {
+
+                alert(id);
+            },
+
 
         });
 

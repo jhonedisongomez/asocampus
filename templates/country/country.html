@@ -3,67 +3,96 @@
 
 {% endblock %}
 {% block content %}
-    <div style="margin-top:100px;">
+
+
+    <dom-module id="country-view">
+    <template>
+
+
+    <div style="margin-top:7em;">
         <country-app></country-app>
     </div>
 
-    <h1>Vaadin Elementary School Signups</h1>
-    <vaadin-grid>
-      <table>
-        <colgroup>
-          <col/>
-          <col/>
-          <col/>
-          <col/>
-        </colgroup>
-        <thead>
-          <tr>
-            <td>
-              First name
-            </td>
-            <td>
-              Last name
-            </td>
-            <td>
-              Email
-            </td>
-            <td>
-              Phone
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Marcus
-            </td>
-            <td>
-              Hellberg
-            </td>
-            <td>
-              marcus@fakemail.com
-            </td>
-            <td>
-              1 (844) 4-VAADIN
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Joonas
-            </td>
-            <td>
-              Lehtinen
-            </td>
-            <td>
-              joonas@fakemail.com
-            </td>
-            <td>
-              1 (844) 4-VAADIN
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </vaadin-grid>
-    
+    <div style="margin-top:7em;">
+      <paper-material style="height: 50%;"
+      elevation="5">
+            <vaadin-grid>
+
+          <table>
+            <colgroup>
+              <col/>
+              <col/>
+              <col/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td>
+                    <paper-input label = "Nombre" id="nameFilter"></paper-input>
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for country in countries %}
+                    <tr>
+                    <td>
+                        {{country.1}}
+                    </td>
+
+                    <td>
+                        {{country.2}}
+                    </td>
+
+                    <td>
+                        <paper-button on-tap="getCountry" data="{{ country.0 }}">
+
+                            <paper-icon-button  icon="edit"></paper-icon-button>
+                        </paper-button>
+
+
+                      <paper-icon-button on-click="" icon="remove"></paper-icon-button>
+                  
+                </td>
+                </tr>
+                {% endfor %}
+
+      </tbody>
+          </table>
+
+            </vaadin-grid>
+
+      </paper-material>
+
+      
+    </div>
+</template>
+
+    <script>
+
+        Polymer({
+            is: "country-view",
+            properties: {},
+
+            ready: function () {
+                console.log('hello');
+            },
+
+            getCountry: function(e){
+
+                console.log('hello' + e.currentTarget.attributes[0].value);
+            }
+        });
+    </script>
+
+</dom-module>
+
+<country-view></country-view>
 
 {% endblock %}

@@ -10,24 +10,32 @@ import uuid
 from django.http import HttpResponse
 import json
 
-
 logger = logging.getLogger("logging")
+
+
 class CountryView(LoginRequiredMixin, TemplateView):
 
     template_name = "country/country.html"
     form_class = ""
     login_url = "/"
+    menu = []
+    list_country = []
 
     def get(self, request, *args, **kwargs ):
 
-        is_admin = []
-    
+        # get urls to menu
         with connection.cursor() as cursor:
 
             cursor.callproc('get_menu_options',[request.user.id])
-            is_admin = cursor.fetchall()
+            self.menu = cursor.fetchall()
+
+            #get list of countries for table
+            cursor.callproc('list_country',[request.user.id])
+            self.list_country = cursor.fetchall()
     
-        dic = {'menu':is_admin }
+        dic = {'menu':self.menu,
+               'countries': self.list_country}
+
         context_instance = RequestContext(request)
         template = self.template_name
         return render_to_response(template, dic,context_instance)
