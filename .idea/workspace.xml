@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="" />
+    <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bower.json" afterPath="$PROJECT_DIR$/static/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/template-country/country.html" afterPath="$PROJECT_DIR$/static/template-country/country.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/country/country.html" afterPath="$PROJECT_DIR$/templates/country/country.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/elements.html" afterPath="$PROJECT_DIR$/static/elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/elements.vulcanized.html" afterPath="$PROJECT_DIR$/static/elements.vulcanized.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activities/views.py" afterPath="$PROJECT_DIR$/activities/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/country/views.py" afterPath="$PROJECT_DIR$/country/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="asocampus.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -13,6 +22,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/asocampus$Unittests_in_asocampus.coverage" NAME="Unittests in asocampus Coverage Results" MODIFIED="1505094737137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -21,6 +33,30 @@
     <option name="GROUP_BY_TYPE" value="true" />
     <option name="SORT_CHILDREN" value="false" />
     <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - asocampus@192.168.1.59" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="asocampus.public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - asocampus@192.168.1.59" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -31,101 +67,164 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/country/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="53" column="88" selection-start-line="53" selection-start-column="88" selection-end-line="53" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.39869282">
+              <caret line="130" column="55" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
               <folding>
-                <element signature="n#style#0;n#paper-material#0;n#div#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-button#0;n#form#0;n#div#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-toolbar#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-button#0;n#form#0;n#div#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_profile/views.py">
+      <file leaf-file-name="country.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/country/country.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#69#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asocampus/settings/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="33" />
+            <state vertical-scroll-proportion="-11.724138">
+              <caret line="126" column="96" selection-start-line="126" selection-start-column="96" selection-end-line="126" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activities/views.py">
+      <file leaf-file-name="elements.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/elements.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="178" column="89" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="89" />
+              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="country.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/template-country/country.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3793104">
+              <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="260" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="country_scripts.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="206" column="39" selection-start-line="206" selection-start-column="25" selection-end-line="206" selection-end-column="39" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <marker date="1506284834787" expanded="true" signature="265:1671" placeholder="declare v_is..." />
+                <marker date="1506284834787" expanded="true" signature="361:380" placeholder="o_is_admin :..." />
+                <marker date="1506284834787" expanded="true" signature="384:403" placeholder="o_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="385:403" placeholder="p_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="408:605" placeholder="select 'X' i..profiles_profile..." />
+                <marker date="1506284834787" expanded="true" signature="610:1524" placeholder="if not found..." />
+                <marker date="1506284834787" expanded="true" signature="630:689" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="631:689" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="691:700" placeholder="o_is_admin =..." />
+                <marker date="1506284834787" expanded="true" signature="704:722" placeholder="o_is_admin :..." />
+                <marker date="1506284834787" expanded="true" signature="727:836" placeholder="select 'X' i..country_country..." />
+                <marker date="1506284834787" expanded="true" signature="843:1513" placeholder="if not found..." />
+                <marker date="1506284834787" expanded="true" signature="864:923" placeholder="v_id_country..." />
+                <marker date="1506284834787" expanded="true" signature="930:1077" placeholder="INSERT INTO ..." />
+                <marker date="1506284834787" expanded="true" signature="1086:1144" placeholder="v_values := ..." />
+                <marker date="1506284834787" expanded="true" signature="1153:1373" placeholder="INSERT INTO ..." />
+                <marker date="1506284834787" expanded="true" signature="1382:1445" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="1383:1445" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="1457:1503" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="1458:1503" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="1559:1642" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="1560:1642" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="1646:1664" placeholder="o_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="1647:1664" placeholder="p_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="1936:2414" placeholder="DECLARE v_ad..." />
+                <marker date="1506284834787" expanded="true" signature="1972:2234" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506284834787" expanded="true" signature="2239:2407" placeholder="IF found THE..." />
+                <marker date="1506284834787" expanded="true" signature="2258:2389" placeholder="RETURN QUERY..." />
+                <marker date="1506284834787" expanded="true" signature="2275:2389" placeholder="SELECT coun...country_country..." />
+                <marker date="1506284834787" expanded="true" signature="2753:3641" placeholder="DECLARE v_ad..." />
+                <marker date="1506284834787" expanded="true" signature="2788:2807" placeholder="p_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="2812:2831" placeholder="p_is_admin :..." />
+                <marker date="1506284834787" expanded="true" signature="2837:3099" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506284834787" expanded="true" signature="3104:3491" placeholder="IF NOT found..." />
+                <marker date="1506284834787" expanded="true" signature="3127:3197" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="3212:3230" placeholder="p_is_admin :..." />
+                <marker date="1506284834787" expanded="true" signature="3237:3359" placeholder="SELECT cou.c..country_country..." />
+                <marker date="1506284834787" expanded="true" signature="3237:3373" placeholder="SELECT cou.c..country_country..." />
+                <marker date="1506284834787" expanded="true" signature="3380:3480" placeholder="IF NOT found..." />
+                <marker date="1506284834787" expanded="true" signature="3405:3468" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="3529:3612" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="3618:3636" placeholder="p_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="3935:3957" placeholder="DECLARE v_id..." />
+                <marker date="1506284834787" expanded="true" signature="3935:3965" placeholder="DECLARE v_id..." />
+                <marker date="1506284834787" expanded="true" signature="3935:5669" placeholder="DECLARE v_id..." />
+                <marker date="1506284834787" expanded="true" signature="3935:5671" placeholder="DECLARE v_id..." />
+                <marker date="1506284834787" expanded="true" signature="4095:5669" placeholder="BEGIN END..." />
+                <marker date="1506284834787" expanded="true" signature="4108:4127" placeholder="o_is_error :..." />
+                <marker date="1506284834787" expanded="true" signature="4136:4155" placeholder="o_is_admin :..." />
+                <marker date="1506284834787" expanded="true" signature="4165:4451" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506284834787" expanded="true" signature="4460:5471" placeholder="IF NOT found..." />
+                <marker date="1506284834787" expanded="true" signature="4460:5669" placeholder="IF NOT found..." />
+                <marker date="1506284834787" expanded="true" signature="4487:4557" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="4488:4557" placeholder="p_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="4580:4678" placeholder="select '*' i..country_country..." />
+                <marker date="1506284834787" expanded="true" signature="4580:5458" placeholder="select '*' i..." />
+                <marker date="1506284834787" expanded="true" signature="4689:5455" placeholder="IF NOT found..." />
+                <marker date="1506284834787" expanded="true" signature="4718:4736" placeholder="o_is_admin :..." />
+                <marker date="1506284834787" expanded="true" signature="4749:4873" placeholder="SELECT id, c..country_country..." />
+                <marker date="1506284834787" expanded="true" signature="4886:4988" placeholder="UPDATE count..." />
+                <marker date="1506284834787" expanded="true" signature="5001:5258" placeholder="INSERT INTO ..." />
+                <marker date="1506284834787" expanded="true" signature="5271:5331" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="5358:5437" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="5458:5471" placeholder="update END I..." />
+                <marker date="1506284834787" expanded="true" signature="5517:5600" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="5517:5631" placeholder="o_message :=..." />
+                <marker date="1506284834787" expanded="true" signature="5641:5659" placeholder="o_is_error :..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sign-up.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/template-users/sign-up.html">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/23eec967-2b8c-411e-8e09-863cbf218b00/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="156" column="9" selection-start-line="105" selection-start-column="8" selection-end-line="156" selection-end-column="9" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="asocampus.public.create_country" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_country">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_profile/urls.py">
+        <entry file="file://$PROJECT_DIR$/country/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="x-app.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/template-base/x-app.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.576923">
-              <caret line="121" column="38" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logs.log" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logs/logs.log">
-          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.591133">
-              <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
-              <folding />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,16 +247,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/topics/admin.py" />
-        <option value="$PROJECT_DIR$/payment/models.py" />
-        <option value="$PROJECT_DIR$/country/models.py" />
-        <option value="$PROJECT_DIR$/activities/migrations/__init__.py" />
-        <option value="$PROJECT_DIR$/topics/models.py" />
-        <option value="$PROJECT_DIR$/static/js/general.js" />
-        <option value="$PROJECT_DIR$/agenda/models.py" />
-        <option value="$PROJECT_DIR$/agenda/urls.py" />
-        <option value="$PROJECT_DIR$/agenda/views.py" />
-        <option value="$PROJECT_DIR$/activities/urls.py" />
         <option value="$PROJECT_DIR$/activities/forms.py" />
         <option value="$PROJECT_DIR$/static/bower_components/template-activity/activity_list.html" />
         <option value="$PROJECT_DIR$/templates/activities/activity_list.html" />
@@ -166,7 +255,6 @@
         <option value="$PROJECT_DIR$/static/bower_components/template-users/sign-in.html" />
         <option value="$PROJECT_DIR$/static/bower_components/template-users/sign-up.html" />
         <option value="$PROJECT_DIR$/static/bower_components/template-base/x-app.html" />
-        <option value="$PROJECT_DIR$/static/bower.json" />
         <option value="$PROJECT_DIR$/static/bower_components/template-base/base-login.html" />
         <option value="$PROJECT_DIR$/static/bower_components/template-activity/activity-list.html" />
         <option value="$PROJECT_DIR$/templates/activities/list-activity.html" />
@@ -182,7 +270,6 @@
         <option value="$PROJECT_DIR$/profiles/migrations/0003_auto_20170504_2136.py" />
         <option value="$PROJECT_DIR$/templates/profile/profile.html" />
         <option value="$PROJECT_DIR$/profiles/admin.py" />
-        <option value="$PROJECT_DIR$/static/elements.html" />
         <option value="$PROJECT_DIR$/static/elements.vulcanized.html" />
         <option value="$PROJECT_DIR$/profiles/models.py" />
         <option value="$PROJECT_DIR$/profiles/views.py" />
@@ -195,10 +282,22 @@
         <option value="$PROJECT_DIR$/profiles/urls.py" />
         <option value="$PROJECT_DIR$/static/template-base/base-login.html" />
         <option value="$PROJECT_DIR$/static/template-users/sign-in.html" />
-        <option value="$PROJECT_DIR$/activities/views.py" />
         <option value="$PROJECT_DIR$/user_profile/views.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/../asocampus-scripts/menus/menus_functions.sql" />
+        <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.get_menu_options" />
+        <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.list_country" />
+        <option value="$PROJECT_DIR$/activities/views.py" />
+        <option value="$PROJECT_DIR$/country/urls.py" />
+        <option value="$PROJECT_DIR$/static/bower.json" />
+        <option value="$PROJECT_DIR$/static/elements.html" />
+        <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_country" />
+        <option value="$PROJECT_DIR$/static/template-country/country.html" />
+        <option value="$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/23eec967-2b8c-411e-8e09-863cbf218b00/console.sql" />
         <option value="$PROJECT_DIR$/logs/logs.log" />
+        <option value="$PROJECT_DIR$/templates/country/country.html" />
+        <option value="$PROJECT_DIR$/country/views.py" />
       </list>
     </option>
   </component>
@@ -210,10 +309,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -238,8 +337,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,20 +365,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user_profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -296,97 +379,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template-users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template-profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template-activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,66 +397,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../asoprovidacol/envasoprovida/Scripts/python.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.splitter.proportion" value="0.21645446" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/logs/logs.log" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -498,6 +449,29 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in asocampus" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="asocampus" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -716,8 +690,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="asocampus.settings.local" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="G:\Projects\asoprovidacol\envasoprovida\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -725,7 +700,7 @@
       <module name="asocampus" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="" />
+      <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -734,13 +709,15 @@
       <option name="customRunCommand" value="" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Django server.asocampus" />
       <item index="1" class="java.lang.String" itemvalue="Django tests.Test: static.elements.vulcanized" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in asocampus" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Django tests.Test: static.elements.vulcanized" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in asocampus" />
+        <item index="1" class="java.lang.String" itemvalue="Django tests.Test: static.elements.vulcanized" />
       </list>
     </recent_temporary>
   </component>
@@ -757,50 +734,61 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24357034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34094617" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47275922" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18634969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19478528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24469821" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41300526" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39718804" sideWeight="0.4861963" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34094617" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5025554" sideWeight="0.51059" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49092284" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24469821" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22768533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24190801" sideWeight="0.47881997" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5025554" sideWeight="0.48940998" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18154311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19515885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41396934" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -816,158 +804,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/country/views.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/payment/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/country/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="46" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topics/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery/src/css/var/swap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/migrations/0002_auto_20170330_2140.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="269" column="26" selection-start-line="239" selection-start-column="8" selection-end-line="269" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agenda/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activities/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery/dist/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19484241">
-          <caret line="1" column="760" selection-start-line="1" selection-start-column="760" selection-end-line="1" selection-end-column="760" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bower_components/paper-toolbar/demo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/sign-in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.307692">
-          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bower_components/polymer/polymer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3418803">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30493274">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bower_components/elements.vulcanized.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31733334">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/migrations/0003_auto_20170504_2136.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activities/migrations/0007_auto_20170504_2136.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.03271028">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/country/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -996,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activities/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2735632">
-          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profiles/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1954023">
@@ -1014,7 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21271394">
           <caret line="30265" column="14" selection-start-line="30265" selection-start-column="14" selection-end-line="30265" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,33 +872,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/elements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/general.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asocampus/settings/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="85" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,9 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1069,7 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="263" column="56" selection-start-line="263" selection-start-column="56" selection-end-line="263" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12469438">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,33 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24938875">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-base/base-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0415648">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-users/sign-in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7457212">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-users/sign-up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="156" column="9" selection-start-line="105" selection-start-column="8" selection-end-line="156" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,41 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8239608">
           <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-activity/activity-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2860637">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="104" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_profile/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-base/x-app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.576923">
-          <caret line="121" column="38" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activities/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="89" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1169,54 +925,403 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64827585">
           <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/template-base/x-app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37408313">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_profile/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23448277">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asocampus/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="53" column="88" selection-start-line="53" selection-start-column="88" selection-end-line="53" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#paper-material#0;n#div#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-button#0;n#form#0;n#div#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-toolbar#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-button#0;n#form#0;n#div#0;n#div#0;n#paper-dialog#1;n#template#0;n#dom-module#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user_profile/views.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15632184">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asoprovidacol/envasoprovida/Lib/site-packages/django/contrib/auth/base_user.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asoprovidacol/envasoprovida/Lib/site-packages/django/utils/six.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="841" column="0" selection-start-line="841" selection-start-column="0" selection-end-line="841" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asoprovidacol/envasoprovida/Lib/site-packages/django/utils/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1166" column="0" selection-start-line="1166" selection-start-column="0" selection-end-line="1166" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asocampus/settings/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/23eec967-2b8c-411e-8e09-863cbf218b00.schema:asocampus.public">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>23eec967-2b8c-411e-8e09-863cbf218b00.schema:asocampus.public</OriginalElement>
+          <nodes>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_content_type</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_room</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_section</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_profilerolactivity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_roles</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_auditorcountry</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_auditorpayment</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auditor_menu</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_paymentperson</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_topic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_migrations</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_signupactivities</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idtype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_activityroom</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_auditoragenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activities</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_auditorprofile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_auditortopic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_rolesprofile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_auditorroom</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_payment</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activitiestype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_profile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_agenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_session</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_groups</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_permission</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_sectiontype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_auditorrol</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_signupschedule</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu_options</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idcard</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.p_sign_up_acti_act</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_admin_log</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_user_permissions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_auditoractivity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_topicagenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group_permissions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_country</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8342015855039637" x="3740.0" y="323.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asocampus-scripts/activities/activities_functions.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93609023">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.get_menu_options">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.11111111">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asocampus-scripts/profiles/profiles_scripts.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28270042">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.list_country">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.491453">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asocampus-scripts/menus/menus_functions.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4848485">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asoprovidacol/envasoprovida/Lib/site-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activities/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2853717">
+          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asoprovidacol/envasoprovida/Lib/site-packages/django/utils/autoreload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3322785">
+          <caret line="204" column="32" selection-start-line="204" selection-start-column="32" selection-end-line="204" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/country/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
-            <element signature="e#24#69#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.country_country">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activities/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16190477">
+          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asoprovidacol/envasoprovida/Lib/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/template-activity/activity-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="71" selection-start-line="125" selection-start-column="71" selection-end-line="125" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5884774">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/elements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/template-base/base-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0390625">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="260" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_country">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="206" column="39" selection-start-line="206" selection-start-column="25" selection-end-line="206" selection-end-column="39" />
+          <folding>
+            <marker date="1506284834787" expanded="true" signature="265:1671" placeholder="declare v_is..." />
+            <marker date="1506284834787" expanded="true" signature="361:380" placeholder="o_is_admin :..." />
+            <marker date="1506284834787" expanded="true" signature="384:403" placeholder="o_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="385:403" placeholder="p_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="408:605" placeholder="select 'X' i..profiles_profile..." />
+            <marker date="1506284834787" expanded="true" signature="610:1524" placeholder="if not found..." />
+            <marker date="1506284834787" expanded="true" signature="630:689" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="631:689" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="691:700" placeholder="o_is_admin =..." />
+            <marker date="1506284834787" expanded="true" signature="704:722" placeholder="o_is_admin :..." />
+            <marker date="1506284834787" expanded="true" signature="727:836" placeholder="select 'X' i..country_country..." />
+            <marker date="1506284834787" expanded="true" signature="843:1513" placeholder="if not found..." />
+            <marker date="1506284834787" expanded="true" signature="864:923" placeholder="v_id_country..." />
+            <marker date="1506284834787" expanded="true" signature="930:1077" placeholder="INSERT INTO ..." />
+            <marker date="1506284834787" expanded="true" signature="1086:1144" placeholder="v_values := ..." />
+            <marker date="1506284834787" expanded="true" signature="1153:1373" placeholder="INSERT INTO ..." />
+            <marker date="1506284834787" expanded="true" signature="1382:1445" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="1383:1445" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="1457:1503" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="1458:1503" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="1559:1642" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="1560:1642" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="1646:1664" placeholder="o_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="1647:1664" placeholder="p_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="1936:2414" placeholder="DECLARE v_ad..." />
+            <marker date="1506284834787" expanded="true" signature="1972:2234" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506284834787" expanded="true" signature="2239:2407" placeholder="IF found THE..." />
+            <marker date="1506284834787" expanded="true" signature="2258:2389" placeholder="RETURN QUERY..." />
+            <marker date="1506284834787" expanded="true" signature="2275:2389" placeholder="SELECT coun...country_country..." />
+            <marker date="1506284834787" expanded="true" signature="2753:3641" placeholder="DECLARE v_ad..." />
+            <marker date="1506284834787" expanded="true" signature="2788:2807" placeholder="p_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="2812:2831" placeholder="p_is_admin :..." />
+            <marker date="1506284834787" expanded="true" signature="2837:3099" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506284834787" expanded="true" signature="3104:3491" placeholder="IF NOT found..." />
+            <marker date="1506284834787" expanded="true" signature="3127:3197" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="3212:3230" placeholder="p_is_admin :..." />
+            <marker date="1506284834787" expanded="true" signature="3237:3359" placeholder="SELECT cou.c..country_country..." />
+            <marker date="1506284834787" expanded="true" signature="3237:3373" placeholder="SELECT cou.c..country_country..." />
+            <marker date="1506284834787" expanded="true" signature="3380:3480" placeholder="IF NOT found..." />
+            <marker date="1506284834787" expanded="true" signature="3405:3468" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="3529:3612" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="3618:3636" placeholder="p_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="3935:3957" placeholder="DECLARE v_id..." />
+            <marker date="1506284834787" expanded="true" signature="3935:3965" placeholder="DECLARE v_id..." />
+            <marker date="1506284834787" expanded="true" signature="3935:5669" placeholder="DECLARE v_id..." />
+            <marker date="1506284834787" expanded="true" signature="3935:5671" placeholder="DECLARE v_id..." />
+            <marker date="1506284834787" expanded="true" signature="4095:5669" placeholder="BEGIN END..." />
+            <marker date="1506284834787" expanded="true" signature="4108:4127" placeholder="o_is_error :..." />
+            <marker date="1506284834787" expanded="true" signature="4136:4155" placeholder="o_is_admin :..." />
+            <marker date="1506284834787" expanded="true" signature="4165:4451" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506284834787" expanded="true" signature="4460:5471" placeholder="IF NOT found..." />
+            <marker date="1506284834787" expanded="true" signature="4460:5669" placeholder="IF NOT found..." />
+            <marker date="1506284834787" expanded="true" signature="4487:4557" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="4488:4557" placeholder="p_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="4580:4678" placeholder="select '*' i..country_country..." />
+            <marker date="1506284834787" expanded="true" signature="4580:5458" placeholder="select '*' i..." />
+            <marker date="1506284834787" expanded="true" signature="4689:5455" placeholder="IF NOT found..." />
+            <marker date="1506284834787" expanded="true" signature="4718:4736" placeholder="o_is_admin :..." />
+            <marker date="1506284834787" expanded="true" signature="4749:4873" placeholder="SELECT id, c..country_country..." />
+            <marker date="1506284834787" expanded="true" signature="4886:4988" placeholder="UPDATE count..." />
+            <marker date="1506284834787" expanded="true" signature="5001:5258" placeholder="INSERT INTO ..." />
+            <marker date="1506284834787" expanded="true" signature="5271:5331" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="5358:5437" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="5458:5471" placeholder="update END I..." />
+            <marker date="1506284834787" expanded="true" signature="5517:5600" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="5517:5631" placeholder="o_message :=..." />
+            <marker date="1506284834787" expanded="true" signature="5641:5659" placeholder="o_is_error :..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/23eec967-2b8c-411e-8e09-863cbf218b00/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logs/logs.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6875">
+          <caret line="145" column="50" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/template-country/country.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.591133">
-          <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
+        <state vertical-scroll-proportion="-1.3793104">
+          <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/country/country.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.724138">
+          <caret line="126" column="96" selection-start-line="126" selection-start-column="96" selection-end-line="126" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/country/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39869282">
+          <caret line="130" column="55" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

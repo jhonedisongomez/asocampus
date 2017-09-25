@@ -20,31 +20,82 @@ class CountryView(LoginRequiredMixin, TemplateView):
     login_url = "/"
     menu = []
     list_country = []
+    response_data = {}
+    is_error = False
+    is_admin = False
+    message = ''
+    response_proc = []
 
     def get(self, request, *args, **kwargs ):
 
-        # get urls to menu
-        with connection.cursor() as cursor:
+        try:
+            if "load" in request.GET:
 
-            cursor.callproc('get_menu_options',[request.user.id])
-            self.menu = cursor.fetchall()
+                state = "init"
+                logger.info("state: " + state + "CountryView, get" + ", usuario:" + str(request.user))
+                with connection.cursor() as cursor:
 
-            #get list of countries for table
-            cursor.callproc('list_country',[request.user.id])
-            self.list_country = cursor.fetchall()
-    
-        dic = {'menu':self.menu,
-               'countries': self.list_country}
+                    state = 'finish execute procedure create_country'
+                    logger.info("state: " + state + "call procedure: getCountry, usuario:" + str(request.user))
 
-        context_instance = RequestContext(request)
-        template = self.template_name
-        return render_to_response(template, dic,context_instance)
+                    cursor.callproc('getCountry',[request.user.id, request.GET['country_code']])
+                    self. response_proc = cursor.fetchone()
+
+                state = 'finish execute procedure getCountry'
+                logger.info("state: " + state + "response: "+ str(self. response_proc) +", usuario:" + str(request.user))
+
+                self.response_data['country_name'] = self.response_proc[0]
+                self.response_data['is_active'] = self.response_proc[1]
+                self.response_data['message'] = self. response_proc[2]
+                self.response_data['is_error'] = self. response_proc[3]
+                self.response_data['is_Admin'] = self. response_proc[4]
+                response_json = json.dumps(self.response_data)
+                logger.info("response_data: " + response_json + ", usuario:" + str(request.user))
+                content_type = 'application/json'
+                return HttpResponse(response_json, content_type)
+
+
+            else:
+
+                # get urls to menu
+                with connection.cursor() as cursor:
+
+                    state = "get menu options"
+                    cursor.callproc('get_menu_options',[request.user.id])
+                    self.menu = cursor.fetchall()
+
+                    state = "get list country"
+                    #get list of countries for table
+                    cursor.callproc('list_country',[request.user.id])
+                    self.list_country = cursor.fetchall()
+
+                dic = {'menu':self.menu,
+                       'countries': self.list_country}
+
+                context_instance = RequestContext(request)
+                template = self.template_name
+                return render_to_response(template, dic,context_instance)
+
+        except Exception as e:
+
+            logger.error(e)
+            is_error = True
+            message = "error en el sistema por favor comuniquese con soporte"
+            self.response_data['type_error'] = type(e).__name__
+            self.response_data['file'] = "activities view"
+            self.response_data['class'] = "ActivitiesView"
+            self.response_data['state'] = state
+
+            context_instance = RequestContext(request)
+            template = self.template_name
+            return render_to_response(template, dic,context_instance)
 
     def post(self, request, *args, **kwargs):
 
         response_data = {}
         message = ""
         is_error = False
+        response_proc = []
 
         try:
 
@@ -59,17 +110,33 @@ class CountryView(LoginRequiredMixin, TemplateView):
             country_code = str(uuid.uuid4())
             
             with connection.cursor() as cursor:
-                state = 'execute procedure create_country'
-                logger.info("state: " + state + ", usuario:" + str(request.user) + ",parameters:" + country_code + "," + country_name + "," + str(user))
-                
-                cursor.callproc('create_country',[country_code,country_name,request.user.id])
-                response_proc = cursor.fetchone()
-                
-                state = 'finish execute procedure create_country'
-                logger.info("state: " + state + "response: "+ str(response_proc) +", usuario:" + str(request.user))
-            
-            is_error = response_proc[0]
-            message = response_proc[1]
+
+                if(body['method'] == 'create'):
+
+                    state = 'execute procedure create_country'
+                    logger.info("state: " + state + ", usuario:" + str(request.user) + ",parameters:" + country_code + "," + country_name + "," + str(user))
+
+                    cursor.callproc('create_country',[country_code,country_name,request.user.id])
+                    response_proc = cursor.fetchone()
+
+                    state = 'finish execute procedure create_country'
+                    logger.info("state: " + state + "response: "+ str(response_proc) +", usuario:" + str(request.user))
+
+                if(body['method'] == 'edit'):
+                    country_code = body['country_code']
+                    state = 'execute procedure edit_country'
+                    logger.info("state: " + state + ", usuario:" + str(request.user) + ",parameters:" + country_code + "," + country_name + "," + str(user))
+
+                    cursor.callproc('edit_country',[country_code
+                        ,country_name,request.user.id])
+                    response_proc = cursor.fetchone()
+
+                    state = 'finish execute procedure edit'
+                    logger.info("state: " + state + "response: "+ str(response_proc) +", usuario:" + str(request.user))
+
+            #message, is error, is admin
+            message = response_proc[0]
+            is_error = response_proc[1]
 
         except Exception as e:
 

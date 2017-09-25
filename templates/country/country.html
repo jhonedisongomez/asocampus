@@ -4,21 +4,15 @@
 {% endblock %}
 {% block content %}
 
-
     <dom-module id="country-view">
     <template>
 
-
-    <div style="margin-top:7em;">
-        <country-app></country-app>
-    </div>
-
-    <div style="margin-top:7em;">
-      <paper-material style="height: 50%;"
+    <div style="">
+      <paper-material style="height: 100%;"
       elevation="5">
-            <vaadin-grid>
 
-          <table>
+          <table style="background: white;
+          width: 100%">
             <colgroup>
               <col/>
               <col/>
@@ -27,13 +21,13 @@
             <thead>
               <tr>
                 <td>
-                    <paper-input label = "Nombre" id="nameFilter"></paper-input>
+                    Nombre
                 </td>
                 <td>
-
+                    Activo
                 </td>
                 <td>
-
+                    Acciones
                 </td>
                 
               </tr>
@@ -51,14 +45,14 @@
                     </td>
 
                     <td>
-                        <paper-button on-tap="getCountry" data="{{ country.0 }}">
 
-                            <paper-icon-button  icon="edit"></paper-icon-button>
-                        </paper-button>
+                        <paper-fab
+                                mini
+                                icon="edit"
+                                on-click="getCountry"
+                                data="{{ country.0 }}"
+                                style="background: #5C6BC0"></paper-fab>
 
-
-                      <paper-icon-button on-click="" icon="remove"></paper-icon-button>
-                  
                 </td>
                 </tr>
                 {% endfor %}
@@ -66,33 +60,218 @@
       </tbody>
           </table>
 
-            </vaadin-grid>
 
       </paper-material>
 
+        <iron-ajax
+                id="ajaxGetCountry"
+                url=""
+                handle-as="json"
+                on-response="responseGetCountry">
+        </iron-ajax>
       
     </div>
+
+      <paper-fab
+        icon="add"
+        elevation="5"
+        on-click = "openDlgCountryForm"
+        style="position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background: #3f51b5;">
+
+      </paper-fab>
+
+        <paper-dialog entry-animation="scale-up-animation"
+                      exit-animation="fade-out-animation" id="dlgCountryForm"
+                      style="max-height: 250px;
+                        min-width: 32%;"
+                      modal = "true">
+            <div id="dialog-body" style="padding: 0px;">
+
+                    <paper-toolbar class="toolbar-main"
+                            style="margin-top: -24px;">
+                        <div class="title">Formulario de Pais</div>
+                        <paper-icon-button on-click="closeDlgCountryForm" icon="close"></paper-icon-button>
+                    </paper-toolbar>
+                            <div id="sign-up" style="padding: 10%;
+                                min-width: 60px;">
+
+                                <form is="iron-form"
+                                    style="margin-top: -50px;
+                                    padding: 17px;
+                                max-width: 100%;"
+                                id="countryForm">
+
+                                    <paper-input
+                                            required auto-validate
+                                            error-message="El campo no puede estar vacio."
+                                            id="countryDescription"
+                                            label="Nombre del pais"
+                                            required>
+                                    </paper-input>
+
+                                    <paper-checkbox checked
+                                                    id ="is_active"
+                                                    disabled
+                                                    style="margin-top:10px;
+                                                    width: 100%">
+                                        activo
+                                    </paper-checkbox>
+
+                                    <input type="hidden" id="country_code"/>
+                                    <paper-button id="btnCreateCountry" on-click="btnCreateCountry" raised style="width: 30%;margin-top: 23px;background:#00C851;
+                                        color: white;" >Agregar</paper-button>
+
+                                    <paper-button id="btnEditCountry" on-click="btnCreateCountry" raised style="width: 30%;margin-top: 23px;background:#FFC107;
+                                        color: white;" >Editar</paper-button>
+
+                                    <paper-button on-click="cleanCountry" raised style="width: 30%;margin-top: 23px;background:#FF5722;
+                                        color: white;" >Limpiar</paper-button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </paper-dialog>
+
+        <iron-ajax
+            id="ajaxCreateCountry"
+            url=""
+            handle-as="json"
+            on-response="createCountryResponse">
+        </iron-ajax>
+
+        <paper-dialog
+                entry-animation="scale-up-animation"
+                exit-animation="fade-out-animation"
+                id="dialog"
+                class="colored"
+                modal = "true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">[[body]]</div>
+            <div class="buttons">
+            <paper-button dialog-dismiss>Cerrar</paper-button>
+        </div>
+
+        </paper-dialog>
+
 </template>
 
-    <script>
+        <script>
 
-        Polymer({
-            is: "country-view",
-            properties: {},
+            Polymer({
+                is: "country-view",
+                properties: {},
 
-            ready: function () {
-                console.log('hello');
-            },
+                ready: function () {
 
-            getCountry: function(e){
+                },
 
-                console.log('hello' + e.currentTarget.attributes[0].value);
-            }
-        });
-    </script>
+                getCountry: function(e){
 
-</dom-module>
+                    var url = document.URL;
+                    console.log(e);
+                    document.getElementById("country_code").value = e.currentTarget.attributes[2].value;
+                    var ajaxUrl = "?load=true&country_code=" + e.currentTarget.attributes[2].value;
+                    url = url + ajaxUrl;
+                    this.querySelector('iron-ajax#ajaxGetCountry').url = url
+                    this.querySelector('iron-ajax#ajaxGetCountry').generateRequest();
+                },
 
-<country-view></country-view>
+                responseGetCountry: function(response){
+
+                    this.querySelector('paper-input#countryDescription').value = response.detail.response.country_name;
+                    check = this.querySelector('paper-checkbox#is_active');
+                    check.checked = response.detail.response.is_active;
+                    check.disabled = false;
+                    document.getElementById("btnEditCountry").hidden = false;
+                    document.getElementById("btnCreateCountry").hidden = true;
+                    dlgCountryForm.open();
+
+                },
+
+                editCountry: function(){
+
+                    var country_code = document.getElementById('country_code').value;
+                    var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                },
+
+                btnCreateCountry:function(event){
+
+                    if(validateEditForm()){
+
+                        var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                        this.$.ajaxCreateCountry.method = "POST";
+                        this.$.ajaxCreateCountry.url = document.URL;
+
+                        var method = "";
+                        if(this.$.is_active.disabled){
+                            method = "create";
+                        }else{
+                            method = "edit";
+                        }
+
+                        this.$.ajaxCreateCountry.body = {
+
+                            'country_name': this.$.countryDescription.value,
+                            'country_code':document.getElementById("country_code").value,
+                            'method': method
+                        };
+
+                        this.$.ajaxCreateCountry.headers = {
+                            "X-CSRFToken":  getCookie('csrftoken'),
+                            "X-Requested-With": "XMLHttpRequest",
+                            "content-type": "application/json"
+                        };
+
+                        this.$.ajaxCreateCountry.generateRequest();
+
+                    }else{
+                        this.body = 'Por favor diligencie los datos obligatorios';
+                        this.$.dialog.open();
+                    }
+                },
+
+                createCountryResponse: function(request) {
+
+                    this.body = request.detail.response.message;
+                    this.$.dialog.open();
+
+                    if(!request.detail.response.is_error){
+                        this.$.countryForm.reset();
+                    }
+                },
+
+                openDlgCountryForm:function(){
+
+                    dlgCountryForm.open();
+                    this.$.is_active.disabled = true;
+                    this.$.countryForm.reset();
+                    this.$.is_active.checked = true;
+                    document.getElementById("btnEditCountry").hidden = true;
+                    document.getElementById("btnCreateCountry").hidden = false;
+
+                },
+
+                closeDlgCountryForm:function(){
+                    dlgCountryForm.close();
+                },
+
+                cleanCountry:function(){
+
+                    this.$.is_active.disabled = true;
+                    this.$.countryForm.reset();
+                    this.$.is_active.checked = true;
+                    document.getElementById("btnEditCountry").hidden = true;
+                    document.getElementById("btnCreateCountry").hidden = false;
+
+                }
+            });
+        </script>
+
+    </dom-module>
+
+    <country-view></country-view>
 
 {% endblock %}

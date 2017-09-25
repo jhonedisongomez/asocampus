@@ -32278,6 +32278,276 @@ See the [demo](demo/index.html) for use case examples.
     }
   }); // End Polymer prototype
 </script>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+Material design: [Floating Action Button](https://www.google.com/design/spec/components/buttons-floating-action-button.html)
+
+`paper-fab` is a floating action button. It contains an image placed in the center and
+comes in two sizes: regular size and a smaller size by applying the attribute `mini`. When
+the user touches the button, a ripple effect emanates from the center of the button.
+
+You may import `iron-icons` to use with this element, or provide a URL to a custom icon.
+See `iron-iconset` for more information about how to use a custom icon set.
+
+Example:
+
+    <link href="path/to/iron-icons/iron-icons.html" rel="import">
+
+    <paper-fab icon="add"></paper-fab>
+    <paper-fab mini icon="favorite"></paper-fab>
+    <paper-fab src="star.png"></paper-fab>
+
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--paper-fab-background` | The background color of the button | `--accent-color`
+`--paper-fab-keyboard-focus-background` | The background color of the button when focused | `--paper-pink-900`
+`--paper-fab-disabled-background` | The background color of the button when it's disabled | `--paper-grey-300`
+`--paper-fab-disabled-text` | The text color of the button when it's disabled | `--paper-grey-500`
+`--paper-fab` | Mixin applied to the button | `{}`
+`--paper-fab-mini` | Mixin applied to a mini button | `{}`
+`--paper-fab-disabled` | Mixin applied to a disabled button | `{}`
+`--paper-fab-iron-icon` | Mixin applied to the iron-icon within the button | `{}`
+`--paper-fab-label` | Mixin applied to the label within the button | `{}`
+
+@group Paper Elements
+@demo demo/index.html
+-->
+
+<!--
+@license
+Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+Material design: [Cards](https://www.google.com/design/spec/components/cards.html)
+
+Shared styles that you can apply to an element to renders two shadows on top
+of each other,that create the effect of a lifted piece of paper.
+
+Example:
+
+    <custom-style>
+      <style is="custom-style" include="paper-material-styles"></style>
+    </custom-style>
+
+    <div class="paper-material elevation-1">
+      ... content ...
+    </div>
+
+@group Paper Elements
+@demo demo/index.html
+-->
+
+<dom-module id="paper-material-styles" assetpath="bower_components/paper-styles/element-styles/">
+  <template>
+    <style>
+      :host, html {
+        --paper-material: {
+          display: block;
+          position: relative;
+        };
+        --paper-material-elevation-1: {
+          @apply --shadow-elevation-2dp;
+        };
+        --paper-material-elevation-2: {
+          @apply --shadow-elevation-4dp;
+        };
+        --paper-material-elevation-3: {
+          @apply --shadow-elevation-6dp;
+        };
+        --paper-material-elevation-4: {
+          @apply --shadow-elevation-8dp;
+        };
+        --paper-material-elevation-5: {
+          @apply --shadow-elevation-16dp;
+        };
+      }
+      :host(.paper-material), .paper-material {
+        @apply --paper-material;
+      }
+      :host(.paper-material[elevation="1"]), .paper-material[elevation="1"] {
+        @apply --paper-material-elevation-1;
+      }
+      :host(.paper-material[elevation="2"]), .paper-material[elevation="2"] {
+        @apply --paper-material-elevation-2;
+      }
+      :host(.paper-material[elevation="3"]), .paper-material[elevation="3"] {
+        @apply --paper-material-elevation-3;
+      }
+      :host(.paper-material[elevation="4"]), .paper-material[elevation="4"] {
+        @apply --paper-material-elevation-4;
+      }
+      :host(.paper-material[elevation="5"]), .paper-material[elevation="5"] {
+        @apply --paper-material-elevation-5;
+      }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="paper-fab" assetpath="bower_components/paper-fab/">
+  <template strip-whitespace="">
+    <style include="paper-material-styles">
+      :host {
+        @apply --layout-vertical;
+        @apply --layout-center-center;
+
+        background: var(--paper-fab-background, var(--accent-color));
+        border-radius: 50%;
+        box-sizing: border-box;
+        color: var(--text-primary-color);
+        cursor: pointer;
+        height: 56px;
+        min-width: 0;
+        outline: none;
+        padding: 16px;
+        position: relative;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 56px;
+        z-index: 0;
+
+        /* NOTE: Both values are needed, since some phones require the value `transparent`. */
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+
+        @apply --paper-fab;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      :host([mini]) {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+
+        @apply --paper-fab-mini;
+      }
+
+      :host([disabled]) {
+        color: var(--paper-fab-disabled-text, var(--paper-grey-500));
+        background: var(--paper-fab-disabled-background, var(--paper-grey-300));
+
+        @apply --paper-fab-disabled;
+      }
+
+      iron-icon {
+        @apply --paper-fab-iron-icon;
+      }
+
+      span {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+
+        @apply --paper-fab-label;
+      }
+
+      :host(.keyboard-focus) {
+        background: var(--paper-fab-keyboard-focus-background, var(--paper-pink-900));
+      }
+
+      :host([elevation="1"]) {
+        @apply --paper-material-elevation-1;
+      }
+
+      :host([elevation="2"]) {
+        @apply --paper-material-elevation-2;
+      }
+
+      :host([elevation="3"]) {
+        @apply --paper-material-elevation-3;
+      }
+
+      :host([elevation="4"]) {
+        @apply --paper-material-elevation-4;
+      }
+
+      :host([elevation="5"]) {
+        @apply --paper-material-elevation-5;
+      }
+    </style>
+
+    <iron-icon id="icon" hidden$="{{!_computeIsIconFab(icon, src)}}" src="[[src]]" icon="[[icon]]"></iron-icon>
+    <span hidden$="{{_computeIsIconFab(icon, src)}}">{{label}}</span>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'paper-fab',
+
+      behaviors: [
+        Polymer.PaperButtonBehavior
+      ],
+
+      properties: {
+        /**
+         * The URL of an image for the icon. If the src property is specified,
+         * the icon property should not be.
+         */
+        src: {
+          type: String,
+          value: ''
+        },
+
+        /**
+         * Specifies the icon name or index in the set of icons available in
+         * the icon's icon set. If the icon property is specified,
+         * the src property should not be.
+         */
+        icon: {
+          type: String,
+          value: ''
+        },
+
+        /**
+         * Set this to true to style this is a "mini" FAB.
+         */
+        mini: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true
+        },
+
+        /**
+         * The label displayed in the badge. The label is centered, and ideally
+         * should have very few characters.
+         */
+        label: {
+          type: String,
+          observer: '_labelChanged'
+        }
+      },
+
+      _labelChanged: function() {
+        this.setAttribute('aria-label', this.label);
+      },
+
+      _computeIsIconFab: function(icon, src) {
+        return (icon.length > 0) || (src.length > 0);
+      }
+    });
+  </script>
+</dom-module>
 <dom-module id="profile-user" assetpath="template-profile/">
 
     <style>
@@ -32486,47 +32756,56 @@ See the [demo](demo/index.html) for use case examples.
             </paper-toolbar>
 
             <div id="profile-form" style="padding: 10%;
-            min-width: 60px;">
+            min-width: 60px;margin-bottom: -30px;">
 
-            <form is="iron-form" id="CountryForm" style="padding: 17px;
-                max-width: 100%;">
+                <form is="iron-form" id="CountryForm" style="padding: 17px;
+                    max-width: 100%;">
 
-                <paper-input required="" auto-validate="" error-message="El campo no puede estar vacío." id="countryDescription" label="Nombre del pais">
-                </paper-input>
+                    <paper-input required="" auto-validate="" error-message="El campo no puede estar vacío." id="countryDescription" label="Nombre del pais">
+                    </paper-input>
 
-                <paper-checkbox checked="" disabled="" style="margin-top:10px">
-                    activo
-                </paper-checkbox>
-                
-                <div class="card-actions">
+                    <paper-checkbox checked="" id="is_active" disabled="" style="margin-top:10px">
+                        activo
+                    </paper-checkbox>
 
-                    <paper-button id="btnCreateCountry" on-click="btnCreateCountry" raised="" style="width: 100%;margin-top: 23px;background:#06780b;
-                        color: white;">
-                        Guardar
-                    </paper-button>
-    
-                    <paper-button id="btnEditCountry" on-click="btnEditCountry" raised="" style="width: 100%;margin-top: 23px;background:#D4E157;
-                        color: white;">Editar
-                    </paper-button>
-                </div>
-                
-            </form>
+                    <input type="hidden" id="country_code">
 
-        
+                    <div class="card-actions">
+
+                    </div>
+
+                </form>
+            </div>
+
+            <hr>
+            <paper-button id="btnCreateCountry" on-click="btnCreateCountry" raised="" style="width: 45%;margin-top: 10px;margin-bottom: 10px;background:#06780b;
+                            color: white;">
+                Guardar
+            </paper-button>
+
+            <paper-button id="btnCleanCountry" on-click="btnCleanCountry" raised="" style="width: 45%;margin-top: 5px;margin-bottom: 10px;background:#06780b;
+                            color: white;">
+                Limpiar
+            </paper-button>
+
+            <paper-button id="btnEditCountry" on-click="btnEditCountry" raised="" style="width: 100%;margin-top: 10px;background:#D4E157;
+                            color: white;">Editar
+            </paper-button>
+        </paper-material>
 
 
-    <iron-ajax id="ajaxCreateCountry" url="" handle-as="json" on-response="CreateCountryResponse">
-    </iron-ajax>
+        <iron-ajax id="ajaxCreateCountry" url="" handle-as="json" on-response="CreateCountryResponse">
+        </iron-ajax>
 
-    <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" class="colored" modal="true">
-        <h2>Mensaje</h2>
-        <div id="dialog-body">[[body]]</div>
-        <div class="buttons">
+        <paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="dialog" class="colored" modal="true">
+            <h2>Mensaje</h2>
+            <div id="dialog-body">[[body]]</div>
+            <div class="buttons">
             <paper-button dialog-dismiss="">Cerrar</paper-button>
         </div>
 
-    </paper-dialog>
-    </div></paper-material></template>
+        </paper-dialog>
+    </template>
 
     <script>
 
@@ -32541,7 +32820,7 @@ See the [demo](demo/index.html) for use case examples.
             }
 
         }
-    
+
         Polymer({
             is: "country-app",
             properties: {
@@ -32560,10 +32839,17 @@ See the [demo](demo/index.html) for use case examples.
                     this.$.ajaxCreateCountry.method = "POST";
                     this.$.ajaxCreateCountry.url = document.URL;
 
+                    var method = "";
+                    if(this.$.is_active.checked){
+                        method = "edit";
+                    }else{
+                        method = "create";
+                    }
+
                     this.$.ajaxCreateCountry.body = {
                         
                         'country_name': this.$.countryDescription.value,
-                        'method': 'create'
+                        'method': method
                     };
 
                     this.$.ajaxCreateCountry.headers = {
@@ -32585,12 +32871,6 @@ See the [demo](demo/index.html) for use case examples.
                 this.body = request.detail.response.message;
                 this.$.dialog.open();
             },
-
-            getCountry: function(id) {
-
-                alert(id);
-            },
-
 
         });
 
