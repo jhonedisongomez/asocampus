@@ -1,6 +1,6 @@
 {% extends "base-superadmin.html" %}
 {%  block title %}
-
+    Pais
 {% endblock %}
 {% block content %}
 
@@ -8,11 +8,13 @@
     <template>
 
     <div style="">
-      <paper-material style="height: 100%;"
+      <paper-material style="height: 100%;
+                        position: absolute;
+                        width: 100%;
+                        display: contents;"
       elevation="5">
 
-          <table style="background: white;
-          width: 100%">
+          <table style="width: 100%;" rules="rows">
             <colgroup>
               <col/>
               <col/>
@@ -35,13 +37,25 @@
             <tbody>
 
                 {% for country in countries %}
-                    <tr>
+                    <tr style="border-bottom: 1px solid #999;">
                     <td>
                         {{country.1}}
                     </td>
 
                     <td>
-                        {{country.2}}
+
+                        {% if country.2 == True %}
+
+                            <paper-checkbox checked
+                                    disabled>
+
+                            </paper-checkbox>
+
+                        {% else %}
+                            <paper-checkbox disabled>
+
+                            </paper-checkbox>
+                        {% endif %}
                     </td>
 
                     <td>
@@ -147,7 +161,8 @@
                 exit-animation="fade-out-animation"
                 id="dialog"
                 class="colored"
-                modal = "true">
+                modal = "true"
+                on-iron-overlay-closed = "onCloseDialog">
             <h2>Mensaje</h2>
             <div id="dialog-body">[[body]]</div>
             <div class="buttons">
@@ -216,6 +231,7 @@
 
                             'country_name': this.$.countryDescription.value,
                             'country_code':document.getElementById("country_code").value,
+                            'is_active':this.$.is_active.checked,
                             'method': method
                         };
 
@@ -266,6 +282,10 @@
                     document.getElementById("btnEditCountry").hidden = true;
                     document.getElementById("btnCreateCountry").hidden = false;
 
+                },
+
+                onCloseDialog: function(){
+                    location.reload();
                 }
             });
         </script>

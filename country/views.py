@@ -123,12 +123,14 @@ class CountryView(LoginRequiredMixin, TemplateView):
                     logger.info("state: " + state + "response: "+ str(response_proc) +", usuario:" + str(request.user))
 
                 if(body['method'] == 'edit'):
+
                     country_code = body['country_code']
+                    active = body['is_active']
                     state = 'execute procedure edit_country'
                     logger.info("state: " + state + ", usuario:" + str(request.user) + ",parameters:" + country_code + "," + country_name + "," + str(user))
 
                     cursor.callproc('edit_country',[country_code
-                        ,country_name,request.user.id])
+                        ,country_name,active,request.user.id])
                     response_proc = cursor.fetchone()
 
                     state = 'finish execute procedure edit'
