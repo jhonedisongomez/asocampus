@@ -37,6 +37,8 @@
     "paper-listbox": "PolymerElements/paper-listbox#^2.0.0",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^2.0.0",
     "vaadin-grid": "vaadin-grid#1.0.0-rc1",
-    "paper-fab": "PolymerElements/paper-fab#^2.0.0"
+    "paper-fab": "PolymerElements/paper-fab#^2.0.0",
+    "datatables.net": "^1.10.16",
+    "datatables.net-dt": "^3.2.2"
   }
 }

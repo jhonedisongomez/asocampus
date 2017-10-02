@@ -1,126 +1,130 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html lang="es">
-    <head>
+<head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% load static from staticfiles %}
-        <link  rel="import" href="{% static 'css/general.css' %}"/>
-        <script type="text/javascript" src="{% static 'bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
-        <link  rel="import" href="{% static 'elements.vulcanized.html' %}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static from staticfiles %}
+    <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
+    <link  rel="import" href="{% static 'css/general.css' %}"/>
+    <script type="text/javascript" src="{% static 'bower_components/webcomponentsjs/webcomponents-lite.js' %}"></script>
+    <link  rel="import" href="{% static 'elements.vulcanized.html' %}"/>
 
-        <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
-        <script src="{% static 'js/general.js' %}"></script>
+    <script src="{% static 'js/general.js' %}"></script>
 
-        {% block imports %} {% endblock %}
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 
-        <title>{% block title %}{% endblock %}</title>
-    </head>
-    <body  fullbleed layout vertical style="background: #eee">
-        <input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
-        <dom-module id="super-admin">
+    {% block imports %} {% endblock %}
 
-            <template>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body  fullbleed layout vertical style="background: #eee">
+<input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
-                <style>
+<dom-module id="super-admin">
 
-                </style>
+    <template>
 
-                <paper-drawer-panel class="flex" id="menu">
-                    <div drawer  layout flex  style="overflow:scroll;overflow-x:hidden;" >
-                        <paper-toolbar class="toolbar-menu">
-                            <span class="title">Menu</span>
-                            <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
-                        </paper-toolbar>
-                        <div class="logo-asoprovida" style="background: lightgray;">
-                            <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
-                                style="width: 200px;">
-                        </div>
-                        <paper-menu >
-                            <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
-                            {% for option in menu %}
-                                <paper-item icon="home" label="Administrador" on-click="logout" ><a is="pushstate-anchor" href="/{{option.1}}">{{option.0}}</a></paper-item>
-                            {% endfor %}
-                            <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
-                            
-                        
-                        </paper-menu>
+        <style>
 
-                    </div>
+        </style>
 
-                    <div main>
+        <paper-drawer-panel class="flex" id="menu">
+            <div drawer  layout flex  style="overflow:scroll;overflow-x:hidden;" >
+                <paper-toolbar class="toolbar-menu">
+                    <span class="title">Menu</span>
+                    <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
+                </paper-toolbar>
+                <div class="logo-asoprovida" style="background: lightgray;">
+                    <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
+                         style="width: 200px;">
+                </div>
+                <paper-menu >
+                    <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
+                    {% for option in menu %}
+                        <paper-item icon="home" label="Administrador" on-click="logout" ><a is="pushstate-anchor" href="/{{option.1}}">{{option.0}}</a></paper-item>
+                    {% endfor %}
+                    <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
 
-                        <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
-                            <paper-toolbar class="toolbar-main" elevation="5">
-                                <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
 
-                            </paper-toolbar>
-                                                         
-                            {% block content %}	{% endblock %}
-                        </paper-scroll-header-panel>
-                    </div>
+                </paper-menu>
 
-                </paper-drawer-panel>
+            </div>
+
+            <div main>
+
+                <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
+                    <paper-toolbar class="toolbar-main" elevation="5">
+                        <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+
+                    </paper-toolbar>
+
+                    {% block content %}	{% endblock %}
+                </paper-scroll-header-panel>
+            </div>
+
+        </paper-drawer-panel>
 
         <iron-ajax
-            id="ajaxLogout"
-            url=""
-            handle-as="json"
-            on-response="hresponseLogout"
-            debounce-duration="300">
+                id="ajaxLogout"
+                url=""
+                handle-as="json"
+                on-response="hresponseLogout"
+                debounce-duration="300">
         </iron-ajax>
 
-            </template>
-        </dom-module>
-        <script>
-            HTMLImports.whenReady(function() {
-                Polymer({
-                    is: 'super-admin',
+    </template>
+</dom-module>
+<script>
+    HTMLImports.whenReady(function() {
+        Polymer({
+            is: 'super-admin',
 
-                    ready:function(){
-                        this.$.item_inicio.focused = true;
-                        this.$.menu.forceNarrow = true;
+            ready:function(){
+                this.$.item_inicio.focused = true;
+                this.$.menu.forceNarrow = true;
 
-                    },
+            },
 
-                    onLayoutChange: function(wide) {
-                        var drawer = this.$.drawer;
-                        if (wide && drawer.opened) {
-                            drawer.opened = false;
-                        }
-                    },
+            onLayoutChange: function(wide) {
+                var drawer = this.$.drawer;
+                if (wide && drawer.opened) {
+                    drawer.opened = false;
+                }
+            },
 
-                    home:function(event){
-                        window.location.replace("/");
-                    },
-                    listActivity:function(event){
-                        window.location.replace("/actividades/lista-de-actividades");
-                    },
+            home:function(event){
+                window.location.replace("/");
+            },
+            listActivity:function(event){
+                window.location.replace("/actividades/lista-de-actividades");
+            },
 
-                    logout:function(event){
+            logout:function(event){
 
-                        this.$.ajax.url = '/usuario/cerrar-sesion/'
-                        this.$.ajax.generateRequest();
-                    },
-                    hresponseLogout: function(request) {
+                this.$.ajax.url = '/usuario/cerrar-sesion/'
+                this.$.ajax.generateRequest();
+            },
+            hresponseLogout: function(request) {
 
-                        if(!request.detail.response.is_error){
-                        window.location.replace("/");
+                if(!request.detail.response.is_error){
+                    window.location.replace("/");
 
-                        }else{
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
+                }else{
+                    document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                    this.$.dialog.open();
 
-                        }
-                    },
-                    closedMenu:function(event){
-                        this.$.menu.closeDrawer();
-                    },
-                });
-            });
+                }
+            },
+            closedMenu:function(event){
+                this.$.menu.closeDrawer();
+            },
+        });
+    });
 
 </script>
 <super-admin></super-admin>
-    </body>
+</body>
 </html>

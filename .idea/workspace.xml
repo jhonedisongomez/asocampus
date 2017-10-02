@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/country/section-type.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery/.bower.json" afterPath="$PROJECT_DIR$/static/js/jquery/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base-superadmin.html" afterPath="$PROJECT_DIR$/templates/base-superadmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bower.json" afterPath="$PROJECT_DIR$/static/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/country/country.html" afterPath="$PROJECT_DIR$/templates/country/country.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/elements.html" afterPath="$PROJECT_DIR$/static/elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/country/models.py" afterPath="$PROJECT_DIR$/country/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery/src/var/rcssNum.js" afterPath="$PROJECT_DIR$/static/js/jquery/src/var/rcssNum.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/country/urls.py" afterPath="$PROJECT_DIR$/country/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/country/views.py" afterPath="$PROJECT_DIR$/country/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,20 +44,6 @@
         <option name="myItemId" value="PostgreSQL - asocampus@192.168.1.59" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="asocampus.public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - asocampus@192.168.1.59" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -63,14 +55,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/country/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.062305298">
+              <caret line="264" column="53" selection-start-line="264" selection-start-column="53" selection-end-line="264" selection-end-column="53" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#24#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/country/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,43 +80,49 @@
       <file leaf-file-name="country.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/country/country.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.6551723">
-              <caret line="287" column="38" selection-start-line="287" selection-start-column="38" selection-end-line="287" selection-end-column="38" />
+            <state vertical-scroll-proportion="-4.62069">
+              <caret line="239" column="27" selection-start-line="239" selection-start-column="27" selection-end-line="239" selection-end-column="27" />
               <folding>
-                <element signature="e#193#338#0#HTML" expanded="true" />
-                <element signature="e#378#398#0#HTML" expanded="true" />
-                <element signature="e#924#962#0#HTML" expanded="true" />
+                <element signature="e#1217#1237#0#HTML" expanded="true" />
+                <element signature="e#2972#2999#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/country/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21052632">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="section-type.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/country/section-type.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.6896552">
-              <caret line="245" column="40" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="elements.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/elements.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3103447">
-              <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-              <folding />
+              <caret line="304" column="52" selection-start-line="304" selection-start-column="52" selection-end-line="304" selection-end-column="52" />
+              <folding>
+                <element signature="e#988#1133#0#HTML" expanded="true" />
+                <element signature="e#1210#1230#0#HTML" expanded="true" />
+                <element signature="e#1896#1934#0#HTML" expanded="true" />
+                <element signature="e#3002#3029#0#HTML" expanded="true" />
+                <element signature="e#3475#3571#0#HTML" expanded="true" />
+                <element signature="e#3775#3841#0#HTML" expanded="true" />
+                <element signature="e#3922#3943#0#HTML" expanded="true" />
+                <element signature="e#4037#4063#0#HTML" expanded="true" />
+                <element signature="e#4334#4404#0#HTML" expanded="true" />
+                <element signature="e#4482#4608#0#HTML" expanded="true" />
+                <element signature="e#5284#5372#0#HTML" expanded="true" />
+                <element signature="e#5638#5747#0#HTML" expanded="true" />
+                <element signature="e#5875#5984#0#HTML" expanded="true" />
+                <element signature="e#6086#6195#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,18 +130,8 @@
       <file leaf-file-name="base-superadmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="general.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/general.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.172414">
+              <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -143,108 +141,142 @@
         <entry file="file://$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="166" column="30" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="30" />
+              <caret line="546" column="55" selection-start-line="447" selection-start-column="0" selection-end-line="567" selection-end-column="16" />
               <folding>
-                <marker date="1506399513525" expanded="true" signature="265:1671" placeholder="declare v_is..." />
-                <marker date="1506399513525" expanded="true" signature="361:380" placeholder="o_is_admin :..." />
-                <marker date="1506399513525" expanded="true" signature="384:403" placeholder="o_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="385:403" placeholder="p_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="408:605" placeholder="select 'X' i..profiles_profile..." />
-                <marker date="1506399513525" expanded="true" signature="610:1524" placeholder="if not found..." />
-                <marker date="1506399513525" expanded="true" signature="630:689" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="631:689" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="691:700" placeholder="o_is_admin =..." />
-                <marker date="1506399513525" expanded="true" signature="704:722" placeholder="o_is_admin :..." />
-                <marker date="1506399513525" expanded="true" signature="727:836" placeholder="select 'X' i..country_country..." />
-                <marker date="1506399513525" expanded="true" signature="843:1513" placeholder="if not found..." />
-                <marker date="1506399513525" expanded="true" signature="864:923" placeholder="v_id_country..." />
-                <marker date="1506399513525" expanded="true" signature="930:1077" placeholder="INSERT INTO ..." />
-                <marker date="1506399513525" expanded="true" signature="1086:1144" placeholder="v_values := ..." />
-                <marker date="1506399513525" expanded="true" signature="1153:1373" placeholder="INSERT INTO ..." />
-                <marker date="1506399513525" expanded="true" signature="1382:1445" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="1383:1445" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="1457:1503" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="1458:1503" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="1559:1642" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="1560:1642" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="1646:1664" placeholder="o_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="1647:1664" placeholder="p_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="1936:2414" placeholder="DECLARE v_ad..." />
-                <marker date="1506399513525" expanded="true" signature="1972:2234" placeholder="SELECT '*' I..auth_user..." />
-                <marker date="1506399513525" expanded="true" signature="2239:2407" placeholder="IF found THE..." />
-                <marker date="1506399513525" expanded="true" signature="2258:2389" placeholder="RETURN QUERY..." />
-                <marker date="1506399513525" expanded="true" signature="2275:2389" placeholder="SELECT coun...country_country..." />
-                <marker date="1506399513525" expanded="true" signature="2753:3641" placeholder="DECLARE v_ad..." />
-                <marker date="1506399513525" expanded="true" signature="2788:2807" placeholder="p_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="2812:2831" placeholder="p_is_admin :..." />
-                <marker date="1506399513525" expanded="true" signature="2837:3099" placeholder="SELECT '*' I..auth_user..." />
-                <marker date="1506399513525" expanded="true" signature="3104:3491" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="3127:3197" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="3212:3230" placeholder="p_is_admin :..." />
-                <marker date="1506399513525" expanded="true" signature="3237:3359" placeholder="SELECT cou.c..country_country..." />
-                <marker date="1506399513525" expanded="true" signature="3237:3373" placeholder="SELECT cou.c..country_country..." />
-                <marker date="1506399513525" expanded="true" signature="3380:3480" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="3405:3468" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="3529:3612" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="3618:3636" placeholder="p_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="3978:4000" placeholder="DECLARE v_id..." />
-                <marker date="1506399513525" expanded="true" signature="3978:4008" placeholder="DECLARE v_id..." />
-                <marker date="1506399513525" expanded="true" signature="3978:7385" placeholder="DECLARE v_id..." />
-                <marker date="1506399513525" expanded="true" signature="3978:7387" placeholder="DECLARE v_id..." />
-                <marker date="1506399513525" expanded="true" signature="4185:7385" placeholder="BEGIN END..." />
-                <marker date="1506399513525" expanded="true" signature="4198:4217" placeholder="o_is_error :..." />
-                <marker date="1506399513525" expanded="true" signature="4226:4245" placeholder="o_is_admin :..." />
-                <marker date="1506399513525" expanded="true" signature="4255:4541" placeholder="SELECT '*' I..auth_user..." />
-                <marker date="1506399513525" expanded="true" signature="4550:7181" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="4550:7187" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="4550:7385" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="4577:4647" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="4578:4647" placeholder="p_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="4661:7174" placeholder="select '*' i..." />
-                <marker date="1506399513525" expanded="true" signature="4671:4689" placeholder="o_is_admin :..." />
-                <marker date="1506399513525" expanded="true" signature="4702:4847" placeholder="SELECT id, c..country_country..." />
-                <marker date="1506399513525" expanded="true" signature="4860:7171" placeholder="IF v_country..." />
-                <marker date="1506399513525" expanded="true" signature="4946:5048" placeholder="select '*' i..country_country..." />
-                <marker date="1506399513525" expanded="true" signature="5063:5717" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="5096:5244" placeholder="UPDATE count..." />
-                <marker date="1506399513525" expanded="true" signature="5261:5582" placeholder="INSERT INTO ..." />
-                <marker date="1506399513525" expanded="true" signature="5617:5696" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="5749:7151" placeholder="IF v_country..." />
-                <marker date="1506399513525" expanded="true" signature="5803:5905" placeholder="select '*' i..country_country..." />
-                <marker date="1506399513525" expanded="true" signature="5920:6558" placeholder="IF NOT found..." />
-                <marker date="1506399513525" expanded="true" signature="5953:6063" placeholder="UPDATE count..." />
-                <marker date="1506399513525" expanded="true" signature="6080:6345" placeholder="INSERT INTO ..." />
-                <marker date="1506399513525" expanded="true" signature="6362:6422" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="6457:6536" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="6594:7129" placeholder="IF v_is_acti..." />
-                <marker date="1506399513525" expanded="true" signature="6646:6751" placeholder="UPDATE count..." />
-                <marker date="1506399513525" expanded="true" signature="6770:7027" placeholder="INSERT INTO ..." />
-                <marker date="1506399513525" expanded="true" signature="7046:7106" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="7175:7181" placeholder="update END I..." />
-                <marker date="1506399513525" expanded="true" signature="7233:7316" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="7233:7347" placeholder="o_message :=..." />
-                <marker date="1506399513525" expanded="true" signature="7357:7375" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="265:1730" placeholder="declare v_is..." />
+                <marker date="1506902102679" expanded="true" signature="363:382" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="387:406" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="411:630" placeholder="select 'X' i..profiles_profile..." />
+                <marker date="1506902102679" expanded="true" signature="635:1579" placeholder="if not found..." />
+                <marker date="1506902102679" expanded="true" signature="657:716" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="731:749" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="756:867" placeholder="select 'X' i..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="874:1568" placeholder="if not found..." />
+                <marker date="1506902102679" expanded="true" signature="898:957" placeholder="v_id_country..." />
+                <marker date="1506902102679" expanded="true" signature="966:1119" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="1128:1186" placeholder="v_values := ..." />
+                <marker date="1506902102679" expanded="true" signature="1195:1421" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="1430:1493" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="1510:1556" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="1616:1699" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="1705:1723" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="1989:2497" placeholder="DECLARE v_ad..." />
+                <marker date="1506902102679" expanded="true" signature="2025:2317" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506902102679" expanded="true" signature="2322:2490" placeholder="IF found THE..." />
+                <marker date="1506902102679" expanded="true" signature="2341:2472" placeholder="RETURN QUERY..." />
+                <marker date="1506902102679" expanded="true" signature="2358:2472" placeholder="SELECT coun...country_country..." />
+                <marker date="1506902102679" expanded="true" signature="2836:3756" placeholder="DECLARE v_ad..." />
+                <marker date="1506902102679" expanded="true" signature="2873:2892" placeholder="p_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="2897:2916" placeholder="p_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="2922:3214" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506902102679" expanded="true" signature="3219:3606" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="3242:3312" placeholder="p_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="3327:3345" placeholder="p_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="3352:3488" placeholder="SELECT cou.c..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="3495:3595" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="3520:3583" placeholder="p_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="3644:3727" placeholder="p_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="3733:3751" placeholder="p_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="4091:7338" placeholder="DECLARE v_ad..." />
+                <marker date="1506902102679" expanded="true" signature="4297:4316" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="4323:4342" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="4350:4654" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506902102679" expanded="true" signature="4661:7148" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="4686:4756" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="4774:4792" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="4801:4944" placeholder="SELECT id, c..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="4953:7134" placeholder="IF v_country..." />
+                <marker date="1506902102679" expanded="true" signature="5035:5135" placeholder="select '*' i..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="5146:5760" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="5175:5311" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="5324:5637" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="5664:5743" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="5784:7118" placeholder="IF v_country..." />
+                <marker date="1506902102679" expanded="true" signature="5836:5938" placeholder="select '*' i..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="5951:6569" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="5982:6088" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="6103:6364" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="6379:6439" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="6470:6549" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="6597:7100" placeholder="IF v_is_acti..." />
+                <marker date="1506902102679" expanded="true" signature="6645:6742" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="6757:7006" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="7021:7081" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="7190:7304" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="7312:7330" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="7648:8241" placeholder="DECLARE v_ad..." />
+                <marker date="1506902102679" expanded="true" signature="7690:7994" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506902102679" expanded="true" signature="8001:8232" placeholder="IF found THE..." />
+                <marker date="1506902102679" expanded="true" signature="8022:8193" placeholder="RETURN QUERY..." />
+                <marker date="1506902102679" expanded="true" signature="8022:8210" placeholder="RETURN QUERY..." />
+                <marker date="1506902102679" expanded="true" signature="8041:8193" placeholder="SELECT coun...country_country..." />
+                <marker date="1506902102679" expanded="true" signature="8550:10204" placeholder="declare v_is..." />
+                <marker date="1506902102679" expanded="true" signature="8676:8695" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="8700:8719" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="8724:8943" placeholder="select 'X' i..profiles_profile..." />
+                <marker date="1506902102679" expanded="true" signature="8948:10013" placeholder="if not found..." />
+                <marker date="1506902102679" expanded="true" signature="8970:9029" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="9044:9062" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="9069:9221" placeholder="select 'X' i..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="9228:10002" placeholder="if not found..." />
+                <marker date="1506902102679" expanded="true" signature="9253:9321" placeholder="v_id_section..." />
+                <marker date="1506902102679" expanded="true" signature="9330:9510" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="9519:9587" placeholder="v_values := ..." />
+                <marker date="1506902102679" expanded="true" signature="9596:9831" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="9840:9914" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="9932:9989" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="10050:10144" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="10050:10173" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="10179:10197" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="10578:11555" placeholder="DECLARE v_ad..." />
+                <marker date="1506902102679" expanded="true" signature="10615:10634" placeholder="p_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="10639:10658" placeholder="p_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="10664:10956" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506902102679" expanded="true" signature="10961:11404" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="10984:11054" placeholder="p_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="11069:11087" placeholder="p_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="11094:11267" placeholder="SELECT cou.c..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="11094:11286" placeholder="SELECT secti..country_sectiontype..." />
+                <marker date="1506902102679" expanded="true" signature="11293:11393" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="11318:11381" placeholder="p_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="11442:11525" placeholder="p_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="11531:11549" placeholder="p_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="11925:15379" placeholder="DECLARE v_ad..." />
+                <marker date="1506902102679" expanded="true" signature="12158:12177" placeholder="o_is_error :..." />
+                <marker date="1506902102679" expanded="true" signature="12184:12203" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="12211:12515" placeholder="SELECT '*' I..auth_user..." />
+                <marker date="1506902102679" expanded="true" signature="12522:15189" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="12547:12617" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="12635:12653" placeholder="o_is_admin :..." />
+                <marker date="1506902102679" expanded="true" signature="12662:12814" placeholder="SELECT id, s..country_sectiontype..." />
+                <marker date="1506902102679" expanded="true" signature="12662:12815" placeholder="SELECT id, c..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="12662:12834" placeholder="SELECT id, s..country_sectiontype..." />
+                <marker date="1506902102679" expanded="true" signature="12843:15175" placeholder="IF v_country..." />
+                <marker date="1506902102679" expanded="true" signature="12935:13044" placeholder="select '*' i..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="12935:13063" placeholder="select '*' i..country_sectiontype..." />
+                <marker date="1506902102679" expanded="true" signature="13074:13731" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="13103:13241" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="13103:13258" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="13271:13608" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="13635:13714" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="13755:15159" placeholder="IF v_country..." />
+                <marker date="1506902102679" expanded="true" signature="13817:13918" placeholder="select '*' i..country_country..." />
+                <marker date="1506902102679" expanded="true" signature="13931:14592" placeholder="IF NOT found..." />
+                <marker date="1506902102679" expanded="true" signature="13962:14070" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="13962:14087" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="14102:14387" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="14386:14387" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="14402:14462" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="14493:14572" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="14620:15141" placeholder="IF v_is_acti..." />
+                <marker date="1506902102679" expanded="true" signature="14668:14756" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="14668:14757" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="14668:14774" placeholder="UPDATE count..." />
+                <marker date="1506902102679" expanded="true" signature="14789:15047" placeholder="INSERT INTO ..." />
+                <marker date="1506902102679" expanded="true" signature="15062:15122" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="15231:15345" placeholder="o_message :=..." />
+                <marker date="1506902102679" expanded="true" signature="15353:15371" placeholder="o_is_error :..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/23eec967-2b8c-411e-8e09-863cbf218b00/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6666667">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="asocampus.public.create_country" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_country">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -267,10 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/bower_components/template-activity/activity_list.html" />
-        <option value="$PROJECT_DIR$/templates/activities/activity_list.html" />
-        <option value="$PROJECT_DIR$/static/template-base/x-app.html" />
-        <option value="$PROJECT_DIR$/static/template-users/sign-up.html" />
         <option value="$PROJECT_DIR$/static/bower_components/template-users/sign-in.html" />
         <option value="$PROJECT_DIR$/static/bower_components/template-users/sign-up.html" />
         <option value="$PROJECT_DIR$/static/bower_components/template-base/x-app.html" />
@@ -305,19 +333,23 @@
         <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.get_menu_options" />
         <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.list_country" />
         <option value="$PROJECT_DIR$/activities/views.py" />
-        <option value="$PROJECT_DIR$/country/urls.py" />
         <option value="$PROJECT_DIR$/static/bower.json" />
         <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_country" />
-        <option value="$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql" />
         <option value="$PROJECT_DIR$/logs/logs.log" />
         <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.edit_country" />
-        <option value="$PROJECT_DIR$/country/views.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/23eec967-2b8c-411e-8e09-863cbf218b00/console.sql" />
         <option value="$PROJECT_DIR$/static/template-country/country.html" />
         <option value="$PROJECT_DIR$/static/css/general.css" />
         <option value="$PROJECT_DIR$/static/elements.html" />
-        <option value="$PROJECT_DIR$/templates/country/country.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/country/urls.py" />
+        <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_menu" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/23eec967-2b8c-411e-8e09-863cbf218b00/console.sql" />
+        <option value="$PROJECT_DIR$/templates/base-superadmin.html" />
+        <option value="$PROJECT_DIR$/templates/country/country.html" />
+        <option value="$PROJECT_DIR$/country/models.py" />
+        <option value="$PROJECT_DIR$/country/views.py" />
+        <option value="$PROJECT_DIR$/templates/country/section-type.html" />
+        <option value="$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql" />
       </list>
     </option>
   </component>
@@ -329,10 +361,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1364" />
-    <option name="height" value="726" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -385,7 +417,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,11 +431,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
+              <option name="myItemId" value="country" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,7 +447,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
     <property name="settings.editor.splitter.proportion" value="0.21645446" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/logs/logs.log" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -428,10 +456,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Projects\asocampus\static\js" />
       <recent name="G:\Projects\asocampus\templates" />
       <recent name="G:\Projects\asocampus\static\bower_components" />
       <recent name="G:\Projects\asocampus\static" />
-      <recent name="G:\Projects\asocampus\static\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Projects\asocampus\static\js" />
@@ -754,7 +782,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -762,42 +790,42 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47100174" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19248466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19478528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21294719" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4020443" sideWeight="0.4861963" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21028744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20045386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41300526" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40545145" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39718804" sideWeight="0.4861963" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5025554" sideWeight="0.51059" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49092284" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49092284" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24190801" sideWeight="0.47881997" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5025554" sideWeight="0.48940998" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18154311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21441124" sideWeight="0.47881997" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39718804" sideWeight="0.4861963" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21088958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19515885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19478528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41396934" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41300526" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -821,60 +849,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/profiles/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15632184">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activities/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76551723">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1954023">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/elements.vulcanized.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21271394">
-          <caret line="30265" column="14" selection-start-line="30265" selection-start-column="14" selection-end-line="30265" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="85" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profiles/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -980,67 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/23eec967-2b8c-411e-8e09-863cbf218b00.schema:asocampus.public">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>23eec967-2b8c-411e-8e09-863cbf218b00.schema:asocampus.public</OriginalElement>
-          <nodes>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_content_type</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_room</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_section</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_profilerolactivity</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_roles</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_auditorcountry</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_auditorpayment</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auditor_menu</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_paymentperson</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_topic</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_migrations</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_signupactivities</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idtype</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_activityroom</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_auditoragenda</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activities</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_auditorprofile</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_auditortopic</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_rolesprofile</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_auditorroom</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_payment</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activitiestype</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_profile</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_agenda</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_session</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_groups</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_permission</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_sectiontype</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_auditorrol</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_signupschedule</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu_options</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idcard</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.p_sign_up_acti_act</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_admin_log</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_user_permissions</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_auditoractivity</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_topicagenda</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group_permissions</node>
-            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_country</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.8342015855039637" x="3740.0" y="323.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../asocampus-scripts/activities/activities_functions.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.93609023">
@@ -1097,25 +1015,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/country/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.country_country">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1158,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,101 +1076,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="166" column="30" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="30" />
-          <folding>
-            <marker date="1506399513525" expanded="true" signature="265:1671" placeholder="declare v_is..." />
-            <marker date="1506399513525" expanded="true" signature="361:380" placeholder="o_is_admin :..." />
-            <marker date="1506399513525" expanded="true" signature="384:403" placeholder="o_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="385:403" placeholder="p_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="408:605" placeholder="select 'X' i..profiles_profile..." />
-            <marker date="1506399513525" expanded="true" signature="610:1524" placeholder="if not found..." />
-            <marker date="1506399513525" expanded="true" signature="630:689" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="631:689" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="691:700" placeholder="o_is_admin =..." />
-            <marker date="1506399513525" expanded="true" signature="704:722" placeholder="o_is_admin :..." />
-            <marker date="1506399513525" expanded="true" signature="727:836" placeholder="select 'X' i..country_country..." />
-            <marker date="1506399513525" expanded="true" signature="843:1513" placeholder="if not found..." />
-            <marker date="1506399513525" expanded="true" signature="864:923" placeholder="v_id_country..." />
-            <marker date="1506399513525" expanded="true" signature="930:1077" placeholder="INSERT INTO ..." />
-            <marker date="1506399513525" expanded="true" signature="1086:1144" placeholder="v_values := ..." />
-            <marker date="1506399513525" expanded="true" signature="1153:1373" placeholder="INSERT INTO ..." />
-            <marker date="1506399513525" expanded="true" signature="1382:1445" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="1383:1445" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="1457:1503" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="1458:1503" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="1559:1642" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="1560:1642" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="1646:1664" placeholder="o_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="1647:1664" placeholder="p_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="1936:2414" placeholder="DECLARE v_ad..." />
-            <marker date="1506399513525" expanded="true" signature="1972:2234" placeholder="SELECT '*' I..auth_user..." />
-            <marker date="1506399513525" expanded="true" signature="2239:2407" placeholder="IF found THE..." />
-            <marker date="1506399513525" expanded="true" signature="2258:2389" placeholder="RETURN QUERY..." />
-            <marker date="1506399513525" expanded="true" signature="2275:2389" placeholder="SELECT coun...country_country..." />
-            <marker date="1506399513525" expanded="true" signature="2753:3641" placeholder="DECLARE v_ad..." />
-            <marker date="1506399513525" expanded="true" signature="2788:2807" placeholder="p_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="2812:2831" placeholder="p_is_admin :..." />
-            <marker date="1506399513525" expanded="true" signature="2837:3099" placeholder="SELECT '*' I..auth_user..." />
-            <marker date="1506399513525" expanded="true" signature="3104:3491" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="3127:3197" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="3212:3230" placeholder="p_is_admin :..." />
-            <marker date="1506399513525" expanded="true" signature="3237:3359" placeholder="SELECT cou.c..country_country..." />
-            <marker date="1506399513525" expanded="true" signature="3237:3373" placeholder="SELECT cou.c..country_country..." />
-            <marker date="1506399513525" expanded="true" signature="3380:3480" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="3405:3468" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="3529:3612" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="3618:3636" placeholder="p_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="3978:4000" placeholder="DECLARE v_id..." />
-            <marker date="1506399513525" expanded="true" signature="3978:4008" placeholder="DECLARE v_id..." />
-            <marker date="1506399513525" expanded="true" signature="3978:7385" placeholder="DECLARE v_id..." />
-            <marker date="1506399513525" expanded="true" signature="3978:7387" placeholder="DECLARE v_id..." />
-            <marker date="1506399513525" expanded="true" signature="4185:7385" placeholder="BEGIN END..." />
-            <marker date="1506399513525" expanded="true" signature="4198:4217" placeholder="o_is_error :..." />
-            <marker date="1506399513525" expanded="true" signature="4226:4245" placeholder="o_is_admin :..." />
-            <marker date="1506399513525" expanded="true" signature="4255:4541" placeholder="SELECT '*' I..auth_user..." />
-            <marker date="1506399513525" expanded="true" signature="4550:7181" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="4550:7187" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="4550:7385" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="4577:4647" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="4578:4647" placeholder="p_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="4661:7174" placeholder="select '*' i..." />
-            <marker date="1506399513525" expanded="true" signature="4671:4689" placeholder="o_is_admin :..." />
-            <marker date="1506399513525" expanded="true" signature="4702:4847" placeholder="SELECT id, c..country_country..." />
-            <marker date="1506399513525" expanded="true" signature="4860:7171" placeholder="IF v_country..." />
-            <marker date="1506399513525" expanded="true" signature="4946:5048" placeholder="select '*' i..country_country..." />
-            <marker date="1506399513525" expanded="true" signature="5063:5717" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="5096:5244" placeholder="UPDATE count..." />
-            <marker date="1506399513525" expanded="true" signature="5261:5582" placeholder="INSERT INTO ..." />
-            <marker date="1506399513525" expanded="true" signature="5617:5696" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="5749:7151" placeholder="IF v_country..." />
-            <marker date="1506399513525" expanded="true" signature="5803:5905" placeholder="select '*' i..country_country..." />
-            <marker date="1506399513525" expanded="true" signature="5920:6558" placeholder="IF NOT found..." />
-            <marker date="1506399513525" expanded="true" signature="5953:6063" placeholder="UPDATE count..." />
-            <marker date="1506399513525" expanded="true" signature="6080:6345" placeholder="INSERT INTO ..." />
-            <marker date="1506399513525" expanded="true" signature="6362:6422" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="6457:6536" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="6594:7129" placeholder="IF v_is_acti..." />
-            <marker date="1506399513525" expanded="true" signature="6646:6751" placeholder="UPDATE count..." />
-            <marker date="1506399513525" expanded="true" signature="6770:7027" placeholder="INSERT INTO ..." />
-            <marker date="1506399513525" expanded="true" signature="7046:7106" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="7175:7181" placeholder="update END I..." />
-            <marker date="1506399513525" expanded="true" signature="7233:7316" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="7233:7347" placeholder="o_message :=..." />
-            <marker date="1506399513525" expanded="true" signature="7357:7375" placeholder="o_is_error :..." />
-          </folding>
+          <caret line="245" column="40" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/country/views.py">
+    <entry file="file://$PROJECT_DIR$/static/css/general.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9264705">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.menu_options">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_menu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/elements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.86206895">
+          <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bower_components/jquery/.bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery/src/css/var/swap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/template-country/country.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16037735">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="109" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,76 +1153,452 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-country/country.html">
+    <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8769231">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#paper-checkbox#0;n#form#0;n#div#0;n#paper-material#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-8.172414">
+          <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/logs.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="165.24138">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6615385">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6896552">
-          <caret line="245" column="40" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/general.css">
+    <entry file="file://$PROJECT_DIR$/country/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/elements.html">
+    <entry file="uml://DATABASE/23eec967-2b8c-411e-8e09-863cbf218b00">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>23eec967-2b8c-411e-8e09-863cbf218b00</OriginalElement>
+          <nodes>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_content_type</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_foreign_data_wrapper</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_timezone_names</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_ts_config_map</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_section</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_profilerolactivity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_ssl</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_roles</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_migrations</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_user_sequences</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_all_sequences</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activities</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_auditortopic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_user</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_auditorroom</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_policy</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_rules</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_user_functions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_database_conflicts</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_sys_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_auditorrol</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_archiver</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_sys_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_shdepend</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_authid</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.p_sign_up_acti_act</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_xact_all_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_attribute</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_auditoractivity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_largeobject_metadata</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group_permissions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_foreign_server</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_prepared_statements</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_replication</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_ts_config</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_db_role_setting</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_ts_dict</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stats</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_inherits</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_replication_origin</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_conversion</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_available_extensions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_group</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_user_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_database</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_prepared_xacts</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_rewrite</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_signupactivities</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idtype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_xact_user_functions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_depend</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_auditoragenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_user_mapping</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_description</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_auditorprofile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_seclabel</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_rolesprofile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_extension</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activitiestype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_activity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_sys_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_groups</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_user_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_timezone_abbrevs</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_views</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_all_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_user_permissions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_roles</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_bgwriter</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_country</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_collation</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_index</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_opfamily</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_room</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_largeobject</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_cast</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_proc</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auditor_menu</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_auditorpayment</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_attrdef</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_class</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_ts_template</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_replication_slots</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_all_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statistic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_operator</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_payment</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_profile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_agenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_session</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_xact_user_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_permission</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_signupschedule</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_available_extension_versions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_all_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_user_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_xact_sys_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idcard</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_settings</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_event_trigger</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_auth_members</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_pltemplate</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_shdescription</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_language</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_cursors</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_topicagenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_trigger</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_matviews</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_user_mappings</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_sys_sequences</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_database</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_shadow</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_auditorcountry</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_paymentperson</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_topic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_transform</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_enum</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_replication_origin_status</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_activityroom</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_foreign_table</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_amop</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_seclabels</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_constraint</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_namespace</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_locks</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_aggregate</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_sys_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_sectiontype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_file_settings</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_stat_user_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_type</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu_options</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_amproc</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_range</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_am</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_admin_log</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_statio_all_tables</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_indexes</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_shseclabel</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_ts_parser</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_policies</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_default_acl</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_tablespace</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.pg_catalog.pg_opclass</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.517960088691796" x="844.711044520548" y="2774.553082191781" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/23eec967-2b8c-411e-8e09-863cbf218b00.schema:asocampus.public">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>23eec967-2b8c-411e-8e09-863cbf218b00.schema:asocampus.public</OriginalElement>
+          <nodes>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_content_type</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_room</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_section</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_profilerolactivity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_roles</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_auditorcountry</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_auditorpayment</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auditor_menu</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_paymentperson</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_topic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_migrations</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_signupactivities</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idtype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_activityroom</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_auditoragenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activities</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_auditorprofile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.topics_auditortopic</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_rolesprofile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.rooms_auditorroom</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.payment_payment</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_activitiestype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_profile</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_agenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_session</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_groups</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_permission</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_sectiontype</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_signupschedule</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.roles_auditorrol</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu_options</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.profiles_idcard</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.p_sign_up_acti_act</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.django_admin_log</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_user_user_permissions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.activities_auditoractivity</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.menu</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.auth_group_permissions</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.agenda_topicagenda</node>
+            <node x="" y="">23eec967-2b8c-411e-8e09-863cbf218b00.table:asocampus.public.country_country</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.1" x="968.0" y="1586.0067416668405" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/country/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3103447">
-          <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/country/country.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6551723">
-          <caret line="287" column="38" selection-start-line="287" selection-start-column="38" selection-end-line="287" selection-end-column="38" />
+        <state vertical-scroll-proportion="-4.62069">
+          <caret line="239" column="27" selection-start-line="239" selection-start-column="27" selection-end-line="239" selection-end-column="27" />
           <folding>
-            <element signature="e#193#338#0#HTML" expanded="true" />
-            <element signature="e#378#398#0#HTML" expanded="true" />
-            <element signature="e#924#962#0#HTML" expanded="true" />
+            <element signature="e#1217#1237#0#HTML" expanded="true" />
+            <element signature="e#2972#2999#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/templates/country/section-type.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21052632">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="-0.6896552">
+          <caret line="304" column="52" selection-start-line="304" selection-start-column="52" selection-end-line="304" selection-end-column="52" />
+          <folding>
+            <element signature="e#988#1133#0#HTML" expanded="true" />
+            <element signature="e#1210#1230#0#HTML" expanded="true" />
+            <element signature="e#1896#1934#0#HTML" expanded="true" />
+            <element signature="e#3002#3029#0#HTML" expanded="true" />
+            <element signature="e#3475#3571#0#HTML" expanded="true" />
+            <element signature="e#3775#3841#0#HTML" expanded="true" />
+            <element signature="e#3922#3943#0#HTML" expanded="true" />
+            <element signature="e#4037#4063#0#HTML" expanded="true" />
+            <element signature="e#4334#4404#0#HTML" expanded="true" />
+            <element signature="e#4482#4608#0#HTML" expanded="true" />
+            <element signature="e#5284#5372#0#HTML" expanded="true" />
+            <element signature="e#5638#5747#0#HTML" expanded="true" />
+            <element signature="e#5875#5984#0#HTML" expanded="true" />
+            <element signature="e#6086#6195#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="546" column="55" selection-start-line="447" selection-start-column="0" selection-end-line="567" selection-end-column="16" />
+          <folding>
+            <marker date="1506902102679" expanded="true" signature="265:1730" placeholder="declare v_is..." />
+            <marker date="1506902102679" expanded="true" signature="363:382" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="387:406" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="411:630" placeholder="select 'X' i..profiles_profile..." />
+            <marker date="1506902102679" expanded="true" signature="635:1579" placeholder="if not found..." />
+            <marker date="1506902102679" expanded="true" signature="657:716" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="731:749" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="756:867" placeholder="select 'X' i..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="874:1568" placeholder="if not found..." />
+            <marker date="1506902102679" expanded="true" signature="898:957" placeholder="v_id_country..." />
+            <marker date="1506902102679" expanded="true" signature="966:1119" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="1128:1186" placeholder="v_values := ..." />
+            <marker date="1506902102679" expanded="true" signature="1195:1421" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="1430:1493" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="1510:1556" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="1616:1699" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="1705:1723" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="1989:2497" placeholder="DECLARE v_ad..." />
+            <marker date="1506902102679" expanded="true" signature="2025:2317" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506902102679" expanded="true" signature="2322:2490" placeholder="IF found THE..." />
+            <marker date="1506902102679" expanded="true" signature="2341:2472" placeholder="RETURN QUERY..." />
+            <marker date="1506902102679" expanded="true" signature="2358:2472" placeholder="SELECT coun...country_country..." />
+            <marker date="1506902102679" expanded="true" signature="2836:3756" placeholder="DECLARE v_ad..." />
+            <marker date="1506902102679" expanded="true" signature="2873:2892" placeholder="p_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="2897:2916" placeholder="p_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="2922:3214" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506902102679" expanded="true" signature="3219:3606" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="3242:3312" placeholder="p_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="3327:3345" placeholder="p_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="3352:3488" placeholder="SELECT cou.c..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="3495:3595" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="3520:3583" placeholder="p_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="3644:3727" placeholder="p_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="3733:3751" placeholder="p_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="4091:7338" placeholder="DECLARE v_ad..." />
+            <marker date="1506902102679" expanded="true" signature="4297:4316" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="4323:4342" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="4350:4654" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506902102679" expanded="true" signature="4661:7148" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="4686:4756" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="4774:4792" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="4801:4944" placeholder="SELECT id, c..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="4953:7134" placeholder="IF v_country..." />
+            <marker date="1506902102679" expanded="true" signature="5035:5135" placeholder="select '*' i..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="5146:5760" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="5175:5311" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="5324:5637" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="5664:5743" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="5784:7118" placeholder="IF v_country..." />
+            <marker date="1506902102679" expanded="true" signature="5836:5938" placeholder="select '*' i..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="5951:6569" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="5982:6088" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="6103:6364" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="6379:6439" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="6470:6549" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="6597:7100" placeholder="IF v_is_acti..." />
+            <marker date="1506902102679" expanded="true" signature="6645:6742" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="6757:7006" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="7021:7081" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="7190:7304" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="7312:7330" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="7648:8241" placeholder="DECLARE v_ad..." />
+            <marker date="1506902102679" expanded="true" signature="7690:7994" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506902102679" expanded="true" signature="8001:8232" placeholder="IF found THE..." />
+            <marker date="1506902102679" expanded="true" signature="8022:8193" placeholder="RETURN QUERY..." />
+            <marker date="1506902102679" expanded="true" signature="8022:8210" placeholder="RETURN QUERY..." />
+            <marker date="1506902102679" expanded="true" signature="8041:8193" placeholder="SELECT coun...country_country..." />
+            <marker date="1506902102679" expanded="true" signature="8550:10204" placeholder="declare v_is..." />
+            <marker date="1506902102679" expanded="true" signature="8676:8695" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="8700:8719" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="8724:8943" placeholder="select 'X' i..profiles_profile..." />
+            <marker date="1506902102679" expanded="true" signature="8948:10013" placeholder="if not found..." />
+            <marker date="1506902102679" expanded="true" signature="8970:9029" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="9044:9062" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="9069:9221" placeholder="select 'X' i..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="9228:10002" placeholder="if not found..." />
+            <marker date="1506902102679" expanded="true" signature="9253:9321" placeholder="v_id_section..." />
+            <marker date="1506902102679" expanded="true" signature="9330:9510" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="9519:9587" placeholder="v_values := ..." />
+            <marker date="1506902102679" expanded="true" signature="9596:9831" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="9840:9914" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="9932:9989" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="10050:10144" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="10050:10173" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="10179:10197" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="10578:11555" placeholder="DECLARE v_ad..." />
+            <marker date="1506902102679" expanded="true" signature="10615:10634" placeholder="p_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="10639:10658" placeholder="p_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="10664:10956" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506902102679" expanded="true" signature="10961:11404" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="10984:11054" placeholder="p_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="11069:11087" placeholder="p_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="11094:11267" placeholder="SELECT cou.c..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="11094:11286" placeholder="SELECT secti..country_sectiontype..." />
+            <marker date="1506902102679" expanded="true" signature="11293:11393" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="11318:11381" placeholder="p_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="11442:11525" placeholder="p_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="11531:11549" placeholder="p_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="11925:15379" placeholder="DECLARE v_ad..." />
+            <marker date="1506902102679" expanded="true" signature="12158:12177" placeholder="o_is_error :..." />
+            <marker date="1506902102679" expanded="true" signature="12184:12203" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="12211:12515" placeholder="SELECT '*' I..auth_user..." />
+            <marker date="1506902102679" expanded="true" signature="12522:15189" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="12547:12617" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="12635:12653" placeholder="o_is_admin :..." />
+            <marker date="1506902102679" expanded="true" signature="12662:12814" placeholder="SELECT id, s..country_sectiontype..." />
+            <marker date="1506902102679" expanded="true" signature="12662:12815" placeholder="SELECT id, c..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="12662:12834" placeholder="SELECT id, s..country_sectiontype..." />
+            <marker date="1506902102679" expanded="true" signature="12843:15175" placeholder="IF v_country..." />
+            <marker date="1506902102679" expanded="true" signature="12935:13044" placeholder="select '*' i..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="12935:13063" placeholder="select '*' i..country_sectiontype..." />
+            <marker date="1506902102679" expanded="true" signature="13074:13731" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="13103:13241" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="13103:13258" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="13271:13608" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="13635:13714" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="13755:15159" placeholder="IF v_country..." />
+            <marker date="1506902102679" expanded="true" signature="13817:13918" placeholder="select '*' i..country_country..." />
+            <marker date="1506902102679" expanded="true" signature="13931:14592" placeholder="IF NOT found..." />
+            <marker date="1506902102679" expanded="true" signature="13962:14070" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="13962:14087" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="14102:14387" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="14386:14387" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="14402:14462" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="14493:14572" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="14620:15141" placeholder="IF v_is_acti..." />
+            <marker date="1506902102679" expanded="true" signature="14668:14756" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="14668:14757" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="14668:14774" placeholder="UPDATE count..." />
+            <marker date="1506902102679" expanded="true" signature="14789:15047" placeholder="INSERT INTO ..." />
+            <marker date="1506902102679" expanded="true" signature="15062:15122" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="15231:15345" placeholder="o_message :=..." />
+            <marker date="1506902102679" expanded="true" signature="15353:15371" placeholder="o_is_error :..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/country/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.062305298">
+          <caret line="264" column="53" selection-start-line="264" selection-start-column="53" selection-end-line="264" selection-end-column="53" />
+          <folding>
+            <element signature="e#24#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

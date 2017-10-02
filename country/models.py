@@ -25,6 +25,7 @@ class SectionType(models.Model):
     section_type_code = models.CharField(max_length=64, default=uuid.uuid4, blank=False, null=True, db_index=True)
     section_type_name = models.CharField(max_length=40, blank=False, null=True)
     active = models.BooleanField(default=True, db_index=True)
+    version = models.IntegerField(blank = False, null=True)
 
     class Meta:
         index_together = (
@@ -41,9 +42,11 @@ class Section(models.Model):
     section_code = models.CharField(max_length=64, default=uuid.uuid4, blank=False, null=True, db_index=True)
     section_name = models.CharField(max_length=30, blank=False, null=False)
     active = models.BooleanField(default=True, db_index=True)
+    version = models.IntegerField(blank = False, null=True)
     fk_country = models.ForeignKey(Country, blank=False, null=True, related_name='section_country')
     fk_section = models.ForeignKey('self', blank=True, null=True, related_name='section_section')
     fk_section_type = models.ForeignKey(SectionType, blank=False, null=True, related_name='section_section_type')
+
 
     class Meta:
         index_together = (
