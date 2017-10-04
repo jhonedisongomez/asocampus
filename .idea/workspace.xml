@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asocampus/settings/staging.py" afterPath="$PROJECT_DIR$/asocampus/settings/staging.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="asocampus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/asocampus/settings/staging.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.1923077">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -1514,7 +1515,7 @@
     <entry file="file://$PROJECT_DIR$/asocampus/settings/staging.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1923077">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
       </provider>
