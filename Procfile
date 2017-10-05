@@ -1,1 +1,1 @@
-web: unicorn asocampus.wsgi
+web gunicorn asocampus.wsgi
