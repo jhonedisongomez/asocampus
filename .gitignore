@@ -2,7 +2,6 @@
 *.py[co]
 *.pyc
 /static/bower_components
-/logs
 .idea/
 .vscode/
 !agenda/migrations/__init__.py
