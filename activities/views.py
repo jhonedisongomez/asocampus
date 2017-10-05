@@ -26,7 +26,7 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
         logger.info(str(request) +  ", usuario:" +  str(request.user))
 
         if "load" in request.GET:
-            print (str(request))
+
             state = "init"
             logger.info("state: " + state + ", usuario:" + str(request.user))
             response_data = {}

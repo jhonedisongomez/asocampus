@@ -1,13 +1,13 @@
 {% extends "base-superadmin.html" %}
 {%  block title %}
-    Pais
+    Tipos de secciones
 {% endblock %}
 {% block content %}
 
     <script>
 
         $(document).ready( function () {
-            $('#countryTable').DataTable({
+            $('#sectionTypesTable').DataTable({
 
                 language: {
                     search: "Buscar:",
@@ -31,19 +31,21 @@
 
     </script>
 
-    <dom-module id="country-view">
-        <template>
 
-            <div style="">
+    <dom-module id="section-type-view">
+        <template>
+            <div>
+
                 <paper-material style="height: 100%;
-                                position: absolute;
-                                width: 100%;
-                                display: contents;"
+                        position: absolute;
+                        width: 100%;
+                        display: contents;"
                                 elevation="5">
+
 
                     <table style="width: 100%;"
                            rules="rows"
-                           id="countryTable">
+                           id="sectionTypesTable">
                         <thead>
                         <tr>
                             <td>
@@ -59,15 +61,15 @@
                         </thead>
                         <tbody>
 
-                        {% for country in countries %}
+                        {% for section_types in section_types %}
                             <tr style="border-bottom: 1px solid #999;">
                                 <td>
-                                    {{country.1}}
+                                    {{section_types.1}}
                                 </td>
 
                                 <td>
 
-                                    {% if country.2 == True %}
+                                    {% if section_types.2 == True %}
 
                                         <paper-checkbox checked
                                                         disabled>
@@ -86,8 +88,8 @@
                                     <paper-fab
                                             mini
                                             icon="edit"
-                                            on-click="getCountry"
-                                            data="{{ country.0 }}"
+                                            on-click="getSectionType"
+                                            data="{{ section_types.0 }}"
                                             style="background: #5C6BC0">
 
                                     </paper-fab>
@@ -99,21 +101,15 @@
                         </tbody>
                     </table>
 
-                </paper-material>
 
-                <iron-ajax
-                        id="ajaxGetCountry"
-                        url=""
-                        handle-as="json"
-                        on-response="responseGetCountry">
-                </iron-ajax>
+                </paper-material>
 
             </div>
 
             <paper-fab
                     icon="add"
                     elevation="5"
-                    on-click = "openDlgCountryForm"
+                    on-click = "openDlgSectionTypeForm"
                     style="position: fixed;
         right: 10px;
         bottom: 10px;
@@ -122,31 +118,31 @@
             </paper-fab>
 
             <paper-dialog entry-animation="scale-up-animation"
-                          exit-animation="fade-out-animation" id="dlgCountryForm"
+                          exit-animation="fade-out-animation" id="dlgSectionTypeForm"
                           style="max-height: 250px;
-                                 min-width: 32%;"
+                        min-width: 32%;"
                           modal = "true">
                 <div id="dialog-body" style="padding: 0px;">
 
                     <paper-toolbar class="toolbar-main"
                                    style="margin-top: -24px;">
-                        <div class="title">Formulario de Pais</div>
-                        <paper-icon-button on-click="closeDlgCountryForm" icon="close"></paper-icon-button>
+                        <div class="title">Formulario de Tipos de Secciones</div>
+                        <paper-icon-button on-click="closeDlgSectionTypeForm" icon="close"></paper-icon-button>
                     </paper-toolbar>
                     <div id="sign-up" style="padding: 10%;
-                                        min-width: 60px;">
+                                min-width: 60px;">
 
                         <form is="iron-form"
                               style="margin-top: -50px;
                                     padding: 17px;
-                                    max-width: 100%;"
-                              id="countryForm">
+                                max-width: 100%;"
+                              id="sectionTypeForm">
 
                             <paper-input
                                     required auto-validate
                                     error-message="El campo no puede estar vacio."
-                                    id="countryDescription"
-                                    label="Nombre del pais"
+                                    id="sectionTypeDescription"
+                                    label="Nombre del tipo de secci&#243;n"
                                     required>
                             </paper-input>
 
@@ -154,31 +150,24 @@
                                             id ="is_active"
                                             disabled
                                             style="margin-top:10px;
-        width: 100%">
+                                                    width: 100%">
                                 activo
                             </paper-checkbox>
 
-                            <input type="hidden" id="country_code"/>
-                            <paper-button id="btnCreateCountry" on-click="btnCreateCountry" raised style="width: 30%;margin-top: 23px;background:#00C851;
-        color: white;" >Agregar</paper-button>
+                            <input type="hidden" id="section_type_code"/>
+                            <paper-button id="btnCreateSectionType" on-click="createSectionType" raised style="width: 30%;margin-top: 23px;background:#00C851;
+                                        color: white;" >Agregar</paper-button>
 
-                            <paper-button id="btnEditCountry" on-click="btnCreateCountry" raised style="width: 30%;margin-top: 23px;background:#FFC107;
-        color: white;" >Editar</paper-button>
+                            <paper-button id="btnEditSectionType" on-click="createSectionType" raised style="width: 30%;margin-top: 23px;background:#FFC107;
+                                        color: white;" >Editar</paper-button>
 
-                            <paper-button on-click="cleanCountry" raised style="width: 30%;margin-top: 23px;background:#FF5722;
-        color: white;" >Limpiar</paper-button>
+                            <paper-button on-click="cleanSectionType" raised style="width: 30%;margin-top: 23px;background:#FF5722;
+                                        color: white;" >Limpiar</paper-button>
                         </form>
 
                     </div>
                 </div>
             </paper-dialog>
-
-            <iron-ajax
-                    id="ajaxCreateCountry"
-                    url=""
-                    handle-as="json"
-                    on-response="createCountryResponse">
-            </iron-ajax>
 
             <paper-dialog
                     entry-animation="scale-up-animation"
@@ -195,6 +184,21 @@
 
             </paper-dialog>
 
+            <iron-ajax
+                    id="ajaxCreateSectionType"
+                    url=""
+                    handle-as="json"
+                    on-response="createSectionTypeResponse">
+            </iron-ajax>
+
+            <iron-ajax
+                    id="ajaxGetSectionType"
+                    url=""
+                    handle-as="json"
+                    on-response="responseGetSectionType">
+            </iron-ajax>
+
+
         </template>
 
         <script>
@@ -202,7 +206,7 @@
 
             function validateEditForm(){
 
-                if(document.getElementById('countryDescription').validate() )
+                if(document.getElementById('sectionTypeDescription').validate() )
                 {
                     return true;
                 }else
@@ -212,51 +216,36 @@
 
             }
 
-
             Polymer({
-                is: "country-view",
+                is: "section-type-view",
                 properties: {},
 
                 ready: function () {
 
                 },
 
-                getCountry: function(e){
+                openDlgSectionTypeForm: function(){
 
-                    var url = document.URL;
-                    console.log(e);
-                    document.getElementById("country_code").value = e.currentTarget.attributes[2].value;
-                    var ajaxUrl = "?load=true&country_code=" + e.currentTarget.attributes[2].value;
-                    url = url + ajaxUrl;
-                    this.querySelector('iron-ajax#ajaxGetCountry').url = url
-                    this.querySelector('iron-ajax#ajaxGetCountry').generateRequest();
-                },
-
-                responseGetCountry: function(response){
-
-                    this.querySelector('paper-input#countryDescription').value = response.detail.response.country_name;
-                    check = this.querySelector('paper-checkbox#is_active');
-                    check.checked = response.detail.response.is_active;
-                    check.disabled = false;
-                    document.getElementById("btnEditCountry").hidden = false;
-                    document.getElementById("btnCreateCountry").hidden = true;
-                    dlgCountryForm.open();
+                    dlgSectionTypeForm.open();
+                    this.$.is_active.disabled = true;
+                    this.$.sectionTypeForm.reset();
+                    this.$.is_active.checked = true;
+                    document.getElementById("btnEditSectonType").hidden = true;
+                    document.getElementById("btnCreateSectionType").hidden = false;
 
                 },
 
-                editCountry: function(){
-
-                    var country_code = document.getElementById('country_code').value;
-                    var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                closeDlgSectionTypeForm: function(){
+                    dlgSectionTypeForm.close();
                 },
 
-                btnCreateCountry:function(event){
+                createSectionType:function(event){
 
                     if(validateEditForm()){
 
                         var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
-                        this.$.ajaxCreateCountry.method = "POST";
-                        this.$.ajaxCreateCountry.url = document.URL;
+                        this.$.ajaxCreateSectionType.method = "POST";
+                        this.$.ajaxCreateSectionType.url = document.URL;
 
                         var method = "";
                         if(this.$.is_active.disabled){
@@ -265,21 +254,21 @@
                             method = "edit";
                         }
 
-                        this.$.ajaxCreateCountry.body = {
+                        this.$.ajaxCreateSectionType.body = {
 
-                            'country_name': this.$.countryDescription.value,
-                            'country_code':document.getElementById("country_code").value,
+                            'section_type_name': this.$.sectionTypeDescription.value,
+                            'section_type_code':document.getElementById("section_type_code").value,
                             'is_active':this.$.is_active.checked,
                             'method': method
                         };
 
-                        this.$.ajaxCreateCountry.headers = {
+                        this.$.ajaxCreateSectionType.headers = {
                             "X-CSRFToken":  getCookie('csrftoken'),
                             "X-Requested-With": "XMLHttpRequest",
                             "content-type": "application/json"
                         };
 
-                        this.$.ajaxCreateCountry.generateRequest();
+                        this.$.ajaxCreateSectionType.generateRequest();
 
                     }else{
                         this.body = 'Por favor diligencie los datos obligatorios';
@@ -287,49 +276,73 @@
                     }
                 },
 
-                createCountryResponse: function(request) {
+                createSectionTypeResponse: function(request) {
 
                     this.body = request.detail.response.message;
                     this.$.dialog.open();
 
                     if(!request.detail.response.is_error){
-                        this.$.countryForm.reset();
+                        this.$.sectionTypeForm.reset();
                     }
                 },
 
-                openDlgCountryForm:function(){
+                openDlgSectionTypeForm:function(){
 
-                    dlgCountryForm.open();
+                    dlgSectionTypeForm.open();
                     this.$.is_active.disabled = true;
-                    this.$.countryForm.reset();
+                    this.$.sectionTypeForm.reset();
                     this.$.is_active.checked = true;
-                    document.getElementById("btnEditCountry").hidden = true;
-                    document.getElementById("btnCreateCountry").hidden = false;
+                    document.getElementById("btnEditSectionType").hidden = true;
+                    document.getElementById("btnCreateSectionType").hidden = false;
 
                 },
 
-                closeDlgCountryForm:function(){
-                    dlgCountryForm.close();
-                },
 
-                cleanCountry:function(){
+                cleanSectionType:function(){
 
                     this.$.is_active.disabled = true;
-                    this.$.countryForm.reset();
+                    this.$.sectionTypeForm.reset();
                     this.$.is_active.checked = true;
-                    document.getElementById("btnEditCountry").hidden = true;
-                    document.getElementById("btnCreateCountry").hidden = false;
+                    document.getElementById("btnEditSectionType").hidden = true;
+                    document.getElementById("btnCreateSectionType").hidden = false;
 
                 },
 
                 onCloseDialog: function(){
                     location.reload();
-                }
-            });
+                },
+
+                getSectionType: function(e){
+
+                    var url = document.URL;
+                    console.log(e);
+                    document.getElementById("section_type_code").value = e.currentTarget.attributes[2].value;
+                    var ajaxUrl = "?load=true&section_type_code=" + e.currentTarget.attributes[2].value;
+                    url = url + ajaxUrl;
+                    this.querySelector('iron-ajax#ajaxGetSectionType').url = url
+                    this.querySelector('iron-ajax#ajaxGetSectionType').generateRequest();
+                },
+
+                responseGetSectionType: function(response){
+
+                    this.querySelector('paper-input#SectionTypeDescription').value = response.detail.response.section_type_name;
+                    check = this.querySelector('paper-checkbox#is_active');
+                    check.checked = response.detail.response.is_active;
+                    check.disabled = false;
+                    document.getElementById("btnEditSectionType").hidden = false;
+                    document.getElementById("btnCreateSectionType").hidden = true;
+                    dlgSectionTypeForm.open();
+
+                },
+
+
+            })
+
         </script>
+
 
     </dom-module>
 
-    <country-view></country-view>
+    <section-type-view></section-type-view>
 
 {% endblock %}
