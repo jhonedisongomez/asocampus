@@ -1,1 +1,9 @@
 [05/Oct/2017 08:24:59] WARNING django.request:Not Found: /favicon.ico
+[05/Oct/2017 12:34:50] WARNING django.request:Not Found: /favicon.ico
+[05/Oct/2017 12:35:47] WARNING django.request:Not Found: /favicon.ico
+[05/Oct/2017 12:39:28] WARNING django.request:Not Found: /js/promise-polyfill/Promise.js
+[05/Oct/2017 12:40:39] WARNING django.request:Not Found: /js/promise-polyfill/Promise.js
+[05/Oct/2017 12:40:50] WARNING django.request:Not Found: /js/promise-polyfill/Promise.js
+[05/Oct/2017 12:40:54] WARNING django.request:Not Found: /js/promise-polyfill/
+[05/Oct/2017 12:41:49] WARNING django.request:Not Found: /promise-polyfill/Promise.js
+[05/Oct/2017 12:42:05] WARNING django.request:Not Found: /js/promise-polyfill/Promise.js

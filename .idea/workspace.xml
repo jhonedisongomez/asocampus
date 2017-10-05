@@ -1,7 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="" />
+    <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/COPYING" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/History.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/Promise-Statics.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/Promise.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/Promise.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/externs/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/animation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/apply-preserving-inline-style.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/apply.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/box-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/color-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/deprecation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/dev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/dimension-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/effect-callback.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/element-animatable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/docs/examples.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/docs/experimental.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/font-weight-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/group-constructors.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/handler-utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/interpolation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/keyframe-effect-constructor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/keyframe-effect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/keyframe-interpolations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/matrix-decomposition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/matrix-interpolation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/normalize-keyframes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/number-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/position-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/promise-polyfill-lite.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/promise-polyfill/promise-polyfill.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/property-interpolation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/property-names.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/scope.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/shadow-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/shape-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/docs/support.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/tick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/timeline.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/timing-utilities.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/transform-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/visibility-handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/web-animations-bonus-cancel-events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/web-animations-bonus-object-form-keyframes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/src/web-animations-next-animation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations-next-lite.min.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations-next-lite.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations-next-lite.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/externs/web-animations-next.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations-next.min.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations-next.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations-next.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/externs/web-animations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations.min.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/web-animations-js/web-animations.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/.bower.json" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/CustomElements.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/CustomElements.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/CustomElements.min.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/CustomElements.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/HTMLImports.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/HTMLImports.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/HTMLImports.min.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/HTMLImports.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/MutationObserver.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/MutationObserver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/MutationObserver.min.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/MutationObserver.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/README.md" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/ShadowDOM.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/ShadowDOM.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/ShadowDOM.min.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/ShadowDOM.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/bower.json" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/build.log" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/build.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/elements.html" afterPath="$PROJECT_DIR$/static/elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/elements.vulcanized.html" afterPath="$PROJECT_DIR$/static/elements.vulcanized.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/package.json" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asocampus/settings/staging.py" afterPath="$PROJECT_DIR$/asocampus/settings/staging.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents-lite.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents-lite.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents-lite.min.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents-lite.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents.min.js" afterPath="$PROJECT_DIR$/static/js/webcomponentsjs/webcomponents.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="asocampus.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -44,33 +135,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/country/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="270" column="45" selection-start-line="270" selection-start-column="45" selection-end-line="270" selection-end-column="45" />
-              <folding>
-                <element signature="e#24#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23322684">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staging.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asocampus/settings/staging.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -81,6 +150,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staging.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asocampus/settings/staging.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.063897766">
+              <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,18 +178,18 @@
       <file leaf-file-name="base-superadmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runtime.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <file leaf-file-name="elements.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/elements.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state vertical-scroll-proportion="-7.2413793">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,18 +198,28 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            <state vertical-scroll-proportion="-4.827586">
+              <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asocampus/settings/base.py">
+      <file leaf-file-name="elements.vulcanized.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/elements.vulcanized.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.0">
+              <caret line="16406" column="11" selection-start-line="16406" selection-start-column="11" selection-end-line="16406" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dev.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/web-animations-js/src/dev.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="33" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,7 +229,7 @@
         <entry file="file://$PROJECT_DIR$/asocampus/settings/local.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -176,7 +265,6 @@
         <option value="$PROJECT_DIR$/profiles/migrations/0003_auto_20170504_2136.py" />
         <option value="$PROJECT_DIR$/templates/profile/profile.html" />
         <option value="$PROJECT_DIR$/profiles/admin.py" />
-        <option value="$PROJECT_DIR$/static/elements.vulcanized.html" />
         <option value="$PROJECT_DIR$/profiles/models.py" />
         <option value="$PROJECT_DIR$/profiles/views.py" />
         <option value="$PROJECT_DIR$/static/template-profile/profile.html" />
@@ -198,7 +286,6 @@
         <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.edit_country" />
         <option value="$PROJECT_DIR$/static/template-country/country.html" />
         <option value="$PROJECT_DIR$/static/css/general.css" />
-        <option value="$PROJECT_DIR$/static/elements.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/country/urls.py" />
         <option value="dbfunction:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.create_menu" />
@@ -208,13 +295,15 @@
         <option value="$PROJECT_DIR$/country/views.py" />
         <option value="$PROJECT_DIR$/templates/country/section-type.html" />
         <option value="$PROJECT_DIR$/../asocampus-scripts/country/country_scripts.sql" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/asocampus/wsgi.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/base-superadmin.html" />
-        <option value="$PROJECT_DIR$/asocampus/settings/staging.py" />
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/static/elements.html" />
+        <option value="$PROJECT_DIR$/static/elements.vulcanized.html" />
+        <option value="$PROJECT_DIR$/asocampus/settings/staging.py" />
       </list>
     </option>
   </component>
@@ -284,20 +373,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -312,21 +387,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asocampus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="country" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,6 +402,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="asocampus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -692,26 +757,26 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22239032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20045386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42006803" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41908008" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40545145" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4020443" sideWeight="0.4861963" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40545145" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -761,27 +826,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/template-profile/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8239608">
-          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asocampus/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64827585">
-          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/template-base/x-app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37408313">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_profile/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23448277">
@@ -881,14 +925,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.country_country">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -956,14 +1000,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/37d54a83/23eec967-2b8c-411e-8e09-863cbf218b00/asocampus.public.menu_options">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -971,13 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/elements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.86206895">
-          <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -1000,16 +1037,6 @@
         <state vertical-scroll-proportion="-2.6666667">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/logs.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="165.24138">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/country/models.py">
@@ -1275,52 +1302,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/country/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="270" column="45" selection-start-line="270" selection-start-column="45" selection-end-line="270" selection-end-column="45" />
-          <folding>
-            <element signature="e#24#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asocampus/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asocampus/settings/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asocampus/settings/staging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1333,14 +1318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runtime.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1349,10 +1326,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/country/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="270" column="45" selection-start-line="270" selection-start-column="45" selection-end-line="270" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23322684">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/webcomponentsjs/build.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/promise-polyfill/LICENSE">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.827586">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base-superadmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/elements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2413793">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/web-animations-js/src/dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/elements.vulcanized.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="16406" column="11" selection-start-line="16406" selection-start-column="11" selection-end-line="16406" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asocampus/settings/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asocampus/settings/staging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.063897766">
+          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
