@@ -1,7 +1,7 @@
 
 from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = ['*']
 # Database
@@ -9,10 +9,10 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'asocampus',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': '192.168.1.59',
+        'NAME': 'db3bjjs55629je',
+        'USER': 'hgmldlkwqtoytl',
+        'PASSWORD': '1ee8f590d525c6957355fa6e21741f467f05fca8aa2627d33132f0e9b378118b',
+        'HOST': 'ec2-23-21-220-188.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
