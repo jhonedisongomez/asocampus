@@ -9,10 +9,10 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd94nj8jspsvrrr',
-        'USER': 'ryatnbyeiiispb',
-        'PASSWORD': '1ef2eff4838a5150c56057ed585334dbd478f0ceae3b2a98ec2915720141609b',
-        'HOST': 'ec2-50-17-203-195.compute-1.amazonaws.com',
+        'NAME': 'asocampus',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': '192.168.1.59',
         'PORT': '5432',
     }
 }
