@@ -7,3 +7,4 @@
 [05/Oct/2017 12:40:54] WARNING django.request:Not Found: /js/promise-polyfill/
 [05/Oct/2017 12:41:49] WARNING django.request:Not Found: /promise-polyfill/Promise.js
 [05/Oct/2017 12:42:05] WARNING django.request:Not Found: /js/promise-polyfill/Promise.js
+[05/Oct/2017 13:32:21] WARNING django.request:Not Found: /favicon.ico

@@ -84,7 +84,6 @@ TEMPLATE_DIRS = [BASE_DIR.child('templates')]
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR.child('static')]
-STATIC_ROOT = 'staticfiles'
 
 LOGGING = {
     'version': 1,
