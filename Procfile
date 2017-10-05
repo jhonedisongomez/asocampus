@@ -1,1 +1,1 @@
-web:gunicorn asocampus.wsgi
+web: gunicorn asocampus.wsgi
