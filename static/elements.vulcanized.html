@@ -16401,7 +16401,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><script src="js/web-animations-js/web-animations-next-lite.min.js"></script>
+--><script src="bower_components/web-animations-js/web-animations-next-lite.min.js"></script>
 <script>
 
   Polymer({
@@ -23075,7 +23075,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><script src="js/promise-polyfill/Promise.js"></script><script>
+--><script src="bower_components/promise-polyfill/Promise.js"></script><script>
 if (!window.Promise) {
   window.Promise = MakePromise(Polymer.Base.async);
 }
@@ -31555,7 +31555,7 @@ Example:
 
     </style>
     <template>
-        <div class="horizontal layout wrap" style="margin-top: 140px;">
+        <div class="horizontal layout wrap" style="margin-top: 140px;padding: 10px;">
 
             <iron-ajax id="list-ajax-activity" on-response="response" url="" handle-as="json">
             </iron-ajax>
@@ -31563,35 +31563,29 @@ Example:
             <template is="dom-repeat" items="[[repos]]">
 
 
-                <div style="margin-left: 10px;
-                  margin-top: 20px;
-                  max-width: 350px;">
+                <div style="margin-top: 20px;
+                    max-width: 350px;
+                    min-width: 100px;">
 
-                    <paper-card class="list_activity" elevation="5" heading="" style="    max-width: 100%;
-                        min-width: 100%;
-                        margin: auto;
-                        margin-left: 20px;" image="https://scontent.fclo1-2.fna.fbcdn.net/v/t1.0-9/13501956_1023216811094463_7027667485082089552_n.jpg?oh=4428d37268c5e3b513825e455b00cbb1&amp;oe=5991171C" alt="Sailboat Harbor">
+                    <paper-material elevation="5">
+                        <paper-toolbar style="margin-top: -24px;
+                        background: rgb(34, 198, 30);">
+                            <div class="title">[[item.topic]]</div>
+                        </paper-toolbar>
 
-                        <div class="card-content"><h2>[[item.topic]]</h2></div>
-                        <div class="card-actions">
-                            <input type="hidden" value="[[item.activity_code]]" id="activity_code[[item.id_html]]">
+                        <div>
+                            <img style="width: 100%;" src="[[item.image_url]]">
 
-                            <paper-button class="button-paper-card" name="[[item.activity_code]]" on-click="signUpActivity">Inscribite</paper-button>
-
-                            <paper-button class="button-paper-card">Ver Agenda</paper-button>
-
-                            <paper-icon-button name="[[item.id_html]]" icon="hardware:keyboard-arrow-down" title="more info" onclick="_toggle(this.name)" style="float:right;">
-                            </paper-icon-button>
-
-                            <iron-collapse id="[[item.id_html]]" style="width:100%;">
-                                [[item.description]]
-                            </iron-collapse>
-
-                            <script>
-
-                            </script>
                         </div>
-                    </paper-card>
+
+                        <p style="padding: 20px;">[[item.pre_description]]</p>
+                        <hr>
+                        <paper-button class="button-paper-card" name="[[item.activity_code]]" on-click="signUpActivity">Inscribite</paper-button>
+
+                        <paper-button class="button-paper-card">Ver Mas</paper-button>
+
+                    </paper-material>
+
                 </div>
             </template>
         </div>
@@ -31608,10 +31602,10 @@ Example:
             </div>
 
         </paper-dialog>
-        <footer>
+        <!---<footer>
 
         <p>develop by Jhon Edison Gomez </p>
-        </footer>
+        </footer><!--->
     </template>
 
 </dom-module>

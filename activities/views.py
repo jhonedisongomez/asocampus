@@ -48,9 +48,12 @@ class ActivitiesView(LoginRequiredMixin, TemplateView):
                     list['activity_code'] = val_act.activities_code
                     list['begin_date'] = str(val_act.begin_date)
                     list['finish_date'] = str(val_act.finish_date)
-                    list['topic'] = val_act.topic
+                    list['topic'] = val_act.title
                     list['is_pay'] = val_act.is_pay
+                    list['pre_description'] = val_act.pre_description
                     list['description'] = val_act.description
+                    list['image_url'] = val_act.image_url
+                    list['image_location'] = val_act.image_location.url
                     activity_list.append(list)
                     count = count +1
                 count = 0
