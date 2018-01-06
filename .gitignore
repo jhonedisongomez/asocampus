@@ -13,3 +13,4 @@
 !user_profile/migrations/__init__.py
 !roles/migrations/__init__.py
 .envasocampus/
+.env/
