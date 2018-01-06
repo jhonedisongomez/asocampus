@@ -5,453 +5,519 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static from staticfiles %}
-    <link  rel="import" href="{% static 'css/general.css' %}"/>
+    <link  rel="stylesheet" href="{% static 'css/general.css' %}"/>
+    <link  rel="stylesheet" href="{% static 'gallery/css/blueimp-gallery.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/blueimp-gallery-indicator.css' %}">
+
+
+
     <script type="text/javascript" src="{% static 'js/webcomponentsjs/webcomponents-lite.js' %}"></script>
     <link  rel="import" href="{% static 'elements.vulcanized.html' %}"/>
 
     <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'js/general.js' %}"></script>
+    <script src="{% static 'gallery/js/blueimp-gallery.min.js' %}"></script>
+
 
     {% block imports %} {% endblock %}
 
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body  fullbleed layout vertical style="background: #eee">
-    <input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
+<input type="hidden" id="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 
-        <dom-module id="base-login">
+    <dom-module id="base-login">
 
-            <template>
+        <template>
 
-                <style>
-
-                    .toolbar-menu{
-                        --paper-toolbar-background:#06780b;
-                    }
-
-                    .toolbar-main{
-                        --paper-toolbar-background:rgb(34, 198, 30);
-                    }
-
-                </style>
-
-                <paper-drawer-panel class="flex" id="menu">
-                    <div drawer  layout flex  style="overflow:scroll;overflow-x:hidden;" >
-                        <paper-toolbar class="toolbar-menu">
-                            <span class="title">Menu</span>
-                            <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
-                        </paper-toolbar>
-                        <div class="logo-asoprovida" style="background: lightgray;">
-                            <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
-                                style="width: 200px;">
-                        </div>
-                        <paper-menu >
-                            <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
-                            <paper-item on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
-                            <paper-item><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
-                            <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
-                            {% for option in menu %}
-                                <paper-item icon="home" label="Administrador" on-click="logout" ><a is="pushstate-anchor" href="{{option.1}}">{{option.0}}</a></paper-item>
-                            {% endfor %}
-                        
-                        </paper-menu>
-
-                    </div>
-
-                    <div main>
-
-                        <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
-                            <paper-toolbar class="toolbar-main" elevation="5">
-                                <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
-
-                            </paper-toolbar>
-                                
-                            {% block content %}	{% endblock %}
-                        </paper-scroll-header-panel>
-                    </div>
-
-                </paper-drawer-panel>
-
-        <iron-ajax
-            id="ajaxLogout"
-            url=""
-            handle-as="json"
-            on-response="hresponseLogout"
-            debounce-duration="300">
-        </iron-ajax>
-
-            </template>
-        </dom-module>
-        <script>
-            HTMLImports.whenReady(function() {
-                Polymer({
-                    is: 'base-login',
-
-                    ready:function(){
-                        this.$.item_inicio.focused = true;
-                        this.$.menu.forceNarrow = true;
-
-                    },
-
-                    onLayoutChange: function(wide) {
-                        var drawer = this.$.drawer;
-                        if (wide && drawer.opened) {
-                            drawer.opened = false;
-                        }
-                    },
-
-                    home:function(event){
-                        window.location.replace("/");
-                    },
-                    listActivity:function(event){
-                        window.location.replace("/actividades/lista-de-actividades");
-                    },
-
-                    logout:function(event){
-
-                        this.$.ajax.url = '/usuario/cerrar-sesion/'
-                        this.$.ajax.generateRequest();
-                    },
-                    hresponseLogout: function(request) {
-
-                        if(!request.detail.response.is_error){
-                        window.location.replace("/");
-
-                        }else{
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
-
-                        }
-                    },
-                    closedMenu:function(event){
-                        this.$.menu.closeDrawer();
-                    },
-                });
-            });
-
-        </script>
-
-        <base-login></base-login>
-    {% else %}
-        <dom-module id="sign-in">
             <style>
 
-                .background {
-                    background: url("{% static 'img/cano-cristales.jpg'  %}");
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    height: 100%;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    background-position: center;
-                    z-index: -10;
+                .toolbar-menu{
+                    --paper-toolbar-background:#06780b;
                 }
 
-                footer{
+                .toolbar-main{
+                    --paper-toolbar-background:rgb(34, 198, 30);
+                }
 
-                    background: black;
-                    color: white;
-                    height: 65px;
-                    margin: 0;
-                    margin-top: 15px;
+                .banner-index{
+
+                    background: url('{% static 'img/cano-cristales.jpg'  %}');
+                    width: 100%;
+                    height: 50%;
                 }
 
             </style>
-            <template>
-                <div class="background"></div>
-                <div style="margin-top: 140px;">
 
-                    <paper-material elevation="5"
-                    style="max-width: 380px;
+            <paper-drawer-panel class="flex" id="menu" style="overflow: auto;">
+                <div drawer  layout flex  style="overflow:scroll;overflow-x:hidden;" >
+                    <paper-toolbar class="toolbar-menu">
+                        <span class="title">Menu</span>
+                        <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
+                    </paper-toolbar>
+                    <div class="logo-asoprovida" style="background: lightgray;">
+                        <img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png"
+                             style="width: 200px;">
+                    </div>
+                    <paper-menu >
+                        <paper-item id="item_inicio" on-click="home" ><a is="pushstate-anchor" href="/">Inicio</a></paper-item>
+                        <paper-item on-click="listActivity"><a is="pushstate-anchor" href="{% url 'activity_list' %}">Actividades</a></paper-item>
+                        <paper-item><a is="pushstate-anchor" href="{% url 'my-profile' %}">Mi perfil</a></paper-item>
+                        <paper-item icon="home" label="Cerrar Sesion" on-click="logout" ><a is="pushstate-anchor" href="{% url 'logout' %}">Cerrar sesión</a></paper-item>
+                        {% for option in menu %}
+                            <paper-item icon="home" label="Administrador" on-click="logout" ><a is="pushstate-anchor" href="{{option.1}}">{{option.0}}</a></paper-item>
+                        {% endfor %}
+
+                    </paper-menu>
+
+                </div>
+
+                <div main >
+
+                    <div id="links">
+                        <a href="{% static 'img/asoprovida.jpg' %}" title="Banana">
+                            <img src="" alt="Banana">
+                        </a>
+                        <a href="https://source.unsplash.com/QifvZqd5akk" title="Apple">
+                            <img src="" alt="Apple">
+                        </a>
+                        <a href="images/orange.jpg" title="Orange">
+                            <img src="" alt="Orange">
+                        </a>
+                    </div>
+
+                    <div>
+                        <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+                        <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-controls"
+                                style="position: inherit;height: 70%">
+                            <div class="slides"></div>
+                            <ol class="indicator" style="margin-bottom: 170px"></ol>
+                        </div>
+
+                    </div>
+                    <div>
+                    {% block content %}	{% endblock %}
+                    </div>
+
+
+                    <paper-scroll-header-panel disableSwipe class="flex" style="position: inherit;">
+                        <paper-toolbar class="toolbar-main" elevation="5">
+                            <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+
+                        </paper-toolbar>
+
+
+                    </paper-scroll-header-panel>
+                </div>
+
+            </paper-drawer-panel>
+
+            <iron-ajax
+                    id="ajaxLogout"
+                    url=""
+                    handle-as="json"
+                    on-response="hresponseLogout"
+                    debounce-duration="300">
+            </iron-ajax>
+
+
+            <script>
+                blueimp.Gallery(
+                        document.getElementById('links').getElementsByTagName('a'),
+                        {
+                            container: '#blueimp-gallery-carousel',
+                            carousel: true
+                        }
+                );
+            </script>
+
+
+            <script>
+                document.getElementById('links').onclick = function (event) {
+                    event = event || window.event;
+                    var target = event.target || event.srcElement,
+                            link = target.src ? target.parentNode : target,
+                            options = {index: link, event: event},
+                            links = this.getElementsByTagName('a');
+                    blueimp.Gallery(links, options);
+                };
+            </script>
+
+
+
+        </template>
+    </dom-module>
+
+    <script>
+        HTMLImports.whenReady(function() {
+            Polymer({
+                is: 'base-login',
+
+                ready:function(){
+                    this.$.item_inicio.focused = true;
+                    this.$.menu.forceNarrow = true;
+
+                },
+
+                onLayoutChange: function(wide) {
+                    var drawer = this.$.drawer;
+                    if (wide && drawer.opened) {
+                        drawer.opened = false;
+                    }
+                },
+
+                home:function(event){
+                    window.location.replace("/");
+                },
+                listActivity:function(event){
+                    window.location.replace("/actividades/lista-de-actividades");
+                },
+
+                logout:function(event){
+
+                    this.$.ajax.url = '/usuario/cerrar-sesion/'
+                    this.$.ajax.generateRequest();
+                },
+                hresponseLogout: function(request) {
+
+                    if(!request.detail.response.is_error){
+                        window.location.replace("/");
+
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        this.$.dialog.open();
+
+                    }
+                },
+                closedMenu:function(event){
+                    this.$.menu.closeDrawer();
+                },
+            });
+        });
+
+    </script>
+
+    <base-login></base-login>
+{% else %}
+    <dom-module id="sign-in">
+        <style>
+
+            .background {
+                background: url("{% static 'img/cano-cristales.jpg'  %}");
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                z-index: -10;
+            }
+
+            footer{
+
+                background: black;
+                color: white;
+                height: 65px;
+                margin: 0;
+                margin-top: 15px;
+            }
+
+        </style>
+        <template>
+            <div class="background"></div>
+            <div style="margin-top: 140px;">
+
+                <paper-material elevation="5"
+                                style="max-width: 380px;
                         margin-left: 31%;
                         background: white;
                         margin: 0 auto;">
 
-                        <div id="sign-in">
+                    <div id="sign-in">
 
-                            <paper-toolbar class="toolbar-main">
-                                <div class="title">Bienvenidos</div>
-                            </paper-toolbar>
-                            <form is="iron-form" id="sign-in-form" style="padding: 50px;">
+                        <paper-toolbar class="toolbar-main">
+                            <div class="title">Bienvenidos</div>
+                        </paper-toolbar>
+                        <form is="iron-form" id="sign-in-form" style="padding: 50px;">
 
                             <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="usernameSignIn"
-                                        label="Correo electronico" required></paper-input>
+                                         label="Correo electronico" required></paper-input>
 
                             <paper-input required auto-validate error-message="El campo no pude estar en blanco" id="passwordSignIn"
-                                        label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+                                         label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
 
                             <paper-button on-click="signIn" raised style="width: 100%;margin-top: 23px;background:#00C851;
                                 color: white;" >INICIAR SESIÓN</paper-button>
 
                             <paper-button on-click="signUp" raised style="width: 100%;margin-top: 5px;background:#4285F4;
                                 color: white;" >Registrate</paper-button>
-                            </form>
+                        </form>
 
-                        </div>
-                    </paper-material>
+                    </div>
+                </paper-material>
 
-                </div>
+            </div>
 
-                <iron-ajax
+            <iron-ajax
                     id="ajax"
                     url=""
                     handle-as="json"
                     on-response="hresponse"
                     debounce-duration="300">
-                </iron-ajax>
+            </iron-ajax>
 
-                    <paper-dialog entry-animation="scale-up-animation"
-                                exit-animation="fade-out-animation" id="dialog"
-                                    modal = "true">
-                        <h2>Mensaje</h2>
-                        <div id="dialog-body">Dialog body</div>
-                        <div class="buttons">
-                            <paper-button dialog-dismiss>Cerrar</paper-button>
+            <paper-dialog entry-animation="scale-up-animation"
+                          exit-animation="fade-out-animation" id="dialog"
+                          modal = "true">
+                <h2>Mensaje</h2>
+                <div id="dialog-body">Dialog body</div>
+                <div class="buttons">
+                    <paper-button dialog-dismiss>Cerrar</paper-button>
 
-                        </div>
+                </div>
 
-                    </paper-dialog>
+            </paper-dialog>
 
-                    <paper-dialog entry-animation="scale-up-animation"
-                        exit-animation="fade-out-animation" id="dlgSignUpForm"
-                        style="max-height: 500px;
+            <paper-dialog entry-animation="scale-up-animation"
+                          exit-animation="fade-out-animation" id="dlgSignUpForm"
+                          style="max-height: 500px;
                         min-width: 32%;"
-                        modal = "true">
-                        <div id="dialog-body" style="padding: 0px;">
+                          modal = "true">
+                <div id="dialog-body" style="padding: 0px;">
 
                     <paper-toolbar class="toolbar-main"
-                            style="margin-top: -24px;">
+                                   style="margin-top: -24px;">
                         <div class="title">Registrate</div>
                         <paper-icon-button on-click="closedMenu" icon="close"></paper-icon-button>
                     </paper-toolbar>
-                            <div id="sign-up" style="padding: 10%;
+                    <div id="sign-up" style="padding: 10%;
                                 min-width: 60px;">
 
-                                <form is="iron-form"
-                                    id="signUpForm"
-                                    style="margin-top: -50px;
+                        <form is="iron-form"
+                              id="signUpForm"
+                              style="margin-top: -50px;
                                     padding: 17px;
                                     max-width: 100%;">
 
-                                    <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="name"
-                                            label="Nombres" required></paper-input>
+                            <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="name"
+                                         label="Nombres" required></paper-input>
 
-                                    <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="lastName"
-                                            label="Apellidos" required></paper-input>
+                            <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="lastName"
+                                         label="Apellidos" required></paper-input>
 
-                                    <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="email"
-                                            label="Correo electronico" required></paper-input>
+                            <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="email"
+                                         label="Correo electronico" required></paper-input>
 
-                                    <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="password"
-                                            label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+                            <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="password"
+                                         label="Contraseña" type="password" required style="margin-top: 13px;"></paper-input>
 
-                                    <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="confirmPassword" label="Confirmar contraseña" type="password" required style="margin-top: 13px;"></paper-input>
+                            <paper-input required auto-validate error-message="El campo no puede estar en blanco" id="confirmPassword" label="Confirmar contraseña" type="password" required style="margin-top: 13px;"></paper-input>
 
-                                    <paper-button on-click="signUpEvent" raised style="width: 100%;margin-top: 23px;background:#00C851;
+                            <paper-button on-click="signUpEvent" raised style="width: 100%;margin-top: 23px;background:#00C851;
                                         color: white;" >Registrarse</paper-button>
-                                </form>
+                        </form>
 
-                            </div>
-                        </div>
-                    </paper-dialog>
+                    </div>
+                </div>
+            </paper-dialog>
 
-                    <iron-ajax
-                        id="ajaxSignUp"
-                        url=""
-                        handle-as="json"
-                        on-response="hresponseSignUp"
-                        debounce-duration="300">
-                    </iron-ajax>
+            <iron-ajax
+                    id="ajaxSignUp"
+                    url=""
+                    handle-as="json"
+                    on-response="hresponseSignUp"
+                    debounce-duration="300">
+            </iron-ajax>
 
-                    <iron-ajax
-                        id="signUp"
-                        url=""
-                        handle-as="json"
-                        contentType="application/x-www-form-urlencoded; charset=UTF-8"
-                        on-response="signUpResponse"
-                        debounce-duration="300">
-                    </iron-ajax>
+            <iron-ajax
+                    id="signUp"
+                    url=""
+                    handle-as="json"
+                    contentType="application/x-www-form-urlencoded; charset=UTF-8"
+                    on-response="signUpResponse"
+                    debounce-duration="300">
+            </iron-ajax>
 
-                    <iron-ajax
-                        id="createProfileAjax"
-                        url=""
-                        handle-as="json"
-                        contentType="application/x-www-form-urlencoded; charset=UTF-8"
-                        on-response="createProfileResponse"
-                        debounce-duration="300">
-                    </iron-ajax>
+            <iron-ajax
+                    id="createProfileAjax"
+                    url=""
+                    handle-as="json"
+                    contentType="application/x-www-form-urlencoded; charset=UTF-8"
+                    on-response="createProfileResponse"
+                    debounce-duration="300">
+            </iron-ajax>
 
-            </template>
-        </dom-module>
-        <script >
+        </template>
+    </dom-module>
+    <script >
 
-            HTMLImports.whenReady(function() {
-                Polymer({
-                    is: 'sign-in',
-                    signIn: function(event){
+        HTMLImports.whenReady(function() {
+            Polymer({
+                is: 'sign-in',
+                signIn: function(event){
 
-                        if(this.$.usernameSignIn.validate() && this.$.passwordSignIn.validate()){
-                            ///iniciar-sesion/
-                            this.$.ajax.url = '/usuario/iniciar-sesion/'
-                            this.$.ajax.params = {'username':this.$.usernameSignIn.value, 'password': this.$.passwordSignIn.value }
-                            this.$.ajax.generateRequest();
+                    if(this.$.usernameSignIn.validate() && this.$.passwordSignIn.validate()){
+                        ///iniciar-sesion/
+                        this.$.ajax.url = '/usuario/iniciar-sesion/'
+                        this.$.ajax.params = {'username':this.$.usernameSignIn.value, 'password': this.$.passwordSignIn.value }
+                        this.$.ajax.generateRequest();
 
-                        }else{
-                            document.getElementById("dialog-body").innerHTML = "los valores no son validos.";
-                            this.$.dialog.open();
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = "los valores no son validos.";
+                        this.$.dialog.open();
 
-                        }
-                    },
-                    hresponse: function(request) {
+                    }
+                },
+                hresponse: function(request) {
 
-                        if(!request.detail.response.is_error){
+                    if(!request.detail.response.is_error){
 
-                            if(!request.detail.response.authenticated){
-                                document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                                this.$.dialog.open();
-                                
-                            }else{
-                                document.getElementById("dialog-body").innerHTML = "Bienvenido a ASOCAMPUS, nuestro campus virtual.";
-                                this.$.dialog.open();
-                                window.location.replace("/");
-                            }
-
-                        }else{
+                        if(!request.detail.response.authenticated){
                             document.getElementById("dialog-body").innerHTML = request.detail.response.message;
                             this.$.dialog.open();
 
+                        }else{
+                            document.getElementById("dialog-body").innerHTML = "Bienvenido a ASOCAMPUS, nuestro campus virtual.";
+                            this.$.dialog.open();
+                            window.location.replace("/");
                         }
-                    },
 
-                    signUp: function(event){
-                        document.getElementById('signUpForm').reset();
-                        this.$.dlgSignUpForm.open();
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        this.$.dialog.open();
 
-                    },
+                    }
+                },
 
-                    signUpEvent: function(event){
+                signUp: function(event){
+                    document.getElementById('signUpForm').reset();
+                    this.$.dlgSignUpForm.open();
 
-                        if(this.$.name.validate() && this.$.password.validate() && this.$.lastName.validate()
+                },
+
+                signUpEvent: function(event){
+
+                    if(this.$.name.validate() && this.$.password.validate() && this.$.lastName.validate()
                             && this.$.email.validate() && this.$.password.validate() && this.$.confirmPassword.validate()){
 
-                            if(this.$.password.value == this.$.confirmPassword.value){
-                                this.$.ajaxSignUp.url = '/usuario/registro/'
-                                this.$.ajaxSignUp.params = {'email':this.$.email.value};
+                        if(this.$.password.value == this.$.confirmPassword.value){
+                            this.$.ajaxSignUp.url = '/usuario/registro/'
+                            this.$.ajaxSignUp.params = {'email':this.$.email.value};
 
-                                this.$.ajaxSignUp.generateRequest();
-
-                            }else{
-                                document.getElementById("dialog-body").innerHTML = "las contraseñas no son iguales";
-                                this.$.dialog.open();
-
-                            }
+                            this.$.ajaxSignUp.generateRequest();
 
                         }else{
-                            document.getElementById("dialog-body").innerHTML = "los valores no son validos";
+                            document.getElementById("dialog-body").innerHTML = "las contraseñas no son iguales";
                             this.$.dialog.open();
 
                         }
-                    },
 
-                    hresponseSignUp: function(request) {
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = "los valores no son validos";
+                        this.$.dialog.open();
 
-                        if(!request.detail.response.is_error){
-                            if(request.detail.response.exist){
+                    }
+                },
+
+                hresponseSignUp: function(request) {
+
+                    if(!request.detail.response.is_error){
+                        if(request.detail.response.exist){
 
                             document.getElementById("dialog-body").innerHTML = request.detail.response.message;
                             this.$.dialog.open();
-
-                            }else{
-                                var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
-                                this.$.signUp.method = "POST";
-                                this.$.signUp.url = '/usuario/registro/';
-
-                                this.$.signUp.body = {'password': this.$.password.value,
-                                    'email': this.$.email.value,
-                                    'name':this.$.name.value,
-                                    'last_name': this.$.lastName.value,};
-
-                                this.$.signUp.headers = {
-                                    "X-CSRFToken":  getCookie('csrftoken'),
-                                    "X-Requested-With": "XMLHttpRequest",
-                                    "content-type": "application/json"
-                                };
-
-                                this.$.signUp.generateRequest();
-                            }
 
                         }else{
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
-                        }
-                    },
-
-                    signUpResponse: function(request){
-
-                        if(!request.detail.response.is_error){
-                            
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
                             var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
-                            this.$.createProfileAjax.method = "POST";
-                            this.$.createProfileAjax.url = '/perfil/mi-perfil/';
+                            this.$.signUp.method = "POST";
+                            this.$.signUp.url = '/usuario/registro/';
 
-                            this.$.createProfileAjax.body = {'password': this.$.password.value,
+                            this.$.signUp.body = {'password': this.$.password.value,
                                 'email': this.$.email.value,
-                                'first_name':this.$.name.value,
-                                'last_name': this.$.lastName.value,
-                                'phone_number': 0,
-                                'mobil_number': 0,
-                                'id_type':1,
-                                'method':'create',
-                                'id':0};
+                                'name':this.$.name.value,
+                                'last_name': this.$.lastName.value,};
 
-                            this.$.createProfileAjax.headers = {
+                            this.$.signUp.headers = {
                                 "X-CSRFToken":  getCookie('csrftoken'),
                                 "X-Requested-With": "XMLHttpRequest",
                                 "content-type": "application/json"
                             };
 
-                            this.$.createProfileAjax.generateRequest();
-                            
-                            //this.$.dialog.open();
-                        }else{
-
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
+                            this.$.signUp.generateRequest();
                         }
 
-                    },
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        this.$.dialog.open();
+                    }
+                },
 
-                    closedMenu:function(event){
-                        this.$.dlgSignUpForm.close();
-                    },
+                signUpResponse: function(request){
 
-                    createProfileResponse:function(request){
-                        if(!request.detail.response.is_error){
-                            this.$.dialog.open();
-                            document.getElementById('signUpForm').reset();
-                                
-                        }else{
-                            document.getElementById("dialog-body").innerHTML = request.detail.response.message;
-                            this.$.dialog.open();
-                        }
+                    if(!request.detail.response.is_error){
+
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        var csrftoken = document.getElementById("csrfmiddlewaretoken").value;
+                        this.$.createProfileAjax.method = "POST";
+                        this.$.createProfileAjax.url = '/perfil/mi-perfil/';
+
+                        this.$.createProfileAjax.body = {'password': this.$.password.value,
+                            'email': this.$.email.value,
+                            'first_name':this.$.name.value,
+                            'last_name': this.$.lastName.value,
+                            'phone_number': 0,
+                            'mobil_number': 0,
+                            'id_type':1,
+                            'method':'create',
+                            'id':0};
+
+                        this.$.createProfileAjax.headers = {
+                            "X-CSRFToken":  getCookie('csrftoken'),
+                            "X-Requested-With": "XMLHttpRequest",
+                            "content-type": "application/json"
+                        };
+
+                        this.$.createProfileAjax.generateRequest();
+
+                        //this.$.dialog.open();
+                    }else{
+
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        this.$.dialog.open();
                     }
 
+                },
 
-                });
+                closedMenu:function(event){
+                    this.$.dlgSignUpForm.close();
+                },
+
+                createProfileResponse:function(request){
+                    if(!request.detail.response.is_error){
+                        this.$.dialog.open();
+                        document.getElementById('signUpForm').reset();
+
+                    }else{
+                        document.getElementById("dialog-body").innerHTML = request.detail.response.message;
+                        this.$.dialog.open();
+                    }
+                }
+
+
             });
+        });
 
 
-        </script>
+    </script>
 
-        <sign-in></sign-in>
+    <sign-in></sign-in>
 
 
-    {% endif %}
+{% endif %}
 
-    </body>
+</body>
 </html>

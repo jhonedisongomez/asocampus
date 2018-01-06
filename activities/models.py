@@ -41,11 +41,15 @@ class Activities(models.Model):
     activities_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
     begin_date = models.DateField(blank=False, null=False, db_index=True)
     finish_date = models.DateField(blank=False, null=False, db_index=True)
-    topic = models.CharField(max_length=200, blank=False, null=False)
-    description = models.CharField(max_length=500, blank=False, null=False)
+    title = models.CharField(max_length=200, blank=False, null=False)
+    pre_description = models.CharField(max_length=200, blank=False, null=False)
+    description = models.CharField(max_length=200, blank=False, null=False)
+    image_url = models.CharField(max_length=500,blank=True, null=True)
+    image_location = models.ImageField(upload_to='activity_image', null=False, blank=True)
     active = models.BooleanField(default=True, db_index=True)
     limit = models.IntegerField(blank=True, null=True)
     is_pay = models.BooleanField(default=False, db_index=True)  # to know if the activity as a price
+    price = models.IntegerField(default=0, blank=False, null=False)
     fk_activities_type = models.ForeignKey(ActivitiesType, blank=False, null=False)
     fk_section = models.ForeignKey(Section)
 
@@ -58,7 +62,7 @@ class Activities(models.Model):
         )
 
     def __unicode__(self):
-        return self.topic
+        return self.title
 
 
 class SignUpActivities(models.Model):
