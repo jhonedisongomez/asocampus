@@ -84,6 +84,7 @@ TEMPLATE_DIRS = [BASE_DIR.child('templates')]
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR.child('static')]
+FILE_CHARSET = 'utf-8'
 #MEDIA_ROOT = [BASE_DIR.child('activity_image')]
 
 LOGGING = {

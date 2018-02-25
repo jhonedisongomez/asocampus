@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.template import RequestContext
@@ -22,14 +23,15 @@ class IndexView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         is_admin = []
-        if request.user.is_authenticated():
+        dict = {}
+        """if request.user.is_authenticated():
 
             with connection.cursor() as cursor:
 
                 cursor.callproc('get_menu',[request.user.id])
                 is_admin = cursor.fetchall()
         
-        dict = {'menu':is_admin }
+        dict = {'menu':is_admin }"""
         context_instance = RequestContext(request)
         template = self.template_name
         return render_to_response(template, dict, context_instance)

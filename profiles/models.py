@@ -8,7 +8,7 @@ from activities.models import SignUpActivities
 class IdType(models.Model):
 
     id_type_code = models.CharField(max_length=64, default=uuid.uuid4, db_index=True)
-    description = models.CharField(max_length=30,blank=False,null=True)
+    description = models.CharField(max_length=30, blank=False, null=True)
     active = models.BooleanField(default=True, null=False, blank=True, db_index=True)
 
     class Meta:
@@ -24,9 +24,10 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=20, db_index=True, blank=False, null=False)
     last_name = models.CharField(max_length=64, db_index=True, blank=True, null=True)
     phone_number = models.IntegerField(blank=True, null=True)
-    mobil_number = models.CharField(max_length=11,blank=True, null=True)
+    mobil_number = models.CharField(max_length=11, blank=True, null=True)
+    completed = models.BooleanField(default=False, null=False, blank=False)
     active = models.BooleanField(default=True, db_index=True)
-    version = models.IntegerField(default=0,blank=False, null=False)
+    version = models.IntegerField(default=0, blank=False, null=False)
     fk_id_type = models.ForeignKey(IdType,  blank=True, null=True)
     fk_user = models.ForeignKey(User, blank=True, null=True)
 

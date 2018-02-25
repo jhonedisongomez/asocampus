@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Asocampus</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% load static from staticfiles %}
+    <link type="text/css" rel="stylesheet" href="{% static 'libs/materialize/css/materialize.min.css' %}"  media="screen,projection"/>
+</head>
+<body>
+{% if user.is_authenticated %}
+
+    <nav>
+        <div class="nav-wrapper teal green accent-4">
+            <a href="/" class="brand-logo"><img src="http://asoprovida.org/images/Plantilla_WEB/Logos_Asopro/LogoPaises/VersPq/Asoprovida_Logo_COLOMBIA.png" alt="Girl in a jacket" width="50" height="50"></a>
+            <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/perfil/mi-perfil/">Cursos</a></li>
+                <li><a href="/actividades/lista-de-actividades/">Actividades</a></li>
+                <li><a href="/perfil/mi-perfil/">Perfil</a></li>
+                <li><a href="/usuario/cerrar-sesion">Cerrar Sesion</a></li>
+
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="/perfil/mi-perfil/">Cursos</a></li>
+                <li><a href="/actividades/lista-de-actividades/">Actividades</a></li>
+                <li><a href="sass.html">Perfil</a></li>
+                <li><a href="badges.html">Cerrar sesion</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+  <div class="row">
+     <div class="col s12"><p></p></div>
+    
+    <div class="col s12 m4 l2"></div>
+    <div class="col s12 m4 l8">
+    {% block content %}
+    {% endblock %}</div>
+    <div class="col s12 m4 l2"></div>
+  </div>
+
+
+
+{% else %}
+
+   
+  <div class="parallax-container">
+    <div class="parallax"><img src="https://scontent.fclo1-2.fna.fbcdn.net/v/t31.0-8/27164795_2072393743029583_935942846879940860_o.jpg?oh=1c3690fed7b95bbaa1355b48251206b3&oe=5AFF8C65"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Iniciar Sesión</h2>
+ <div class="row">
+
+        <form class="col s12">
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="El email no tiene el formato correcto" data-success="Correcto">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="password" type="password" class="validate">
+                    <label for="password" >Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="button" name="signIn" onclick="Users.signIn();">Iniciar sesión
+                    <i class="material-icons right">send</i>
+                </button>
+                <button class="btn waves-effect waves-light" type="button" name="SignUp">Registrate
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="https://scontent.fclo1-2.fna.fbcdn.net/v/t31.0-8/21167086_1421308164618657_7740281701528019914_o.jpg?oh=c515dc92a152eb878af3e3a124a60036&oe=5B016BEE"></div>
+  </div>
+
+{% endif %}
+
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'libs/materialize/js/materialize.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/user_profile/user_profile.js' %}"></script>
+
+{% block jsimports %}
+{% endblock %}
+
+        <footer class="page-footer green accent-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Asociación protectora a la vida</h5>
+                <p class="grey-text text-lighten-4">Amar y respetar la vida es responsabilidad de todos.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Nuestras redes sociales</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">Develop by Jhon</a>
+            </div>
+          </div>
+        </footer>
+
+</body>
+</html>
