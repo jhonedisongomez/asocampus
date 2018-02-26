@@ -5,6 +5,12 @@
       $('.parallax').parallax();
     });
 
+   $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+       
+
 $(".button-collapse").sideNav();
   var $input = $('.datepicker').pickadate({
     // Strings and translations
@@ -54,6 +60,34 @@ var Users = {
         }else{
             Materialize.toast('Los datos en el formulario no son validos o estan vacios', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
         }
+    },
+
+    openSignUpForm: function(){
+
+        signUpForm.reset();
+
+        $('#modal1').modal('open');
+    },
+
+    signUpForm: function(){
+
+        var firstname = document.getElementById("firstnameReg").value;
+        var lastname = document.getElementById("lastnameReg").value;
+        var email = document.getElementById("emailReg").value;
+        var password = document.getElementById("passwordReg").value;
+        var passwordAgain = document.getElementById("passwordAgain").value;
+
+        if(firstname != "" || lastname != "" || email != ""
+            || password != "" || passwordAgain != ""){
+
+
+
+
+        }else{
+
+            Materialize.toast('Los datos en el formulario no son validos o estan vacios', 3000, 'rounded')
+        }
+
     },
 
 }
