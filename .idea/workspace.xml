@@ -2,223 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6ceea9e-7fa1-4eb0-81ae-6814104da65a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/user_profile/user_profile.js" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\general.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\AUTHORS.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\core.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\jquery.min.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\jquery.slim.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\jquery.slim.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\jquery.slim.min.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\external\sizzle\LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\external\sizzle\dist\sizzle.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\external\sizzle\dist\sizzle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\external\sizzle\dist\sizzle.min.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\.eslintrc.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\jsonp.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\load.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\parseXML.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\script.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\var\location.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\var\nonce.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\var\rquery.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\ajax\xhr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\attributes.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\attributes\attr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\attributes\classes.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\attributes\prop.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\attributes\support.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\attributes\val.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\callbacks.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\DOMEval.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\access.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\init.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\nodeName.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\parseHTML.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\ready-no-deferred.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\ready.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\readyException.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\stripAndCollapse.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\support.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\core\var\rsingleTag.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\addGetHookIf.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\adjustCSS.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\curCSS.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\hiddenVisibleSelectors.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\showHide.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\support.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\var\cssExpand.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\var\getStyles.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\var\isHiddenWithinTree.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\var\rmargin.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\var\rnumnonpx.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\css\var\swap.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\data.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\data\Data.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\data\var\acceptData.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\data\var\dataPriv.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\data\var\dataUser.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\deferred.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\deferred\exceptionHook.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\deprecated.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\dimensions.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\effects.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\effects\Tween.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\effects\animatedSelector.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\event.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\event\ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\event\alias.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\event\focusin.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\event\support.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\event\trigger.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\exports\amd.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\exports\global.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\_evalUrl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\buildFragment.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\getAll.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\setGlobalEval.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\support.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\var\rcheckableType.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\var\rscriptType.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\var\rtagName.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\manipulation\wrapMap.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\offset.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\queue.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\queue\delay.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\selector-native.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\selector-sizzle.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\selector.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\serialize.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\traversing.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\traversing\findFilter.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\traversing\var\dir.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\traversing\var\rneedsContext.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\traversing\var\siblings.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\ObjectFunctionString.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\arr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\class2type.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\concat.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\document.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\documentElement.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\fnToString.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\getProto.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\hasOwn.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\indexOf.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\pnum.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\push.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\rcssNum.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\rnothtmlwhite.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\slice.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\support.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\var\toString.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\src\wrap.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\Promise-Statics.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\Promise.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\Promise.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\promise-polyfill-lite.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\promise-polyfill\promise-polyfill.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\COPYING" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\History.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\docs\examples.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\docs\experimental.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\docs\support.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\externs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\externs\web-animations-next.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\externs\web-animations.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\animation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\apply-preserving-inline-style.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\apply.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\box-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\color-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\deprecation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\dev.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\dimension-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\effect-callback.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\element-animatable.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\font-weight-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\group-constructors.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\handler-utils.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\interpolation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\keyframe-effect-constructor.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\keyframe-effect.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\keyframe-interpolations.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\matrix-decomposition.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\matrix-interpolation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\normalize-keyframes.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\number-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\position-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\property-interpolation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\property-names.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\scope.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\shadow-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\shape-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\tick.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\timeline.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\timing-utilities.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\transform-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\visibility-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\web-animations-bonus-cancel-events.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\web-animations-bonus-object-form-keyframes.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\src\web-animations-next-animation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations-next-lite.min.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations-next-lite.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations-next-lite.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations-next.min.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations-next.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations-next.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations.min.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\web-animations-js\web-animations.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\CustomElements.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\CustomElements.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\HTMLImports.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\HTMLImports.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\MutationObserver.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\MutationObserver.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\ShadowDOM.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\ShadowDOM.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\build.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\webcomponents-lite.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\webcomponents-lite.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\webcomponents.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\webcomponentsjs\webcomponents.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Jhon Edison Gomez\Documents\proyectos\asocampus\static\js\jquery\dist\jquery.min.js" afterPath="$PROJECT_DIR$/static/js/jquery-3.2.1.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asocampus/settings/base.py" afterPath="$PROJECT_DIR$/asocampus/settings/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home/index.html" afterPath="$PROJECT_DIR$/templates/home/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/logs.log" afterPath="$PROJECT_DIR$/logs/logs.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/models.py" afterPath="$PROJECT_DIR$/profiles/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/profile/profile.html" afterPath="$PROJECT_DIR$/templates/profile/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/urls.py" afterPath="$PROJECT_DIR$/profiles/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/views.py" afterPath="$PROJECT_DIR$/home/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/views.py" afterPath="$PROJECT_DIR$/profiles/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/user_profile/user_profile.js" afterPath="$PROJECT_DIR$/static/js/user_profile/user_profile.js" />
     </list>
     <ignored path="asocampus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -297,8 +83,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="186" column="1" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -307,8 +93,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profiles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5271318">
-              <caret line="121" column="46" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
+            <state vertical-scroll-proportion="1.5730337">
+              <caret line="112" column="51" selection-start-line="112" selection-start-column="51" selection-end-line="112" selection-end-column="51" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
               </folding>
@@ -328,9 +114,12 @@
       </file>
       <file leaf-file-name="logs.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/logs.log">
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+              <caret line="384" column="0" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -370,7 +159,7 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/91b1e091-f300-4432-affe-26a75b6e79bb/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.56666666">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
               <folding />
             </state>
@@ -380,22 +169,9 @@
       <file leaf-file-name="asocampus.public.create_profile" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbfunction:/1c6879ba/91b1e091-f300-4432-affe-26a75b6e79bb/asocampus.public.create_profile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9333334">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="72" />
-              <folding>
-                <marker date="0" expanded="true" signature="311:1745" placeholder="DECLARE v_ge..." />
-                <marker date="0" expanded="true" signature="454:473" placeholder="p_is_error :..." />
-                <marker date="0" expanded="true" signature="478:651" placeholder="SELECT pp.do..profiles_profile..." />
-                <marker date="0" expanded="true" signature="655:1569" placeholder="IF NOT FOUND..." />
-                <marker date="0" expanded="true" signature="676:957" placeholder="INSERT INTO ..." />
-                <marker date="0" expanded="true" signature="962:1174" placeholder="v_values := ..." />
-                <marker date="0" expanded="true" signature="1179:1371" placeholder="INSERT INTO ..." />
-                <marker date="0" expanded="true" signature="1375:1449" placeholder="p_message :=..." />
-                <marker date="0" expanded="true" signature="1460:1559" placeholder="p_message :=..." />
-                <marker date="0" expanded="true" signature="1573:1739" placeholder="BEGIN EXCEPT..." />
-                <marker date="0" expanded="true" signature="1611:1696" placeholder="p_message :=..." />
-                <marker date="0" expanded="true" signature="1701:1719" placeholder="p_is_error :..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -403,7 +179,7 @@
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/profile/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.76923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="67" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
               <folding />
             </state>
@@ -414,7 +190,7 @@
         <entry file="file://$PROJECT_DIR$/templates/home/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -512,7 +288,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="width" value="1932" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -538,8 +314,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -904,26 +680,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
+    <editor active="false" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23563218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49092284" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21839081" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18093175" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49092284" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4182015" sideWeight="0.47881997" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40953413" sideWeight="0.4861963" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4182015" sideWeight="0.47881997" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40455532" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40520042" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40953413" sideWeight="0.4861963" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -981,9 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1268,9 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1320,7 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1356,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1364,7 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.097222224">
           <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1372,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.121527776">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1380,9 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.123595506">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1390,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,7 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,9 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1456,7 +1214,7 @@
     <entry file="file://$PROJECT_DIR$/templates/home/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1502,7 +1260,7 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <caret line="384" column="0" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1510,7 +1268,7 @@
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="30" />
+          <caret line="186" column="1" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1519,7 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.032945737">
           <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1533,7 +1290,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/profile/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.76923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="67" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
           <folding />
         </state>
@@ -1541,28 +1298,15 @@
     </entry>
     <entry file="dbDummy://dbfunction:/1c6879ba/91b1e091-f300-4432-affe-26a75b6e79bb/asocampus.public.create_profile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9333334">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="72" />
-          <folding>
-            <marker date="0" expanded="true" signature="311:1745" placeholder="DECLARE v_ge..." />
-            <marker date="0" expanded="true" signature="454:473" placeholder="p_is_error :..." />
-            <marker date="0" expanded="true" signature="478:651" placeholder="SELECT pp.do..profiles_profile..." />
-            <marker date="0" expanded="true" signature="655:1569" placeholder="IF NOT FOUND..." />
-            <marker date="0" expanded="true" signature="676:957" placeholder="INSERT INTO ..." />
-            <marker date="0" expanded="true" signature="962:1174" placeholder="v_values := ..." />
-            <marker date="0" expanded="true" signature="1179:1371" placeholder="INSERT INTO ..." />
-            <marker date="0" expanded="true" signature="1375:1449" placeholder="p_message :=..." />
-            <marker date="0" expanded="true" signature="1460:1559" placeholder="p_message :=..." />
-            <marker date="0" expanded="true" signature="1573:1739" placeholder="BEGIN EXCEPT..." />
-            <marker date="0" expanded="true" signature="1611:1696" placeholder="p_message :=..." />
-            <marker date="0" expanded="true" signature="1701:1719" placeholder="p_is_error :..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/91b1e091-f300-4432-affe-26a75b6e79bb/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.56666666">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
@@ -1599,8 +1343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/profiles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5271318">
-          <caret line="121" column="46" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
+        <state vertical-scroll-proportion="1.5730337">
+          <caret line="112" column="51" selection-start-line="112" selection-start-column="51" selection-end-line="112" selection-end-column="51" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
           </folding>

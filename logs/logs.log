@@ -361,3 +361,33 @@ CONTEXT:  función PL/pgSQL create_profile(character varying,integer,character v
 [24/Feb/2018 22:44:39] INFO logging:<WSGIRequest: GET '/actividades/lista-de-actividades/'>, usuario:jhonedisongomez
 [24/Feb/2018 22:44:42] INFO logging:state: init, usuario:jhonedisongomez
 [24/Feb/2018 22:44:44] WARNING django.request:Not Found: /images/sample-1.jpg
+[25/Feb/2018 14:54:25] WARNING django.request:Not Found: /images/sample-1.jpg
+[25/Feb/2018 14:54:26] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:17:30] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:18:50] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:24:13] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:24:33] INFO logging:<WSGIRequest: GET '/usuario/iniciar-sesion/?username=jhonedisongomez&password=Colombia2013%40'>, usuario:AnonymousUser
+[25/Feb/2018 21:24:33] INFO logging:usuario autenticado, usuario:jhonedisongomez
+[25/Feb/2018 21:24:33] INFO logging:response_data: {"message": "bienvenido a nuestra plataforma", "is_error": false, "authenticated": true}, usuario:jhonedisongomez
+[25/Feb/2018 21:24:34] WARNING django.request:Not Found: /images/sample-1.jpg
+[25/Feb/2018 21:24:37] INFO logging:<WSGIRequest: GET '/actividades/lista-de-actividades/'>, usuario:jhonedisongomez
+[25/Feb/2018 21:24:39] INFO logging:state: init, usuario:jhonedisongomez
+[25/Feb/2018 21:25:29] INFO logging:<WSGIRequest: GET '/usuario/iniciar-sesion/?username=jhonedisongomez&password=Colombia2013%40'>, usuario:AnonymousUser
+[25/Feb/2018 21:25:29] INFO logging:usuario autenticado, usuario:jhonedisongomez
+[25/Feb/2018 21:25:29] INFO logging:response_data: {"message": "bienvenido a nuestra plataforma", "is_error": false, "authenticated": true}, usuario:jhonedisongomez
+[25/Feb/2018 21:25:30] WARNING django.request:Not Found: /images/sample-1.jpg
+[25/Feb/2018 21:25:34] INFO logging:<WSGIRequest: GET '/actividades/lista-de-actividades/'>, usuario:jhonedisongomez
+[25/Feb/2018 21:25:37] INFO logging:state: init, usuario:jhonedisongomez
+[25/Feb/2018 21:29:19] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:30:46] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:34:30] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:34:43] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:39:57] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:45:25] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 21:51:57] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 22:06:37] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 22:07:20] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 22:11:10] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 22:12:27] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 22:14:18] WARNING django.request:Not Found: /favicon.ico
+[25/Feb/2018 22:17:51] WARNING django.request:Not Found: /favicon.ico
